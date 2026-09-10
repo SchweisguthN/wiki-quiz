@@ -1,7 +1,7 @@
 # Iconic Careers
 
 Jeu où l'on devine un footballeur à partir de sa carrière en club. On affiche
-le parcours d'un joueur (clubs, périodes, matchs joués, prêts en retrait) et il
+le parcours d'un joueur (clubs, périodes, matchs joués) et il
 faut retrouver son nom.
 
 ## Contenu du dépôt
