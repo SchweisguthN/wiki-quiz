@@ -89,7 +89,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 .cover .inner{position:relative;padding:34px 32px 30px}
 .cover .kline{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-l);font-weight:500}
 .cover h1{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
-  font-size:clamp(34px,6vw,60px);line-height:.94;letter-spacing:-.005em;margin:12px 0 0;color:#fdfaf1;max-width:16ch;
+  font-size:clamp(34px,6vw,58px);line-height:1.02;letter-spacing:-.005em;margin:10px 0 0;color:#fdfaf1;max-width:16ch;
   text-shadow:0 2px 0 rgba(10,40,26,.45)}
 .cover p{margin:16px 0 0;color:#cfe0d3;color:#cfe0d3;font-size:15px;max-width:56ch;line-height:1.55}
 .cover .sticker{position:absolute;right:26px;bottom:-1px;width:120px;height:150px;pointer-events:none;opacity:.96;
@@ -168,27 +168,29 @@ button{font:inherit;cursor:pointer;color:inherit}
   box-shadow:0 3px 0 var(--border-s),0 16px 34px rgba(90,65,25,.16);
   position:relative}
 .card-frame::before{content:"";position:absolute;inset:5px;border:1px dashed var(--border-s);border-radius:2px;pointer-events:none;z-index:1}
-.career{background:var(--card);border-radius:2px;overflow:hidden;position:relative;
-  background-image:linear-gradient(var(--paper) .5px,transparent .5px);
-  background-size:100% 40px;background-position:0 56px}
+.career{background:var(--card);border-radius:2px;overflow:hidden;position:relative}
 .career-h{background:var(--pitch);color:#fdfaf1;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;
   font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.1em;
   position:relative;border-bottom:3px double rgba(253,250,241,.35)}
 .career-h::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:3px;
   background:linear-gradient(90deg,var(--gold-l),var(--gold),var(--gold-d))}
 .career-h .badge{font-size:11px;letter-spacing:.1em;background:rgba(253,250,241,.16);padding:3px 9px;border-radius:2px;border:1px solid rgba(253,250,241,.25)}
-.rows{padding:6px 0}
-.row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:9px 18px;align-items:baseline;position:relative;min-height:40px}
+.rows{padding:4px 0}
+.row{display:flex;align-items:baseline;gap:9px;padding:8px 18px;position:relative}
 .row+.row::before{content:"";position:absolute;top:0;left:14px;right:14px;height:1px;
-  background:repeating-linear-gradient(90deg,var(--border-s) 0 3px,transparent 3px 7px);opacity:.7}
-.row .club{font-family:'Bitter',Georgia,serif;font-weight:600;font-size:15.5px}
+  background:repeating-linear-gradient(90deg,var(--border-s) 0 3px,transparent 3px 7px);opacity:.6}
+.row .club{font-family:'Bitter',Georgia,serif;font-weight:600;font-size:15.5px;flex:none}
+.row.big .club{color:var(--pitch)}
+.row .yr{color:var(--muted);font-size:11px;font-weight:600;font-family:'Oswald',sans-serif;letter-spacing:.03em;
+  border:1px solid var(--border);border-radius:2px;padding:1px 5px;background:var(--paper);white-space:nowrap;flex:none}
+.row .leader{flex:1 1 auto;align-self:center;height:0;border-bottom:2px dotted var(--border-s);opacity:.7;margin:0 4px;min-width:16px}
+.row .ap{color:var(--muted);font-size:12.5px;white-space:nowrap;font-family:'Oswald',sans-serif;flex:none}
+.row .ap b{color:var(--pitch);font-size:16px}
+.row.big .ap b{font-size:19px}
+.row .ap .na{color:var(--border-s);font-size:15px}
 .row.nested{padding-left:40px}
-.row.nested::after{content:"↳";position:absolute;left:19px;top:8px;color:var(--gold-d);font-size:15px;font-weight:700}
-.row.nested .club{font-weight:500;font-style:italic;color:#5a5140}
-.row .yr{color:var(--muted);font-size:11.5px;margin-left:9px;font-weight:600;font-family:'Oswald',sans-serif;letter-spacing:.03em;
-  border:1px solid var(--border);border-radius:2px;padding:1px 5px;background:var(--paper);white-space:nowrap}
-.row .ap{color:var(--muted);font-size:13px;white-space:nowrap;font-family:'Oswald',sans-serif}
-.row .ap b{color:var(--pitch);font-size:15px}
+.row.nested::after{content:"↳";position:absolute;left:19px;top:7px;color:var(--gold-d);font-size:15px;font-weight:700}
+.row.nested .club{font-weight:500;font-style:italic;color:#5a5140;font-size:14.5px}
 .hints{padding:14px 18px;border-top:3px double var(--border-s);background:rgba(200,163,74,.11);display:flex;gap:14px;flex-wrap:wrap}
 .hint-chip{font-size:13px;background:var(--card);border:1px solid var(--border-s);border-radius:3px;padding:6px 11px;
   font-family:'Bitter',Georgia,serif;box-shadow:1px 1px 0 var(--border)}
@@ -473,15 +475,16 @@ function Career({p,shown}){
     <div className="career">
      <div className="career-h"><span>Parcours en club</span><span className="badge">{nClubs} club{nClubs>1?'s':''}</span></div>
      <div className="rows">
-     {p.career.map((c,i)=>(
-       <div className={"row"+(nested[i]?" nested":"")} key={i}>
-         <div>
-           <span className="club">{c.club}</span>
-           <span className="yr">{c.start||'?'}{c.end?('–'+c.end):(c.start?'–…':'')}</span>
-         </div>
-         <div className="ap">{c.apps&&/^\d+$/.test(c.apps)?<span><b>{c.apps}</b> m.</span>:''}</div>
+     {p.career.map((c,i)=>{
+       const big=c.apps&&/^\d+$/.test(c.apps)&&parseInt(c.apps)>=100;
+       return (
+       <div className={"row"+(nested[i]?" nested":"")+(big?" big":"")} key={i}>
+         <span className="club">{c.club}</span>
+         <span className="yr">{c.start||'?'}{c.end?('–'+c.end):(c.start?'–…':'')}</span>
+         <span className="leader"></span>
+         <span className="ap">{c.apps&&/^\d+$/.test(c.apps)?<span><b>{c.apps}</b> m.</span>:<span className="na">—</span>}</span>
        </div>
-     ))}
+     );})}
      </div>
      {anyHint &&
        <div className="hints">
