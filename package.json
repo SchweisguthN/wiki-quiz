@@ -1,4 +1,11 @@
 {
+  "name": "iconic-careers",
+  "version": "1.0.0",
+  "description": "Jeu où l'on devine un footballeur à partir de sa carrière en club",
+  "private": true,
+  "scripts": {
+    "serve": "npx http-server -p 3000"
+  },
   "dependencies": {
     "@vercel/analytics": "^2.0.1"
   }
