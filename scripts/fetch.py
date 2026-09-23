@@ -29,6 +29,8 @@ def fetch(template, ids):
             break  # 500 = timeout côté Wikidata
         except TimeoutError:
             break
+        except urllib.error.URLError as e:  # erreur réseau : on réessaie
+            print(f"  réseau : {e}, nouvel essai", flush=True); time.sleep(15)
     if len(ids) == 1:
         raise SystemExit(f"Timeout même sur un seul club : {ids[0]}")
     print(f"  timeout sur {len(ids)} ids, découpage", flush=True)

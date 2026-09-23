@@ -14,7 +14,12 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
-      - run: |
+      - shell: bash
+        run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          python3 scripts/fetch.py
+          set +e
+          python3 -u scripts/fetch.py 2>&1 | tee data/raw/fetch.log
+          code=${PIPESTATUS[0]}
+          git add data/raw/fetch.log && git commit -qm "Log de collecte" && git pull -q --rebase origin main && git push -q origin HEAD:main
+          exit $code
