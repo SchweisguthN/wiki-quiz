@@ -1,0 +1,12 @@
+SELECT ?player ?playerLabel ?natLabel ?posLabel ?club ?apps ?start ?end WHERE {
+  VALUES ?club { {{VALUES}} }
+  ?player p:P54 ?stmt .
+  ?stmt ps:P54 ?club ;
+        pq:P580 ?start ;
+        pq:P1350 ?apps .
+  OPTIONAL { ?stmt pq:P582 ?end . }
+  FILTER( !BOUND(?end) || YEAR(?end) >= 1999 )
+  ?player wdt:P27 ?nat ;
+          wdt:P413 ?pos .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en". }
+}
