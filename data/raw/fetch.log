@@ -1,13 +1,27 @@
-  timeout sur 300 ids, découpage
-  timeout sur 150 ids, découpage
-nouveaux_carrieres lot 1/13 : 2575 lignes en 218s
-error: cannot pull with rebase: You have unstaged changes.
-error: Please commit or stash them.
-Traceback (most recent call last):
-  File "/home/runner/work/wiki-quiz/wiki-quiz/scripts/fetch.py", line 65, in <module>
-    push(dest, f"Collecte {job.name} lot {n}/{len(lots)}")
-  File "/home/runner/work/wiki-quiz/wiki-quiz/scripts/fetch.py", line 47, in push
-    subprocess.run(["git", "pull", "-q", "--rebase", "origin", "main"], check=True)
-  File "/usr/lib/python3.12/subprocess.py", line 571, in run
-    raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['git', 'pull', '-q', '--rebase', 'origin', 'main']' returned non-zero exit status 128.
+nouveaux_carrieres lot 2/13 : 2887 lignes en 35s
+nouveaux_carrieres lot 3/13 : 2864 lignes en 58s
+nouveaux_carrieres lot 4/13 : 450 lignes en 58s
+nouveaux_carrieres lot 5/13 : 2751 lignes en 63s
+nouveaux_carrieres lot 6/13 : 2615 lignes en 68s
+nouveaux_carrieres lot 7/13 : 2638 lignes en 32s
+nouveaux_carrieres lot 8/13 : 2568 lignes en 8s
+nouveaux_carrieres lot 9/13 : 2730 lignes en 38s
+nouveaux_carrieres lot 10/13 : 1793 lignes en 36s
+nouveaux_carrieres lot 11/13 : 2426 lignes en 4s
+nouveaux_carrieres lot 12/13 : 2004 lignes en 56s
+nouveaux_carrieres lot 13/13 : 1058 lignes en 20s
+nouveaux_details lot 1/13 : 389 lignes en 5s
+nouveaux_details lot 2/13 : 381 lignes en 23s
+nouveaux_details lot 3/13 : 366 lignes en 7s
+nouveaux_details lot 4/13 : 354 lignes en 6s
+nouveaux_details lot 5/13 : 340 lignes en 11s
+nouveaux_details lot 6/13 : 348 lignes en 5s
+nouveaux_details lot 7/13 : 358 lignes en 6s
+nouveaux_details lot 8/13 : 338 lignes en 4s
+nouveaux_details lot 9/13 : 327 lignes en 23s
+  429, pause 120s
+nouveaux_details lot 10/13 : 321 lignes en 144s
+nouveaux_details lot 11/13 : 321 lignes en 39s
+  429, pause 120s
+nouveaux_details lot 12/13 : 348 lignes en 129s
+nouveaux_details lot 13/13 : 218 lignes en 17s
