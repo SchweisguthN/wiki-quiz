@@ -1,9 +1,0 @@
-player,club,rank,start,apps,end,hasNat,hasPos
-http://www.wikidata.org/entity/Q209942,http://www.wikidata.org/entity/Q15789,http://wikiba.se/ontology#NormalRank,2022-07-01T00:00:00Z,25.0,2023-08-01T00:00:00Z,false,true
-http://www.wikidata.org/entity/Q209942,http://www.wikidata.org/entity/Q221525,http://wikiba.se/ontology#NormalRank,2010-01-01T00:00:00Z,22.0,2012-01-01T00:00:00Z,false,true
-http://www.wikidata.org/entity/Q209942,http://www.wikidata.org/entity/Q994811,http://wikiba.se/ontology#NormalRank,2012-01-01T00:00:00Z,63.0,2014-01-01T00:00:00Z,false,true
-http://www.wikidata.org/entity/Q209942,http://www.wikidata.org/entity/Q207441,http://wikiba.se/ontology#NormalRank,2012-01-01T00:00:00Z,130.0,,false,true
-http://www.wikidata.org/entity/Q209942,http://www.wikidata.org/entity/Q482764,http://wikiba.se/ontology#PreferredRank,2023-08-01T00:00:00Z,89.0,,false,true
-http://www.wikidata.org/entity/Q209942,http://www.wikidata.org/entity/Q3132749,http://wikiba.se/ontology#NormalRank,2012-01-01T00:00:00Z,4.0,2012-01-01T00:00:00Z,false,true
-http://www.wikidata.org/entity/Q209942,http://www.wikidata.org/entity/Q18732,http://wikiba.se/ontology#NormalRank,2014-01-01T00:00:00Z,67.0,2016-01-01T00:00:00Z,false,true
-http://www.wikidata.org/entity/Q209942,http://www.wikidata.org/entity/Q1130849,http://wikiba.se/ontology#NormalRank,2016-07-01T00:00:00Z,196.0,2022-06-01T00:00:00Z,false,true

@@ -1,0 +1,9 @@
+SELECT ?player ?club ?clubLabel ?apps ?start ?end WHERE {
+  VALUES ?player { {{VALUES}} }
+  ?player p:P54 ?stmt .
+  ?stmt ps:P54 ?club ;
+        pq:P580 ?start .
+  OPTIONAL { ?stmt pq:P1350 ?apps . }
+  OPTIONAL { ?stmt pq:P582 ?end . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en,es,it,de,pt,nl". }
+}
