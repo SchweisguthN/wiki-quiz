@@ -44,7 +44,7 @@ def fetch(template, ids):
 def push(path, msg):
     subprocess.run(["git", "add", str(path)], check=True)
     subprocess.run(["git", "commit", "-qm", msg], check=True)
-    subprocess.run(["git", "pull", "-q", "--rebase", "origin", "main"], check=True)
+    subprocess.run(["git", "pull", "-q", "--rebase", "--autostash", "origin", "main"], check=True)
     subprocess.run(["git", "push", "-q", "origin", "HEAD:main"], check=True)
 
 FAILED = []
