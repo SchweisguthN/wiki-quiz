@@ -6,7 +6,7 @@ commitée et poussée après chaque lot. Les lots déjà présents sont sautés.
 Un lot qui timeoute est coupé en deux ; un club qui timeoute seul est noté
 dans failed.txt et sauté. Un refus d'accès arrête tout.
 """
-import csv, io, pathlib, subprocess, time, urllib.error, urllib.parse, urllib.request
+import csv, http.client, io, pathlib, subprocess, time, urllib.error, urllib.parse, urllib.request
 
 ENDPOINT = "https://query.wikidata.org/sparql"
 UA = "IconicCareersBot/1.0 (https://github.com/SchweisguthN/wiki-quiz)"
@@ -28,9 +28,9 @@ def fetch(template, ids):
                 wait = int(e.headers.get("Retry-After") or 30)
                 print(f"  {e.code}, pause {wait}s", flush=True); time.sleep(wait); continue
             break  # 500 = timeout côté Wikidata
-        except TimeoutError:
+        except (TimeoutError, http.client.IncompleteRead):  # réponse coupée = timeout
             break
-        except urllib.error.URLError as e:  # erreur réseau : on réessaie
+        except OSError as e:  # erreur réseau : on réessaie
             print(f"  réseau : {e}, nouvel essai", flush=True); time.sleep(15)
     if len(ids) == 1:
         print(f"  abandon : {ids[0]} timeoute seul", flush=True)
