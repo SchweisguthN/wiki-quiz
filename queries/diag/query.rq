@@ -1,0 +1,10 @@
+SELECT ?player ?club ?rank ?start ?apps ?end ?hasNat ?hasPos WHERE {
+  VALUES ?player { {{VALUES}} }
+  ?player p:P54 ?stmt .
+  ?stmt ps:P54 ?club ; wikibase:rank ?rank .
+  OPTIONAL { ?stmt pq:P580 ?start . }
+  OPTIONAL { ?stmt pq:P1350 ?apps . }
+  OPTIONAL { ?stmt pq:P582 ?end . }
+  BIND(EXISTS { ?player wdt:P27 [] } AS ?hasNat)
+  BIND(EXISTS { ?player wdt:P413 [] } AS ?hasPos)
+}
