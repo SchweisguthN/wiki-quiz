@@ -3,7 +3,8 @@
 Chaque job contient query.rq (avec un marqueur {{VALUES}}) et lots.txt
 (un lot de Q-IDs par ligne, lignes '#' ignorées). Sortie : data/raw/<job>/lot_NN.csv,
 commitée et poussée après chaque lot. Les lots déjà présents sont sautés.
-Un lot qui timeoute est coupé en deux ; un refus d'accès arrête tout.
+Un lot qui timeoute est coupé en deux ; un club qui timeoute seul est noté
+dans failed.txt et sauté. Un refus d'accès arrête tout.
 """
 import csv, io, pathlib, subprocess, time, urllib.error, urllib.parse, urllib.request
 
@@ -32,11 +33,13 @@ def fetch(template, ids):
         except urllib.error.URLError as e:  # erreur réseau : on réessaie
             print(f"  réseau : {e}, nouvel essai", flush=True); time.sleep(15)
     if len(ids) == 1:
-        raise SystemExit(f"Timeout même sur un seul club : {ids[0]}")
+        print(f"  abandon : {ids[0]} timeoute seul", flush=True)
+        FAILED.append(ids[0])
+        return None
     print(f"  timeout sur {len(ids)} ids, découpage", flush=True)
     half = len(ids) // 2
-    a, b = fetch(template, ids[:half]), fetch(template, ids[half:])
-    return a + b[1:]
+    parts = [r for r in (fetch(template, ids[:half]), fetch(template, ids[half:])) if r]
+    return parts[0] + [row for p in parts[1:] for row in p[1:]] if parts else None
 
 def push(path, msg):
     subprocess.run(["git", "add", str(path)], check=True)
@@ -44,6 +47,7 @@ def push(path, msg):
     subprocess.run(["git", "pull", "-q", "--rebase", "origin", "main"], check=True)
     subprocess.run(["git", "push", "-q", "origin", "HEAD:main"], check=True)
 
+FAILED = []
 for job in sorted(pathlib.Path("queries").iterdir()):
     template = (job / "query.rq").read_text()
     lots = [l.split() for l in (job / "lots.txt").read_text().splitlines() if l.strip() and not l.startswith("#")]
@@ -54,8 +58,12 @@ for job in sorted(pathlib.Path("queries").iterdir()):
         if dest.exists():
             continue
         t = time.time()
-        rows = fetch(template, ids)
+        rows = fetch(template, ids) or [[]]
         with open(dest, "w", newline="", encoding="utf-8") as f:
             csv.writer(f).writerows(rows)
         print(f"{job.name} lot {n}/{len(lots)} : {len(rows)-1} lignes en {time.time()-t:.0f}s", flush=True)
         push(dest, f"Collecte {job.name} lot {n}/{len(lots)}")
+    if FAILED:
+        (out / "failed.txt").write_text("\n".join(FAILED) + "\n")
+        push(out / "failed.txt", f"Collecte {job.name} : {len(FAILED)} échecs")
+        FAILED.clear()
