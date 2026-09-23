@@ -1,37 +1,13 @@
+  timeout sur 300 ids, découpage
+  timeout sur 150 ids, découpage
+nouveaux_carrieres lot 1/13 : 2575 lignes en 218s
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
 Traceback (most recent call last):
-  File "/usr/lib/python3.12/http/client.py", line 584, in _get_chunk_left
-    chunk_left = self._read_next_chunk_size()
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/http/client.py", line 551, in _read_next_chunk_size
-    return int(line, 16)
-           ^^^^^^^^^^^^^
-ValueError: invalid literal for int() with base 16: b''
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.12/http/client.py", line 600, in _read_chunked
-    while (chunk_left := self._get_chunk_left()) is not None:
-                         ^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/http/client.py", line 586, in _get_chunk_left
-    raise IncompleteRead(b'')
-http.client.IncompleteRead: IncompleteRead(0 bytes read)
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/runner/work/wiki-quiz/wiki-quiz/scripts/fetch.py", line 61, in <module>
-    rows = fetch(template, ids) or [[]]
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/wiki-quiz/wiki-quiz/scripts/fetch.py", line 23, in fetch
-    return run(template.replace("{{VALUES}}", " ".join(ids)))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/wiki-quiz/wiki-quiz/scripts/fetch.py", line 18, in run
-    return list(csv.reader(io.StringIO(r.read().decode("utf-8"))))
-                                       ^^^^^^^^
-  File "/usr/lib/python3.12/http/client.py", line 478, in read
-    return self._read_chunked(amt)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/http/client.py", line 612, in _read_chunked
-    raise IncompleteRead(b''.join(value)) from exc
-http.client.IncompleteRead: IncompleteRead(0 bytes read)
+  File "/home/runner/work/wiki-quiz/wiki-quiz/scripts/fetch.py", line 65, in <module>
+    push(dest, f"Collecte {job.name} lot {n}/{len(lots)}")
+  File "/home/runner/work/wiki-quiz/wiki-quiz/scripts/fetch.py", line 47, in push
+    subprocess.run(["git", "pull", "-q", "--rebase", "origin", "main"], check=True)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'pull', '-q', '--rebase', 'origin', 'main']' returned non-zero exit status 128.
