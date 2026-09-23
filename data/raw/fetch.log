@@ -1,17 +1,11 @@
-selection lot 1/15 : 4840 lignes en 53s
-  429, pause 120s
-selection lot 2/15 : 5210 lignes en 141s
-selection lot 3/15 : 5339 lignes en 17s
-selection lot 4/15 : 3000 lignes en 5s
-selection lot 5/15 : 2465 lignes en 2s
-selection lot 6/15 : 2352 lignes en 6s
-selection lot 7/15 : 3593 lignes en 3s
-selection lot 8/15 : 3328 lignes en 4s
-selection lot 9/15 : 3445 lignes en 3s
-  timeout sur 13 ids, découpage
-selection lot 10/15 : 3033 lignes en 110s
-selection lot 11/15 : 3285 lignes en 26s
-selection lot 12/15 : 2127 lignes en 7s
-selection lot 13/15 : 5563 lignes en 14s
-selection lot 14/15 : 4690 lignes en 23s
-selection lot 15/15 : 3337 lignes en 39s
+diag lot 1/1 : 8 lignes en 10s
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+Traceback (most recent call last):
+  File "/home/runner/work/wiki-quiz/wiki-quiz/scripts/fetch.py", line 65, in <module>
+    push(dest, f"Collecte {job.name} lot {n}/{len(lots)}")
+  File "/home/runner/work/wiki-quiz/wiki-quiz/scripts/fetch.py", line 47, in push
+    subprocess.run(["git", "pull", "-q", "--rebase", "origin", "main"], check=True)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'pull', '-q', '--rebase', 'origin', 'main']' returned non-zero exit status 128.
