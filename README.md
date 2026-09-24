@@ -31,7 +31,7 @@ direction « album de vignettes ». Il tourne sur l'échantillon de 320 joueurs 
 
 ## Les données
 
-### `joueurs_agrege.csv` — la table joueurs (15 502 lignes)
+### `joueurs_agrege.csv` — la table joueurs (15 392 lignes)
 
 Une ligne par joueur. Colonnes :
 
@@ -49,14 +49,22 @@ Une ligne par joueur. Colonnes :
 | `difficulte` | `facile` / `moyen` / `difficile` / `legende` / `exclu` |
 | `first_year`, `last_year` | premières et dernières années d'activité |
 
-Niveaux de difficulté :
-- **facile** : star (60+ pages Wikipédia)
-- **moyen** : 250+ matchs dans les grands championnats
-- **difficile** : 100 à 250 matchs
-- **legende** : 10 à 100 matchs
-- **exclu** : moins de 10 matchs (hors périmètre de jeu)
+Niveaux de difficulté (calculés par `scripts/difficulte.py`) :
 
-### `carrieres_nettoyees.csv` — les carrières (121 772 lignes)
+`score = pages Wikipédia + matchs top 5 / 10 + matchs dans un grand club / 5`
+
+Les grands clubs sont 28 clubs à forte visibilité européenne depuis 2000, listés
+dans le script. Un match dans un grand club pèse donc trois fois plus qu'ailleurs.
+
+- **facile** : star (60+ pages Wikipédia)
+- **moyen** : score ≥ 75
+- **difficile** : score ≥ 42
+- **legende** : score < 42
+- **exclu** : moins de 10 matchs top 5 (hors périmètre de jeu)
+
+Les colonnes `matchs_grands_clubs` et `score` permettent de réajuster les seuils.
+
+### `carrieres_nettoyees.csv` — les carrières (121 143 lignes)
 
 Une ligne par passage en club. Colonnes : `player`, `name`, `club`,
 `clubLabel`, `apps` (matchs), `start`, `end` (années). Sélections nationales
@@ -80,7 +88,7 @@ Les données viennent de **Wikidata**, interrogé en SPARQL. Grandes étapes :
    présents chaque saison depuis 1999-2000. Un joueur est retenu si l'un de ses
    passages renseignés (matchs + dates, avec nationalité et poste) chevauche une
    saison où son club était dans un de ces championnats. On évalue donc le
-   championnat à l'époque du passage, pas aujourd'hui → 15 502 joueurs.
+   championnat à l'époque du passage, pas aujourd'hui → 15 392 joueurs.
    Les matchs d'un passage à cheval sur plusieurs divisions sont proratisés
    selon la part des saisons jouées en top 5.
 2. **Carrières complètes** — pour chaque joueur retenu, récupération de tous ses
@@ -89,7 +97,8 @@ Les données viennent de **Wikidata**, interrogé en SPARQL. Grandes étapes :
    « équipe nationale de football », pas par le libellé), correction des dates
    aberrantes, assainissement des nombres de matchs (plafond ~45/saison,
    valeurs corrompues ignorées).
-4. **Difficulté** — calculée sur les matchs top 5 et la notoriété (sitelinks).
+4. **Difficulté** — score combinant notoriété, matchs top 5 et matchs en grand club.
+   Les joueuses (fiches rattachées par erreur au club masculin) sont exclues.
 5. **Nationalité principale** — la sélection A jouée quand elle existe (le pays
    sous les couleurs duquel le joueur a le plus de sélections), sinon la liste
    des nationalités Wikidata.

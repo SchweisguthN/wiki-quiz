@@ -90,9 +90,6 @@ Q10785,Cristian Battocchio,cristian battocchio,Italie,Argentine,milieu de terrai
 Q10788,Nathaniel Chalobah,nathaniel chalobah,Royaume-Uni / Sierra Leone,Royaume-Uni / Sierra Leone,milieu de terrain,7,8,34,PL / SA,2012,2015,2,35,exclu
 Q10792,Joel Ekstrand,joel ekstrand,Suède,Suède,défenseur central,3,12,17,SA,2008,2013,0,18,legende
 Q10796,Jean-Alain Fanchone,jeanalain fanchone,France,France,arrière latéral,7,21,11,L1 / SA,2008,2015,0,13,legende
-Q10885,Fara Williams,fara williams,Royaume-Uni,Royaume-Uni,milieu de terrain,6,42,27,PL,2001,2015,42,40,legende
-Q10889,Karen Carney,karen carney,Royaume-Uni,Royaume-Uni,milieu de terrain / milieu excentré,6,21,24,PL,2001,2015,21,30,legende
-Q10902,Anita Asante,anita asante,Royaume-Uni,Royaume-Uni,défenseur,11,48,24,PL,2003,2014,48,38,legende
 Q11571,Cristiano Ronaldo,cristiano ronaldo,Portugal,Portugal,attaquant / milieu excentré,5,626,215,LIGA / PL / SA,2002,2022,626,403,facile
 Q11576,Raúl González,raul gonzalez,Espagne,Espagne,attaquant,6,444,83,BUN / LIGA,1994,2015,444,216,facile
 Q11584,Iker Casillas,iker casillas,Espagne,Espagne,gardien de but,4,510,100,LIGA,1998,2020,510,253,facile
@@ -1795,7 +1792,6 @@ Q266507,Marcelo Gallardo,marcelo gallardo,Argentine,Argentine,milieu de terrain,
 Q266613,Wayne Rooney,wayne rooney,Angleterre,Royaume-Uni,attaquant / milieu de terrain axial,4,491,101,PL,2002,2021,393,229,facile
 Q266796,Per Ciljan Skjelbred,per ciljan skjelbred,Norvège,Norvège,milieu de terrain,3,54,27,BUN,2004,2020,0,32,legende
 Q266827,Mathieu Bodmer,mathieu bodmer,France,France,défenseur / milieu de terrain,6,280,26,L1,2000,2013,266,107,moyen
-Q266873,Yūki Ōgimi,yuki ogimi,Japon,Japon,attaquant,6,18,44,PL,2001,2015,18,49,difficile
 Q267128,Didier Digard,didier digard,France,France,milieu de terrain,5,200,21,L1 / PL,2004,2015,16,44,difficile
 Q267147,Patrick Guillou,patrick guillou,Allemagne / France,Allemagne / France,défenseur,11,34,7,L1,1988,2005,0,10,legende
 Q267207,Danny Wilson,danny wilson,Écosse,Royaume-Uni,défenseur central,5,2,24,PL,2009,2015,2,25,exclu
@@ -1806,18 +1802,14 @@ Q269883,Emmanuel Petit,emmanuel petit,France,France,milieu défensif,4,106,54,LI
 Q270075,Ronald de Boer,ronald de boer,Pays-Bas,Royaume des Pays-Bas,milieu de terrain,6,37,44,LIGA,1988,2008,37,55,difficile
 Q270311,Santiago Cañizares,santiago canizares,Espagne,Espagne,gardien de but,7,274,46,LIGA,1988,2008,274,128,moyen
 Q270359,Giuseppe Favalli,giuseppe favalli,Italie,Italie,défenseur / défenseur central,4,291,37,SA,1988,2010,291,124,moyen
-Q270760,Aya Sameshima,aya sameshima,Japon,Japon,arrière latéral,7,18,41,L1,2006,2015,0,43,difficile
-Q270767,Mana Iwabuchi,mana iwabuchi,Japon,Japon,attaquant,4,30,45,BUN,2007,2014,0,48,difficile
 Q271615,Boudewijn Zenden,boudewijn zenden,Pays-Bas,Royaume des Pays-Bas,milieu excentré,7,277,43,L1 / LIGA / PL,1994,2011,163,103,moyen
 Q271882,Robert Kovač,robert kovac,Croatie,Croatie,défenseur,7,188,44,BUN / SA,1991,2010,188,100,moyen
-Q272210,Linda Bresonik,linda bresonik,Allemagne,Allemagne,milieu excentré,6,31,21,L1,2000,2015,31,30,legende
 Q272727,Çağdaş Atan,cagdas atan,Turquie,Turquie,défenseur central,11,28,11,BUN,2000,2015,0,14,legende
 Q273715,Jordan Henderson,jordan henderson,Angleterre,Royaume-Uni,milieu de terrain,7,463,77,PL,2008,2026,360,195,facile
 Q273776,Éderzito António Macedo Lopes,ederzito antonio macedo lopes,Portugal,Guinée-Bissau / Portugal,attaquant,8,57,44,L1 / PL,2006,2022,44,58,difficile
 Q274268,Édouard Cissé,edouard cisse,France,France,milieu de terrain,8,288,18,L1 / PL,1996,2012,235,94,moyen
 Q274523,Oriol Romeu,oriol romeu,Espagne,Espagne,milieu de terrain,8,366,45,BUN / LIGA / PL,2008,2026,64,94,moyen
 Q274626,Martin Kelly,martin kelly,Angleterre,Royaume-Uni,arrière latéral,5,154,43,PL,2007,2024,33,65,difficile
-Q274720,Élise Bussaglia,elise bussaglia,France,France,milieu de terrain,11,58,21,L1,2000,2018,58,38,legende
 Q274803,Élson,elson,Brésil,Brésil,milieu de terrain,11,41,17,BUN,2000,2013,0,21,legende
 Q275169,Marouane Fellaini,marouane fellaini,Belgique,Belgique,milieu de terrain,4,260,62,PL,2006,2023,119,112,facile
 Q275405,Jeffrén Suárez,jeffren suarez,Espagne,Espagne,milieu de terrain / milieu excentré,6,22,39,LIGA,2006,2015,22,46,difficile
@@ -1918,7 +1910,6 @@ Q291022,Nigel Martyn,nigel martyn,Angleterre,Royaume-Uni,gardien de but,4,204,29
 Q291203,Eke Uzoma,eke uzoma,Nigeria,Nigeria,milieu de terrain,7,18,9,BUN,2007,2016,0,11,legende
 Q291858,Ívar Ingimarsson,ivar ingimarsson,Islande,Islande,défenseur central,8,63,15,PL,1995,2012,0,21,legende
 Q291897,Iñigo Vélez,inigo velez,Espagne,Espagne,avant-centre,7,31,12,LIGA,1999,2013,0,15,legende
-Q292486,Anouk Hoogendijk,anouk hoogendijk,Royaume des Pays-Bas,Royaume des Pays-Bas,défenseur / défenseur central,7,1,20,PL,2004,2014,1,20,exclu
 Q293007,Ólafur Ingi Skúlason,olafur ingi skulason,Islande,Islande,milieu de terrain,7,0,29,PL,2000,2015,0,29,exclu
 Q293267,Óscar Córdoba,oscar cordoba,Colombie,Colombie,gardien de but,10,15,29,SA,1988,2009,0,30,legende
 Q293353,Oscar García Junyent,oscar garcia junyent,Espagne,Espagne,attaquant / milieu de terrain,7,71,28,LIGA,1980,2005,20,39,legende
@@ -2061,7 +2052,6 @@ Q304677,Souleymane Doukara,souleymane doukara,France / Mauritanie / Sénégal,Fr
 Q304901,Teerasil Dangda,teerasil dangda,Thaïlande,Thaïlande,attaquant,5,6,41,LIGA / PL,2006,2015,0,42,exclu
 Q305322,Franck Dja Djédjé,franck dja djedje,Côte d'Ivoire / France,Côte d'Ivoire / France,attaquant,12,87,16,L1,2003,2015,0,25,legende
 Q306351,John O'Shea,john oshea,République d'Irlande,Irlande,défenseur central,5,450,57,PL,1999,2019,256,153,moyen
-Q306882,Abby Erceg,abby erceg,Nouvelle-Zélande,Nouvelle-Zélande,attaquant,10,11,17,LIGA,2004,2015,0,18,legende
 Q307843,Abdelaziz Ahanfouf,abdelaziz ahanfouf,Maroc,Allemagne / Maroc,attaquant,9,61,16,BUN,1997,2011,0,22,legende
 Q307940,Kader Ferhaoui,kader ferhaoui,Algérie,Algérie / France,milieu de terrain,4,28,12,L1,1985,2001,0,15,legende
 Q307958,Abdelkader Ghezzal,abdelkader ghezzal,Algérie,Algérie / France,attaquant,11,123,30,LIGA / SA,2004,2015,0,42,difficile
@@ -2745,7 +2735,6 @@ Q339312,Daniel Brückner,daniel bruckner,Algérie / Allemagne / République dém
 Q339505,Sam Ricketts,sam ricketts,Pays de Galles,Royaume-Uni,arrière latéral,9,110,21,PL,2000,2016,0,32,legende
 Q339513,Cédric Kanté,cedric kante,Mali,France / Mali,défenseur,7,146,18,L1,2000,2015,0,33,legende
 Q339662,Nicolas Raynier,nicolas raynier,France,France,attaquant,5,0,5,L1,2003,2013,0,5,exclu
-Q339690,Lianne Sanderson,lianne sanderson,Royaume-Uni,Royaume-Uni,attaquant,14,23,18,LIGA,1997,2016,0,20,legende
 Q339936,Tim Rubink,tim rubink,Allemagne,Allemagne,défenseur,7,1,4,BUN,2006,2014,0,4,exclu
 Q339951,Diego Morais Pacheco,diego morais pacheco,Brésil,Brésil,défenseur,7,7,7,BUN,2003,2011,0,8,exclu
 Q340077,David Unsworth,david unsworth,Angleterre,Royaume-Uni,arrière latéral / défenseur central,9,201,15,PL,1992,2009,0,35,legende
@@ -3475,7 +3464,6 @@ Q433200,Matteo Bruscagin,matteo bruscagin,Italie,Italie,défenseur,6,0,11,SA,200
 Q433666,Dorinel Munteanu,dorinel munteanu,Roumanie,Roumanie,milieu de terrain,12,101,33,BUN,1987,2008,0,43,difficile
 Q433702,Trevor Sinclair,trevor sinclair,Angleterre,Royaume-Uni,milieu excentré,6,224,24,PL,1989,2015,82,63,difficile
 Q434136,Ashkan Dejagah,ashkan dejagah,Allemagne / Iran,Allemagne / Iran,milieu excentré,7,201,39,BUN / PL,2004,2018,0,59,difficile
-Q434354,Alex Scott,alex scott,Royaume-Uni,Royaume-Uni,arrière latéral,5,53,26,PL,2002,2018,53,42,legende
 Q434432,Igor Bišćan,igor biscan,Croatie,Croatie,milieu de terrain,4,72,28,PL,1995,2012,72,50,difficile
 Q434436,Jonathan Pitroipa,jonathan pitroipa,Burkina Faso,Burkina Faso,milieu excentré,7,184,32,BUN / L1,2004,2018,0,50,difficile
 Q434646,Martin Hiden,martin hiden,Autriche,Autriche,défenseur,7,13,27,PL,1992,2011,0,28,legende
@@ -3496,7 +3484,6 @@ Q437322,Danny Higginbotham,danny higginbotham,Gibraltar,Royaume-Uni,défenseur c
 Q437329,Danilo Luiz da Silva,danilo luiz da silva,Brésil,Brésil,défenseur,7,231,56,LIGA / PL / SA,2009,2025,231,125,moyen
 Q437545,Owen Hargreaves,owen hargreaves,Angleterre,Royaume-Uni,milieu de terrain,4,176,55,BUN / PL,1999,2012,176,108,moyen
 Q437673,Gastón Ramírez,gaston ramirez,Uruguay,Uruguay,milieu de terrain,11,276,38,PL / SA,2008,2025,0,66,difficile
-Q437866,Amber Hearn,amber hearn,Nouvelle-Zélande,Nouvelle-Zélande,attaquant,8,13,18,PL,2004,2011,13,22,legende
 Q437993,Neil Lennon,neil lennon,Irlande du Nord,Royaume-Uni,milieu de terrain,7,42,29,PL,1986,2008,0,33,legende
 Q438025,Jack Cork,jack cork,Royaume-Uni,Royaume-Uni,milieu de terrain,8,92,40,PL,2006,2015,0,49,difficile
 Q438035,Túlio de Melo,tulio de melo,Brésil,Brésil,attaquant,9,178,32,L1 / SA,2003,2015,101,70,difficile
@@ -3610,7 +3597,6 @@ Q445477,Alaixys Romao,alaixys romao,France / Togo,France / Togo,milieu de terrai
 Q445484,Mate Bilić,mate bilic,Croatie,Croatie,attaquant,9,140,21,LIGA,1998,2015,0,35,legende
 Q445541,Edmundo,edmundo,Brésil,Brésil,attaquant,13,8,50,SA,1990,2008,8,52,exclu
 Q445709,Ludovic Butelle,ludovic butelle,France,France,gardien de but,9,93,19,L1 / LIGA,2001,2016,23,33,legende
-Q445796,Tobin Heath,tobin heath,États-Unis,États-Unis,milieu de terrain,11,8,30,L1,2004,2022,8,32,exclu
 Q445801,Stern John,stern john,Trinité-et-Tobago,Trinité-et-Tobago,attaquant,15,85,27,PL,1997,2012,0,36,legende
 Q445953,Jay Simpson,jay simpson,Royaume-Uni,Royaume-Uni,milieu excentré,7,6,22,PL,2007,2014,0,23,exclu
 Q445976,Manuele Blasi,manuele blasi,Italie,Italie,milieu de terrain,12,254,22,SA,1998,2016,94,66,difficile
@@ -3645,7 +3631,6 @@ Q449629,Joe Garner,joe garner,Royaume-Uni,Royaume-Uni,attaquant,9,0,15,PL,2005,2
 Q449715,Raphaël Wicky,raphael wicky,Suisse,Suisse,milieu de terrain,5,46,30,BUN,1993,2009,0,35,legende
 Q450358,Nacho Novo,nacho novo,Espagne,Espagne,attaquant / milieu de terrain,12,71,22,LIGA,1997,2016,0,29,legende
 Q450580,Kenneth Zeigbo,kenneth zeigbo,Nigéria,Nigeria,attaquant,10,2,7,SA,1995,2013,0,7,exclu
-Q450725,Camille Abily,camille abily,France,France,milieu de terrain,12,35,25,L1,2000,2010,13,31,legende
 Q450783,Cyril Chapuis,cyril chapuis,France,France,attaquant,10,73,8,L1 / PL,1998,2014,42,24,legende
 Q450947,Panagiotis Vlachodimos,panagiotis vlachodimos,Allemagne / Grèce,Allemagne / Grèce,milieu de terrain / milieu excentré,8,1,12,BUN,2010,2015,0,12,exclu
 Q450970,Xavier Margairaz,xavier margairaz,Suisse,Suisse,milieu de terrain,6,13,26,LIGA,2001,2014,0,27,legende
@@ -3663,7 +3648,6 @@ Q454205,Scott McDonald,scott mcdonald,Australie,Australie,attaquant,9,2,23,PL,19
 Q454220,Laurent Robert,laurent robert,France,France,milieu excentré,9,239,25,L1 / LIGA / PL,1994,2009,61,61,difficile
 Q454257,César,cesar,Espagne,Espagne,défenseur central,7,100,24,LIGA / PL,1994,2010,0,34,legende
 Q454773,Amara Diané,amara diane,Côte d'Ivoire,Côte d'Ivoire / France,attaquant,9,105,13,L1,2000,2014,71,38,legende
-Q454825,Sarah Bouhaddi,sarah bouhaddi,France,France,gardien de but,4,22,28,L1,2003,2009,0,30,legende
 Q454859,Jeff Strasser,jeff strasser,Luxembourg,Luxembourg,défenseur,6,214,25,BUN / L1,1993,2020,0,46,difficile
 Q454910,Juan Jesus,juan jesus,Brésil,Brésil,défenseur central,5,280,44,SA,2010,2026,280,128,moyen
 Q454950,Beñat Etxebarria,benat etxebarria,Espagne,Espagne,milieu de terrain axial,8,321,28,LIGA,1997,2021,0,60,difficile
@@ -3682,7 +3666,6 @@ Q455870,Amaury Bischoff,amaury bischoff,France / Portugal,France / Portugal,mili
 Q455905,Gabriel Torje,gabriel torje,Roumanie,Roumanie,milieu excentré,17,67,32,LIGA / SA,2005,2024,0,39,legende
 Q455926,Muhammed Ildiz,muhammed ildiz,Turquie,Turquie,milieu de terrain,4,5,11,BUN,2008,2014,0,12,exclu
 Q455972,Gary Kelly,gary kelly,République d'Irlande,Irlande,arrière latéral,1,143,24,PL,1992,2007,0,38,legende
-Q456014,Sonia Bompastor,sonia bompastor,France,France,milieu de terrain,8,50,24,L1,2000,2013,13,32,legende
 Q456019,Jay Bothroyd,jay bothroyd,Angleterre,Royaume-Uni,attaquant,12,93,46,PL / SA,2000,2021,0,55,difficile
 Q456025,David Forde,david forde,Irlande,Irlande,gardien de but,10,0,24,PL,1999,2008,0,24,exclu
 Q456104,Richard Eckersley,richard eckersley,Royaume-Uni,Royaume-Uni,défenseur,8,2,20,PL,2007,2016,2,21,exclu
@@ -3752,7 +3735,6 @@ Q460484,Luís Eduardo Schmidt,luis eduardo schmidt,Brésil,Brésil / Italie,atta
 Q460512,Amdy Faye,amdy faye,Sénégal,France / Sénégal,milieu de terrain,10,178,25,L1 / PL,1994,2011,0,43,difficile
 Q460521,Jacques Songo'o,jacques songoo,Cameroun,Cameroun / France,gardien de but,5,74,26,L1 / LIGA,1984,2004,0,33,legende
 Q460541,Fabián Canobbio,fabian canobbio,Uruguay,Uruguay,milieu de terrain,8,126,21,LIGA,1997,2015,11,36,legende
-Q460559,Jackie Groenen,jackie groenen,Royaume des Pays-Bas,Royaume des Pays-Bas,milieu de terrain,7,14,26,PL,2010,2019,14,30,legende
 Q460603,Amedeo Carboni,amedeo carboni,Italie,Italie,arrière latéral,8,191,31,LIGA,1982,2006,191,88,moyen
 Q460696,Márton Fülöp,marton fulop,Hongrie,Hongrie,gardien de but,13,48,27,PL,2001,2013,3,32,legende
 Q460700,Jocelyn Angloma,jocelyn angloma,France,France,arrière latéral,8,72,32,LIGA,1985,2007,72,54,difficile
@@ -3761,7 +3743,6 @@ Q460781,Richard Golz,richard golz,Allemagne,Allemagne,gardien de but,3,137,10,BU
 Q460798,Markus Heikkinen,markus heikkinen,Finlande,Finlande,milieu de terrain,11,1,23,PL,1996,2015,0,23,exclu
 Q460816,Pascal Borel,pascal borel,Team 2006,Allemagne,gardien de but,7,32,9,BUN,1997,2013,0,12,legende
 Q460830,Harald Spörl,harald sporl,Allemagne,Allemagne,milieu de terrain,2,25,9,BUN,1987,2002,0,12,legende
-Q460924,Caroline Seger,caroline seger,Suède,Suède,milieu de terrain,8,18,33,L1,2001,2024,18,38,legende
 Q461028,German Hornos,german hornos,Uruguay,Uruguay,attaquant,10,16,10,LIGA,2001,2012,16,15,legende
 Q461177,Cristian Stellini,cristian stellini,Italie,Italie,défenseur,7,59,13,SA,1992,2010,0,19,legende
 Q461200,Tobias Weis,tobias weis,Allemagne,Allemagne,milieu de terrain,6,99,21,BUN,2002,2015,0,31,legende
@@ -3839,8 +3820,6 @@ Q467034,Marcus Bent,marcus bent,Royaume-Uni,Royaume-Uni,attaquant,15,187,26,PL,1
 Q467041,David Murphy,david murphy,Royaume-Uni,Royaume-Uni,arrière latéral,4,48,21,PL,2001,2014,0,26,legende
 Q467187,Mike Havenaar,mike havenaar,Japon,Japon,attaquant,11,2,53,LIGA,2006,2020,0,53,exclu
 Q467232,Dudu Cearense,dudu cearense,Brésil,Brésil,milieu de terrain,10,15,48,L1,2000,2014,0,50,difficile
-Q467270,Annike Krahn,annike krahn,Allemagne,Allemagne,défenseur / défenseur central,4,52,23,L1,2004,2017,52,39,legende
-Q467274,Sarah Gregorius,sarah gregorius,Nouvelle-Zélande,Nouvelle-Zélande,attaquant,4,6,14,PL,2011,2015,6,16,exclu
 Q467587,Raffael,raffael,Brésil,Brésil,milieu de terrain,6,121,28,BUN,2003,2013,16,43,difficile
 Q467809,Mohamed Nagy,mohamed nagy,Égypte,Égypte,attaquant / milieu de terrain,5,8,20,PL,2002,2015,0,21,exclu
 Q468114,Sébastien Pocognoli,sebastien pocognoli,Belgique,Belgique,arrière latéral,5,30,27,BUN,2004,2014,0,30,legende
@@ -4137,13 +4116,11 @@ Q514376,Athirson Mazzoli e Oliveira,athirson mazzoli e oliveira,Brésil,Brésil,
 Q514427,Granit Xhaka,granit xhaka,Suisse,Suisse,milieu de terrain,5,416,61,BUN / PL,2010,2025,291,161,facile
 Q514568,Pablo Barrientos,pablo barrientos,Argentine,Argentine,milieu de terrain,4,86,16,SA,2003,2014,0,25,legende
 Q514631,Ludovic Guerriero,ludovic guerriero,France,France,milieu de terrain,9,6,6,L1,2003,2017,0,7,exclu
-Q515013,Jade Boho,jade boho,Espagne / Guinée équatoriale,Espagne / Guinée équatoriale,attaquant,11,42,10,LIGA,2000,2023,0,14,legende
 Q515039,Igor Štimac,igor stimac,Croatie,Croatie,défenseur,5,43,29,PL,1985,2002,0,33,legende
 Q515068,Andrzej Juskowiak,andrzej juskowiak,Pologne,Pologne,attaquant,8,105,22,BUN,1987,2007,0,32,legende
 Q515208,Antonio Rosati,antonio rosati,Italie,Italie,gardien de but,6,76,14,SA,2004,2015,5,23,legende
 Q515288,Jonathan Aspas,jonathan aspas,Espagne,Espagne,milieu de terrain,9,48,11,LIGA,2000,2015,0,16,legende
 Q515844,Otto Fredrikson,otto fredrikson,Finlande,Finlande,gardien de but,10,0,18,BUN,1995,2015,0,18,exclu
-Q515948,Helen Ward,helen ward,Royaume-Uni,Royaume-Uni,attaquant,3,27,12,PL,2009,2013,27,20,legende
 Q516019,Francisco José Camarasa,francisco jose camarasa,Espagne,Espagne,défenseur,2,22,24,LIGA,1985,2000,22,31,legende
 Q516126,Aquivaldo Mosquera,aquivaldo mosquera,Colombie,Colombie,défenseur,6,41,20,LIGA,2000,2017,41,32,legende
 Q516161,Sascha Mölders,sascha molders,Allemagne,Allemagne,attaquant,8,103,15,BUN,2004,2016,0,25,legende
@@ -4294,7 +4271,6 @@ Q529079,Giuseppe Abruzzese,giuseppe abruzzese,Italie,Italie,arrière latéral / 
 Q529162,Oğuzhan Özyakup,oguzhan ozyakup,Royaume des Pays-Bas / Turquie,Royaume des Pays-Bas / Turquie,milieu de terrain,2,0,30,PL,2011,2012,0,30,exclu
 Q529204,Pietro Accardi,pietro accardi,Italie,Italie,arrière latéral,5,104,11,SA,1999,2014,0,21,legende
 Q529207,Ronaldo,ronaldo,Brésil,Brésil,attaquant,7,238,124,LIGA / SA,1993,2011,238,195,facile
-Q529225,Josephine Henning,josephine henning,Allemagne,Allemagne,défenseur / défenseur central,7,45,24,L1,2005,2016,45,38,legende
 Q529244,Julio César de León,julio cesar de leon,Honduras,Honduras,milieu de terrain,21,115,19,SA,1996,2018,0,30,legende
 Q529376,Dianbobo Baldé,dianbobo balde,Guinée,France / Guinée,défenseur central,7,51,20,L1,1995,2012,0,25,legende
 Q529425,Anthony Stokes,anthony stokes,République d'Irlande,Irlande,attaquant,7,36,25,PL,2005,2016,0,29,legende
@@ -4598,7 +4574,6 @@ Q563105,Pablo Amo,pablo amo,Espagne,Espagne,défenseur central,9,67,17,LIGA,1996
 Q563110,Fernando Miguel Fernández Escribano,fernando miguel fernandez escribano,Espagne,Espagne,attaquant / milieu de terrain,7,276,17,LIGA,1996,2013,1,45,difficile
 Q563881,Pajtim Kasami,pajtim kasami,Macédoine du Nord,Macédoine du Nord,milieu de terrain,5,52,30,PL / SA,2010,2014,0,35,legende
 Q565412,Sezer Öztürk,sezer ozturk,Allemagne / Turquie,Allemagne / Turquie,milieu de terrain,8,9,13,BUN,2004,2015,7,15,exclu
-Q566091,Annelie Brendel,annelie brendel,Allemagne,Allemagne,milieu de terrain,2,70,1,BUN,2000,2006,0,8,legende
 Q566127,Uwe Rösler,uwe rosler,Allemagne de l'Est,Allemagne / République démocratique allemande,attaquant,12,24,26,PL,1987,2003,0,28,legende
 Q566351,Matthew Connolly,matthew connolly,Royaume-Uni,Royaume-Uni,défenseur,7,35,19,PL,2006,2015,0,22,legende
 Q566391,Christopher Reinhard,christopher reinhard,Allemagne,Allemagne,défenseur,9,22,12,BUN,2004,2015,0,14,legende
@@ -4657,7 +4632,6 @@ Q575234,Christian Müller,christian muller,Allemagne,Allemagne,milieu de terrain
 Q575382,Alan Judge,alan judge,Irlande,Irlande,milieu excentré,4,0,13,PL,2008,2014,0,13,exclu
 Q575488,Alan Stubbs,alan stubbs,Angleterre,Royaume-Uni,défenseur,5,184,13,PL,1990,2008,0,31,legende
 Q575645,Matthias Lust,matthias lust,Allemagne,Allemagne,milieu de terrain,6,13,4,BUN,1988,2005,0,5,legende
-Q576041,Saidat Adegoke,saidat adegoke,Nigeria,Nigeria,attaquant,4,52,11,SA,2007,2012,52,27,legende
 Q576520,Kelvin Davis,kelvin davis,Royaume-Uni,Royaume-Uni,gardien de but,7,66,19,PL,1994,2006,0,26,legende
 Q576688,Artur Krysiak,artur krysiak,Pologne,Pologne,gardien de but,8,0,6,PL,2008,2014,0,6,exclu
 Q576838,Ulrick Chavas,ulrick chavas,France,France,milieu de terrain,7,4,7,L1,2002,2013,0,7,exclu
@@ -5773,7 +5747,6 @@ Q787677,Daniel Larsson,daniel larsson,Suède,Suède,milieu excentré,6,46,18,LIG
 Q787761,Alan Tate,alan tate,Royaume-Uni,Royaume-Uni,défenseur,8,93,16,PL,2000,2015,0,25,legende
 Q792379,Axel Sundermann,axel sundermann,Allemagne,Allemagne,défenseur,4,18,5,BUN,1988,2004,0,7,legende
 Q793334,Ayub Daud,ayub daud,Somalie,Somalie,milieu de terrain,8,1,18,SA,2008,2015,1,18,exclu
-Q794647,Aïssata Coulibaly,aissata coulibaly,Mali,Mali,défenseur,1,35,7,L1,2006,2008,0,10,legende
 Q795017,Alessio Romagnoli,alessio romagnoli,Italie,Italie,arrière latéral / défenseur central,5,367,47,SA,2003,2026,337,151,moyen
 Q795185,Cedric van der Gun,cedric van der gun,Royaume des Pays-Bas,Royaume des Pays-Bas,attaquant,7,3,11,BUN,1999,2014,3,12,exclu
 Q795433,Rasmus Bengtsson,rasmus bengtsson,Suède,Suède,défenseur central,5,6,19,BUN,2006,2015,0,20,exclu
@@ -5883,7 +5856,6 @@ Q832156,Kevin Maek,kevin maek,Allemagne,Allemagne,défenseur,6,10,5,BUN,2007,201
 Q832159,Deniz Dogan,deniz dogan,Allemagne / Turquie,Allemagne / Turquie,défenseur,5,26,11,BUN,2001,2015,0,14,legende
 Q832166,Ferhat Bıkmaz,ferhat bikmaz,Allemagne / Turquie,Allemagne / Turquie,arrière latéral,7,75,7,BUN,2006,2014,0,14,legende
 Q832170,Nejmeddin Daghfous,nejmeddin daghfous,Allemagne,Allemagne,attaquant,8,1,9,BUN,2005,2015,0,9,exclu
-Q832256,Betsy Hassett,betsy hassett,Nouvelle-Zélande,Nouvelle-Zélande,milieu de terrain,5,13,17,PL,2013,2015,13,21,legende
 Q832676,Toni Tapalović,toni tapalovic,Allemagne / Croatie,Allemagne / Croatie,gardien de but,6,77,11,BUN,1999,2011,77,34,legende
 Q833002,Bodo Illgner,bodo illgner,Allemagne,Allemagne / Espagne,gardien de but,2,36,45,LIGA,1985,2001,36,56,difficile
 Q833041,Rafael Kazior,rafael kazior,Allemagne / Pologne,Allemagne / Pologne,attaquant,7,32,6,BUN,2001,2015,0,9,legende
@@ -5922,7 +5894,6 @@ Q862607,Javier Baraja,javier baraja,Espagne,Espagne,défenseur / milieu de terra
 Q862756,Niki Mäenpää,niki maenpaa,Finlande,Finlande,gardien de but,8,17,19,L1,2003,2015,0,21,legende
 Q864670,Robson Ponte,robson ponte,Brésil,Brésil,attaquant,7,140,30,BUN,1995,2011,79,60,difficile
 Q865680,Birkir Bjarnason,birkir bjarnason,Islande,Islande,milieu de terrain,10,39,46,SA,2006,2023,0,50,difficile
-Q867176,Leïla Maknoun,leila maknoun,France / Tunisie,France / Tunisie,milieu de terrain,6,12,9,L1,2009,2014,1,10,legende
 Q867245,Saphir Taïder,saphir taider,Algérie / France,Algérie / France,milieu de terrain,5,100,32,PL / SA,2009,2015,25,47,difficile
 Q867814,Clarke Carlisle,clarke carlisle,Royaume-Uni,Royaume-Uni,défenseur central,9,44,15,PL,1997,2013,0,19,legende
 Q868139,Paolo Acerbis,paolo acerbis,Italie,Italie,gardien de but,8,3,5,SA,1998,2016,0,5,exclu
@@ -6808,7 +6779,6 @@ Q1130817,Andrea Giallombardo,andrea giallombardo,Italie,Italie,défenseur,13,35,
 Q1131690,Saliou Lassissi,saliou lassissi,Côte d'Ivoire / France,Côte d'Ivoire / France,défenseur,9,24,7,L1 / SA,1996,2008,0,9,legende
 Q1132491,Jorge Casanova,jorge casanova,Uruguay,Uruguay,milieu de terrain,9,2,5,SA,1995,2010,0,5,exclu
 Q1132567,Facundo Sava,facundo sava,Argentine,Argentine,attaquant,9,27,10,PL,1993,2010,0,13,legende
-Q1132793,Corina Schröder,corina schroder,Allemagne,Allemagne,défenseur,6,34,6,PL,2002,2016,34,16,legende
 Q1134213,Davide Bottone,davide bottone,Italie,Italie,milieu de terrain,7,9,7,SA,2006,2015,0,8,exclu
 Q1135510,Joseph Dayo Oshadogan,joseph dayo oshadogan,Italie,Italie,défenseur,9,44,6,L1 / SA,1995,2010,4,11,legende
 Q1135783,Cory Gibbs,cory gibbs,États-Unis,États-Unis,défenseur,9,30,16,BUN / PL,2000,2012,0,19,legende
@@ -6874,7 +6844,6 @@ Q1163688,Daniele Corvia,daniele corvia,Italie,Italie,attaquant,7,114,8,SA,2004,2
 Q1163856,Jon Macken,jon macken,République d'Irlande,Irlande,attaquant,11,62,8,PL,1996,2015,51,24,legende
 Q1164006,Danijel Prskalo,danijel prskalo,Croatie,Croatie,attaquant,8,14,5,BUN,2008,2015,14,9,legende
 Q1164012,Danijel Štefulj,danijel stefulj,Croatie,Croatie,défenseur,9,73,6,BUN,1991,2008,0,13,legende
-Q1164131,Danique Stein,danique stein,Suisse,Suisse,défenseur,5,15,5,BUN,2004,2011,0,6,legende
 Q1164259,Danko Bošković,danko boskovic,Allemagne,Allemagne,attaquant,10,41,5,BUN,2001,2015,0,9,legende
 Q1164553,Danny Collins,danny collins,Pays de Galles,Royaume-Uni,défenseur central,9,145,16,PL,2001,2019,0,30,legende
 Q1164562,Danny Dichio,danny dichio,Royaume-Uni,Royaume-Uni,attaquant,11,72,13,PL,1993,2009,0,20,legende
@@ -6945,7 +6914,6 @@ Q1191808,Pablo Sebastián Álvarez,pablo sebastian alvarez,Argentine,Argentine,d
 Q1192917,Dominick Kumbela,dominick kumbela,République démocratique du Congo,République démocratique du Congo,attaquant,8,36,11,BUN,2001,2015,0,15,legende
 Q1193223,Nikola Vujadinović,nikola vujadinovic,Monténégro,Monténégro,défenseur central,11,0,17,SA,2004,2015,0,17,exclu
 Q1193428,Louis Schaub,louis schaub,Autriche,Autriche,milieu de terrain,6,48,24,BUN,2011,2024,0,29,legende
-Q1194162,Verónica Boquete,veronica boquete,Espagne,Espagne,milieu de terrain,17,28,31,LIGA,2005,2025,0,34,legende
 Q1195303,Shoji Jo,shoji jo,Japon,Japon,attaquant,5,15,54,LIGA,1994,2006,0,56,difficile
 Q1198439,Marco Rossi,marco rossi,Italie,Italie,milieu de terrain,5,199,16,SA,1995,2013,0,36,legende
 Q1199190,Denis Stracqualursi,denis stracqualursi,Argentine,Argentine,attaquant,8,20,17,PL,2007,2016,0,19,legende
@@ -6966,7 +6934,6 @@ Q1226416,Osahon Eboigbe,osahon eboigbe,Nigeria,Nigeria,attaquant,5,0,5,PL,2007,2
 Q1227805,Dirk Caspers,dirk caspers,Allemagne,Allemagne,défenseur,10,18,4,BUN,2000,2012,18,9,legende
 Q1227848,Dirk Flock,dirk flock,Allemagne,Allemagne,milieu de terrain,9,23,5,BUN,1992,2009,0,7,legende
 Q1228392,Lee Crooks,lee crooks,Royaume-Uni,Royaume-Uni,défenseur,8,10,8,PL,1994,2008,10,11,legende
-Q1232300,Djeneba Bamba,djeneba bamba,Mali,Mali,gardien de but,1,18,5,L1,2006,2008,0,7,legende
 Q1232752,Oliver Held,oliver held,Allemagne,Allemagne,milieu de terrain,4,50,6,BUN,1993,2010,32,17,legende
 Q1233368,Lukas Nottbeck,lukas nottbeck,Allemagne,Allemagne,milieu de terrain,6,15,5,BUN,2007,2013,15,10,legende
 Q1233406,Matthieu Valverde,matthieu valverde,France,France,gardien de but,6,72,12,L1,2003,2012,22,24,legende
@@ -6979,7 +6946,6 @@ Q1238357,Dominique Wassi,dominique wassi,Cameroun,Cameroun,attaquant,6,5,3,BUN,2
 Q1238982,Martin Lejsal,martin lejsal,Tchécoslovaquie / Tchéquie,Tchécoslovaquie / Tchéquie,gardien de but,8,3,9,SA,1999,2011,0,9,exclu
 Q1239669,Donald Agu,donald agu,Nigeria,Nigeria,défenseur,7,0,9,BUN,1992,2007,0,9,exclu
 Q1242085,Donovan Léon,donovan leon,France,France,gardien de but,2,13,15,L1,2011,2015,0,16,legende
-Q1245109,Doris Bačić,doris bacic,Croatie,Croatie,gardien de but,5,0,11,PL,2011,2015,0,11,exclu
 Q1246281,Ray Putterill,ray putterill,Royaume-Uni,Royaume-Uni,milieu de terrain,7,0,7,PL,2007,2014,0,7,exclu
 Q1247743,Jiří Němec,jiri nemec,Tchéquie,Tchécoslovaquie / Tchéquie,milieu de terrain,6,85,24,BUN,1985,2005,85,50,difficile
 Q1248192,Fabian Bolivar,fabian bolivar,Brésil,Brésil,défenseur,10,56,16,L1,1999,2015,56,33,legende
@@ -7432,7 +7398,6 @@ Q1406475,Lhadji Badiane,lhadji badiane,France / Sénégal,France / Sénégal,att
 Q1406500,Khaled Kharroubi,khaled kharroubi,Algérie,France,milieu de terrain,8,32,9,L1,2002,2014,0,12,legende
 Q1406881,Michaël Isabey,michael isabey,France,France,milieu de terrain,3,204,6,L1,1993,2014,0,26,legende
 Q1406968,Christian Nadé,christian nade,France,France,attaquant,11,61,7,L1 / PL,1999,2016,0,13,legende
-Q1407112,Tanja Wörle,tanja worle,Allemagne,Allemagne,milieu de terrain,6,10,4,BUN,1997,2008,0,5,legende
 Q1407338,Marco Bernacci,marco bernacci,Italie,Italie,attaquant,10,13,8,SA,2001,2015,0,9,legende
 Q1407530,Alessandro Bernardini,alessandro bernardini,Italie,Italie,défenseur,7,40,9,SA,2003,2015,0,13,legende
 Q1407552,Antonino Bernardini,antonino bernardini,Italie,Italie,milieu de terrain,7,62,12,SA,1992,2010,0,18,legende
@@ -7789,7 +7754,6 @@ Q1684141,Steven Lewerenz,steven lewerenz,Allemagne,Allemagne,attaquant,9,33,7,BU
 Q1684790,Jean-Clotaire Tsoumou-Madza,jeanclotaire tsoumoumadza,République du Congo,République du Congo,défenseur,8,21,3,BUN,1997,2007,0,5,legende
 Q1684819,Jean-François Bédénik,jeanfrancois bedenik,France,France,gardien de but,7,45,10,L1,1997,2012,0,14,legende
 Q1684893,Jean-Guy Wallemme,jeanguy wallemme,France,France,défenseur,4,83,13,L1,1986,2002,0,21,legende
-Q1686013,Jeanne Haag,jeanne haag,France,France,milieu de terrain,3,43,2,BUN,2003,2015,0,6,legende
 Q1686749,Jem Karacan,jem karacan,Turquie,Royaume-Uni / Turquie,milieu de terrain,5,39,16,PL,2007,2016,0,20,legende
 Q1687134,Jens Bäumer,jens baumer,Allemagne,Allemagne,milieu de terrain,8,2,3,BUN,1996,2014,0,3,exclu
 Q1687342,Jens Rasiejewski,jens rasiejewski,Allemagne,Allemagne,défenseur,6,45,4,BUN,1994,2005,0,8,legende
@@ -7863,7 +7827,6 @@ Q1729005,Alan Kimble,alan kimble,Royaume-Uni,Royaume-Uni,défenseur,8,24,5,PL,19
 Q1731820,Marcel Heister,marcel heister,Allemagne,Allemagne,milieu excentré,3,26,12,BUN,2011,2014,0,15,legende
 Q1732454,Lee Marshall,lee marshall,Royaume-Uni,Royaume-Uni,arrière latéral,4,50,5,PL,1997,2004,0,10,legende
 Q1734445,Karsten Fischer,karsten fischer,Allemagne,Allemagne,milieu de terrain,5,20,5,BUN,2002,2012,0,7,legende
-Q1736284,Kathleen Radtke,kathleen radtke,Allemagne / République démocratique allemande,Allemagne / République démocratique allemande,défenseur,9,16,5,PL,2001,2016,16,10,legende
 Q1737186,Tim Petersen,tim petersen,Allemagne,Allemagne,défenseur,5,9,4,BUN,2004,2010,0,5,exclu
 Q1737891,Kei Kamara,kei kamara,Sierra Leone,Sierra Leone / États-Unis,attaquant,11,11,21,PL,2004,2020,0,22,legende
 Q1740103,Kevin Cooper,kevin cooper,Royaume-Uni,Royaume-Uni,milieu excentré,13,26,9,PL,1995,2011,0,12,legende
@@ -7942,7 +7905,6 @@ Q1787955,Mista,mista,Espagne,Espagne,attaquant,7,205,28,LIGA,1996,2010,179,84,mo
 Q1787999,Kreso Kovacec,kreso kovacec,Allemagne,Allemagne,attaquant,9,28,4,BUN,1987,2004,0,7,legende
 Q1789150,Pablo Correa,pablo correa,France / Uruguay,France / Uruguay,attaquant,7,24,14,L1,1983,2000,0,16,legende
 Q1789277,Kristijan Đorđević,kristijan dordevic,Serbie-et-Monténégro,Serbie,milieu de terrain,3,36,9,BUN,1994,2004,10,15,legende
-Q1789289,Kristin Demann,kristin demann,Allemagne,Allemagne,défenseur,3,22,11,BUN,2009,2014,0,13,legende
 Q1789681,Michael Gardawski,michael gardawski,Allemagne,Allemagne,milieu de terrain,9,0,8,BUN,2008,2015,0,8,exclu
 Q1790131,Stuart Ripley,stuart ripley,Angleterre,Royaume-Uni,milieu excentré,6,40,13,PL,1985,2002,0,17,legende
 Q1790935,Anders Ågnes Konradsen,anders agnes konradsen,Norvège,Norvège,milieu de terrain axial,4,49,18,L1,2007,2015,0,23,legende
@@ -8079,7 +8041,6 @@ Q1902330,Nassim Akrour,nassim akrour,Algérie,Algérie / France,attaquant,7,22,1
 Q1903652,Martin Driller,martin driller,Allemagne,Allemagne,attaquant,7,32,7,BUN,1987,2009,0,10,legende
 Q1903898,Martin Groth,martin groth,Allemagne,Allemagne,milieu de terrain,4,63,6,BUN,1987,2004,0,12,legende
 Q1904444,Martin Latka,martin latka,Tchéquie,Tchéquie,défenseur central,5,3,14,PL,2002,2014,0,14,exclu
-Q1905487,Martina Moser,martina moser,Suisse,Suisse,milieu de terrain,7,21,8,BUN,2001,2012,0,10,legende
 Q1906140,Marvin Zeegelaar,marvin zeegelaar,Royaume des Pays-Bas,Royaume des Pays-Bas,milieu excentré,9,0,16,LIGA,2009,2019,0,16,exclu
 Q1907446,Massamba Sambou,massamba sambou,Sénégal,Sénégal,défenseur,10,35,11,L1,2006,2016,16,18,legende
 Q1907596,Nozomi Hiroyama,nozomi hiroyama,Japon,Japon,milieu de terrain,9,7,47,L1,1996,2012,0,48,exclu
@@ -8163,7 +8124,6 @@ Q1986283,Stéphane Biakolo,stephane biakolo,Cameroun / France,Cameroun / France,
 Q1986401,Ladislav Krejčí,ladislav krejci,Tchéquie,Tchéquie,milieu excentré,4,84,30,SA,2010,2025,0,38,legende
 Q1986629,Nicolas Loison,nicolas loison,France,France,défenseur central,3,1,1,L1,2002,2013,0,1,exclu
 Q1986645,Alejandro Damián Da Silva,alejandro damian da silva,Paraguay,Paraguay,attaquant,8,1,9,SA,1998,2015,0,9,exclu
-Q1987081,Nicole Rolser,nicole rolser,Allemagne,Allemagne,milieu de terrain,5,20,8,PL,2009,2015,20,14,legende
 Q1987235,Talal El Karkouri,talal el karkouri,Maroc,France / Maroc,défenseur,9,82,20,PL,1995,2012,0,28,legende
 Q1988142,Maxime Bourgeois,maxime bourgeois,France,France,milieu excentré,4,23,7,L1,2009,2016,0,9,legende
 Q1988686,Douglas,douglas,Brésil,Brésil,arrière latéral,7,24,36,LIGA,2009,2022,3,39,legende
@@ -8716,7 +8676,6 @@ Q2342559,Cesare Natali,cesare natali,Italie,Italie,défenseur / défenseur centr
 Q2343451,Stephan Kling,stephan kling,Team 2006,Allemagne,défenseur,8,26,6,BUN,2000,2011,0,9,legende
 Q2343828,Stephan Schmidt,stephan schmidt,Allemagne,Allemagne,milieu de terrain,6,49,6,BUN,1995,2007,0,11,legende
 Q2343835,Gastón Cellerino,gaston cellerino,Argentine,Argentine,attaquant,10,8,11,SA,2006,2016,0,12,exclu
-Q2344276,Stephanie Ullrich,stephanie ullrich,Allemagne,Allemagne,gardien de but,4,14,6,BUN,1997,2011,0,7,legende
 Q2345440,Javier Iturriaga,javier iturriaga,Mexique,Mexique,milieu de terrain axial,8,4,10,LIGA,1997,2015,0,10,exclu
 Q2346862,Andrea Lazzari,andrea lazzari,Italie,Italie,milieu excentré,9,237,17,SA,2002,2016,0,41,legende
 Q2347200,Steve Müller,steve muller,Allemagne,Allemagne,milieu de terrain,7,65,5,BUN,2003,2014,0,12,legende
@@ -8941,7 +8900,6 @@ Q2458523,José de la Cuesta,jose de la cuesta,Colombie,Colombie,défenseur,6,14,
 Q2458618,Carlos Calvo Sobrado,carlos calvo sobrado,Espagne,Espagne,milieu excentré,13,37,10,LIGA / SA,2004,2016,0,14,legende
 Q2459358,Roy O'Donovan,roy odonovan,République d'Irlande,Irlande,attaquant,12,17,9,PL,2005,2015,0,11,legende
 Q2460347,Marcelo Otero,marcelo otero,Uruguay,Uruguay,attaquant,7,20,17,LIGA,1990,2004,20,23,legende
-Q2460710,Turid Knaak,turid knaak,Allemagne,Allemagne,attaquant,5,4,15,PL,2007,2014,4,16,exclu
 Q2460894,Daniel Moreira,daniel moreira,France,France,attaquant,7,296,18,L1,1995,2010,0,48,difficile
 Q2461136,Habib Habibou,habib habibou,France / République centrafricaine,France / République centrafricaine,attaquant,13,27,17,L1,2006,2020,0,20,legende
 Q2462464,Miguel Fuentes Azpiroz,miguel fuentes azpiroz,Espagne,Espagne,défenseur,1,63,9,LIGA,1987,2001,0,15,legende
@@ -9587,7 +9545,6 @@ Q2836363,Ali Vanomo Bamba,ali vanomo bamba,Côte d'Ivoire,Côte d'Ivoire,défens
 Q2837118,Alioune Touré,alioune toure,France / Mali,France / Mali,attaquant,10,45,7,L1,1996,2010,25,16,legende
 Q2837725,Allan Johnston,allan johnston,Écosse,Royaume-Uni,milieu de terrain,11,46,7,PL,1990,2013,0,12,legende
 Q2837759,Allan Olesen,allan olesen,Royaume de Danemark,Royaume de Danemark,arrière latéral,6,18,6,L1,1993,2011,0,8,legende
-Q2838294,Allie Long,allie long,États-Unis,États-Unis,milieu de terrain,8,12,21,L1 / PL,2009,2013,12,25,legende
 Q2839693,Alphonse Areola,alphonse areola,France,France,gardien de but,7,240,50,L1 / LIGA / PL,2013,2022,79,90,moyen
 Q2840055,Alphousseyni Keita,alphousseyni keita,Mali,Mali,milieu de terrain,7,16,7,L1,2005,2014,0,9,legende
 Q2840849,Amadou Alassane,amadou alassane,France / Mauritanie,France / Mauritanie,attaquant,1,24,8,L1,2006,2009,0,10,legende
@@ -9696,7 +9653,6 @@ Q2977301,Claude Dielna,claude dielna,France,France,défenseur,13,22,10,L1,2006,2
 Q2978523,Claudio Beauvue,claudio beauvue,Guadeloupe,France,milieu excentré,12,184,27,L1 / LIGA,2007,2025,19,49,difficile
 Q2979044,Cliff Byrne,cliff byrne,Irlande,Irlande,défenseur,6,0,5,PL,1999,2015,0,5,exclu
 Q2982639,Colin McMenamin,colin mcmenamin,Royaume-Uni,Royaume-Uni,attaquant,11,0,4,PL,2000,2014,0,4,exclu
-Q2993621,Ella Masar,ella masar,Canada / États-Unis,Canada / États-Unis,attaquant,12,17,12,L1,2004,2015,17,17,legende
 Q2994955,Constantin Barbu,constantin barbu,Roumanie,Roumanie,milieu de terrain,5,53,11,LIGA,1992,2004,0,16,legende
 Q2996727,Antonio Soldevilla,antonio soldevilla,Espagne,Espagne,défenseur,12,87,11,LIGA,1994,2015,0,20,legende
 Q3001994,Craig Conway,craig conway,Royaume-Uni,Royaume-Uni,milieu excentré,5,19,12,PL,2003,2014,0,14,legende
@@ -9777,7 +9733,6 @@ Q3063929,Fabrice N'Guessi Ondama,fabrice nguessi ondama,République du Congo,Ré
 Q3064009,Fabrizio Ficini,fabrizio ficini,Italie,Italie,milieu de terrain,5,104,8,SA,1990,2008,0,18,legende
 Q3064210,Paul Gallacher,paul gallacher,Écosse,Royaume-Uni,gardien de but,9,10,9,PL,1997,2013,0,10,legende
 Q3064692,Fakhreddine Ben Youssef,fakhreddine ben youssef,Tunisie,Tunisie,milieu excentré,9,3,29,L1,2011,2026,0,29,exclu
-Q3066244,Rosana dos Santos Augusto,rosana dos santos augusto,Brésil,Brésil,milieu excentré,13,3,14,L1,1997,2016,3,15,exclu
 Q3066896,Farid Ghazi,farid ghazi,Algérie,Algérie,attaquant,8,42,11,L1,1994,2009,0,15,legende
 Q3066909,Farid Talhaoui,farid talhaoui,France / Maroc,France / Maroc,attaquant,5,1,11,L1,2001,2013,0,11,exclu
 Q3067213,Fatih Atik,fatih atik,France / Turquie,France / Turquie,milieu de terrain,6,46,14,L1,2003,2014,0,19,legende
@@ -10203,9 +10158,6 @@ Q3476225,Scott Golbourne,scott golbourne,Royaume-Uni,Royaume-Uni,arrière latér
 Q3476681,Sead Hajrović,sead hajrovic,Suisse,Suisse,défenseur,4,0,11,PL,2011,2014,0,11,exclu
 Q3479162,Serge-Alain Liri,sergealain liri,Côte d'Ivoire,Côte d'Ivoire,attaquant,6,14,4,L1,1998,2011,0,5,legende
 Q3479180,Serge Ayeli,serge ayeli,Côte d'Ivoire,Côte d'Ivoire / France,attaquant,13,36,5,L1,2001,2015,0,9,legende
-Q3480512,Ólína Guðbjörg Viðarsdóttir,olina gudbjorg vidarsdottir,Islande,Islande,défenseur,9,7,11,PL,1997,2014,7,13,exclu
-Q3480844,Edda Garðarsdóttir,edda gardarsdottir,Islande,Islande,milieu de terrain,7,5,10,PL,1992,2013,5,12,exclu
-Q3480988,Katrín Ómarsdóttir,katrin omarsdottir,Allemagne / Islande,Allemagne / Islande,milieu de terrain,7,35,7,PL,2001,2015,35,18,legende
 Q3481089,Seïd Khiter,seid khiter,Algérie / France,Algérie / France,attaquant,9,7,9,L1,2002,2014,0,10,exclu
 Q3484423,Simon Pontdemé,simon pontdeme,France,France,gardien de but,7,0,5,L1,2006,2015,0,5,exclu
 Q3486596,Slađan Đukić,sladan dukic,France / Serbie,France / Serbie,milieu de terrain,8,68,3,L1,1989,2002,0,10,legende
@@ -10769,7 +10721,6 @@ Q3830332,Leonardo Augusto Gomes Aro,leonardo augusto gomes aro,Brésil,Brésil,a
 Q3830418,Leonardo Pettinari,leonardo pettinari,Italie,Italie,milieu de terrain,6,9,5,SA,2006,2013,0,6,exclu
 Q3830453,Leonardo Sigali,leonardo sigali,Argentine,Argentine,défenseur central,5,0,12,LIGA,2005,2014,0,12,exclu
 Q3835699,Ljubiša Dunđerski,ljubisa dunderski,Serbie-et-Monténégro,Serbie,milieu de terrain,6,18,7,SA,1993,2007,0,9,legende
-Q3836838,Lorena Sánchez,lorena sanchez,Espagne,Espagne,milieu de terrain,1,91,2,LIGA,2002,2008,0,11,legende
 Q3836924,Lorenzo Crocetti,lorenzo crocetti,Italie,Italie,attaquant,14,2,3,SA,2002,2014,0,3,exclu
 Q3836930,Lorenzo D'Anna,lorenzo danna,Italie,Italie,défenseur central,6,164,9,SA,1990,2008,0,25,legende
 Q3836940,Lorenzo Del Prete,lorenzo del prete,Italie,Italie,arrière latéral,11,4,6,SA,2006,2015,0,6,exclu
@@ -10824,7 +10775,6 @@ Q3848573,Mario Fernández,mario fernandez,Espagne,Espagne,gardien de but,4,36,11
 Q3848695,Mario Karlovic,mario karlovic,Australie,Australie,milieu de terrain,12,8,7,SA,2000,2016,0,8,exclu
 Q3849461,Mark Connolly,mark connolly,Irlande,Irlande,défenseur,5,0,7,PL,2009,2014,0,7,exclu
 Q3849544,Mark Rossiter,mark rossiter,Irlande,Irlande,défenseur,6,0,4,PL,2002,2014,0,4,exclu
-Q3849957,Marta Moreno,marta moreno,Espagne,Espagne,défenseur,2,171,8,LIGA,1997,2012,0,25,legende
 Q3850256,Martino Melis,martino melis,Italie,Italie,milieu de terrain,7,52,1,SA,1988,2008,0,6,legende
 Q3850266,Martino Traversa,martino traversa,Italie,Italie,défenseur,14,24,2,SA,1990,2010,0,4,legende
 Q3851021,Massimiliano Esposito,massimiliano esposito,Italie,Italie,milieu de terrain,11,70,5,SA,1990,2007,0,12,legende
@@ -11029,7 +10979,6 @@ Q3992906,Tommy Knarvik,tommy knarvik,Norvège,Norvège,milieu de terrain,8,0,5,P
 Q3993135,Tonino Sorrentino,tonino sorrentino,Italie,Italie,attaquant,7,5,6,SA,2003,2010,0,6,exclu
 Q3993212,Tony Caig,tony caig,Royaume-Uni,Royaume-Uni,gardien de but,12,1,7,PL,1990,2015,0,7,exclu
 Q4001115,Txema Alonso Fernández,txema alonso fernandez,Espagne,Espagne,défenseur central,3,69,8,LIGA,1989,2006,0,15,legende
-Q4001266,Aitziber Juaristi,aitziber juaristi,Espagne,Espagne,défenseur,2,164,5,LIGA,2002,2008,0,21,legende
 Q4003378,Umberto Del Core,umberto del core,Italie,Italie,attaquant,14,20,6,SA,1996,2015,0,8,legende
 Q4007873,Valerio Di Cesare,valerio di cesare,Italie,Italie,défenseur,9,20,7,PL / SA,2003,2015,0,9,legende
 Q4007929,Valerio Verre,valerio verre,Italie,Italie,milieu de terrain,7,8,16,SA,2011,2015,0,17,exclu
@@ -11177,7 +11126,6 @@ Q4682143,Ademola Bankole,ademola bankole,Nigeria,Nigeria,gardien de but,11,0,6,P
 Q4684258,Adolfo Moyano Burgos,adolfo moyano burgos,Espagne,Espagne,milieu de terrain,7,4,5,LIGA,2006,2015,0,5,exclu
 Q4684875,Adrian Bică Bădan,adrian bica badan,Roumanie,Roumanie,défenseur,8,0,2,SA,2008,2013,0,2,exclu
 Q4685268,Adrian Pettigrew,adrian pettigrew,Royaume-Uni,Royaume-Uni,défenseur central,6,0,4,PL,2005,2009,0,4,exclu
-Q4685514,Adriana Martín,adriana martin,Espagne,Espagne,attaquant,12,5,11,PL,2003,2021,5,12,exclu
 Q4685642,Adrien Faviana,adrien faviana,France,France,défenseur,2,15,4,L1,2004,2009,0,6,legende
 Q4685758,Adrián Cañas,adrian canas,Espagne,Espagne,milieu de terrain,6,0,4,LIGA,2010,2014,0,4,exclu
 Q4695287,Ahmad Benali,ahmad benali,Libye / Royaume-Uni,Libye / Royaume-Uni,milieu de terrain,7,0,17,PL / SA,2010,2018,0,17,exclu
@@ -11261,7 +11209,6 @@ Q4737482,Alun Armstrong,alun armstrong,Royaume-Uni,Royaume-Uni,attaquant,10,54,7
 Q4738564,Aly Yirango,aly yirango,Mali,Mali,gardien de but,3,4,10,L1,2012,2014,4,11,exclu
 Q4739095,Amadou Samb,amadou samb,Sénégal,Sénégal,attaquant,7,0,3,SA,2008,2015,0,3,exclu
 Q4739096,Amadou Sanokho,amadou sanokho,France,France,milieu de terrain,12,5,4,L1,1998,2012,0,4,exclu
-Q4739601,Amanda DaCosta,amanda dacosta,Portugal / États-Unis,Portugal / États-Unis,milieu de terrain,7,28,9,PL,2011,2015,28,17,legende
 Q4740074,Amara Konaté,amara konate,Côte d'Ivoire,Côte d'Ivoire,attaquant,7,0,2,SA,2010,2015,0,2,exclu
 Q4742093,Amedeo Calliari,amedeo calliari,Italie,Italie,milieu de terrain,5,0,3,SA,2008,2014,0,3,exclu
 Q4745920,Ameth Fall,ameth fall,Sénégal,Sénégal,attaquant,6,0,3,SA,2010,2015,0,3,exclu
@@ -11448,7 +11395,6 @@ Q5040635,Carl Pettefer,carl pettefer,Royaume-Uni,Royaume-Uni,milieu de terrain,8
 Q5040695,Carl Regan,carl regan,Royaume-Uni,Royaume-Uni,arrière latéral / défenseur,11,0,4,PL,1997,2013,0,4,exclu
 Q5040796,Carl Serrant,carl serrant,Angleterre,Royaume-Uni,arrière latéral,7,4,3,PL,1994,2007,0,3,exclu
 Q5040881,Carl Tiler,carl tiler,Royaume-Uni,Royaume-Uni,défenseur central,9,15,3,PL,1988,2003,0,4,legende
-Q5041047,Carla Couto,carla couto,Portugal,Portugal,attaquant,5,26,9,SA,1990,2012,26,17,legende
 Q5041170,Carles Gil,carles gil,Espagne,Espagne,milieu excentré,4,40,27,LIGA,2009,2015,8,33,legende
 Q5041299,Carlin Itonga,carlin itonga,Royaume-Uni / République démocratique du Congo,Royaume-Uni / République démocratique du Congo,attaquant,6,0,4,PL,2001,2004,0,4,exclu
 Q5041580,Carlo Polli,carlo polli,Suisse,Suisse,milieu de terrain,5,0,2,SA,2006,2012,0,2,exclu
@@ -11462,7 +11408,6 @@ Q5042453,Carlos Orejuela Pita,carlos orejuela pita,Pérou,Pérou,attaquant,8,190
 Q5042581,Carlos Rodríguez,carlos rodriguez,Espagne,Espagne,milieu de terrain,8,1,5,LIGA,1997,2014,1,5,exclu
 Q5042707,Carlos Tomás,carlos tomas,Espagne,Espagne,défenseur,7,1,6,LIGA,2007,2015,0,6,exclu
 Q5042772,Carlos Vinícius Santos de Jesus,carlos vinicius santos de jesus,Brésil,Brésil,défenseur,7,0,15,BUN,2011,2015,0,15,exclu
-Q5043121,Carly Telford,carly telford,Royaume-Uni,Royaume-Uni,gardien de but,8,21,16,PL,2002,2021,21,22,legende
 Q5043686,Carmine Cucciniello,carmine cucciniello,Italie,Italie,milieu de terrain,7,0,3,SA,2006,2014,0,3,exclu
 Q5056072,Cecil Filanckembo,cecil filanckembo,Congo,République du Congo,défenseur,2,31,3,L1,2006,2010,0,6,legende
 Q5057094,Cedric Evina,cedric evina,Cameroun / Royaume-Uni,Cameroun / Royaume-Uni,défenseur central,4,0,5,PL,2010,2014,0,5,exclu
@@ -11851,7 +11796,6 @@ Q5526896,Gastón Brugman,gaston brugman,Uruguay,Uruguay,milieu de terrain,7,0,14
 Q5527922,Gauthier Mahoto,gauthier mahoto,France / République démocratique du Congo,France / République démocratique du Congo,milieu de terrain,5,0,3,PL,2008,2014,0,3,exclu
 Q5528177,Gavin Holligan,gavin holligan,Royaume-Uni,Royaume-Uni,attaquant,10,1,2,PL,1997,2005,0,2,exclu
 Q5528285,Gavin Strachan,gavin strachan,Royaume-Uni,Royaume-Uni,milieu de terrain,11,5,5,PL,1997,2011,0,6,exclu
-Q5530702,Gemma Bonner,gemma bonner,Royaume-Uni,Royaume-Uni,défenseur,4,28,13,PL,2011,2012,28,21,legende
 Q5530861,Gen Shōji,gen shoji,Japon,Japon,défenseur,4,19,59,L1,2011,2023,0,61,difficile
 Q5533382,Gennaro Fragiello,gennaro fragiello,Italie,Italie,attaquant,10,2,3,SA,2000,2010,0,3,exclu
 Q5536647,George Baldock,george baldock,Grèce,Grèce / Royaume-Uni,arrière latéral,6,88,28,PL,2009,2024,0,37,legende
@@ -12114,7 +12058,6 @@ Q6198914,Jim Whitley,jim whitley,Irlande du Nord,Royaume-Uni,milieu de terrain,6
 Q6201064,Jimmy Phillips,jimmy phillips,Royaume-Uni,Royaume-Uni,milieu de terrain,7,0,2,PL,2008,2016,0,2,exclu
 Q6203811,Jiří Skalák,jiri skalak,Tchéquie,Tchéquie,milieu excentré,7,22,24,PL,2010,2023,0,26,legende
 Q6204329,Jo Kuffour,jo kuffour,Royaume-Uni,Royaume-Uni,attaquant,9,0,7,PL,1998,2014,0,7,exclu
-Q6205897,Joanna Lohman,joanna lohman,États-Unis,États-Unis,milieu de terrain,13,21,8,LIGA,2001,2014,0,10,legende
 Q6206501,Joaquín Moso,joaquin moso,Espagne,Espagne,gardien de but,10,0,5,LIGA,1995,2014,0,5,exclu
 Q6206591,Joazhiño Arroe,joazhino arroe,Pérou,Pérou,milieu excentré,2,1,6,SA,2009,2012,0,6,exclu
 Q6208352,Joe Anderson,joe anderson,Royaume-Uni,Royaume-Uni,défenseur,7,0,6,PL,2008,2013,0,6,exclu
@@ -12306,8 +12249,6 @@ Q6539737,Liam Noble,liam noble,Royaume-Uni,Royaume-Uni,milieu de terrain,3,0,4,P
 Q6539745,Liam O'Brien,liam obrien,Royaume-Uni,Royaume-Uni,gardien de but,6,0,2,PL,2009,2014,0,2,exclu
 Q6543562,Licá,lica,Portugal,Portugal,milieu excentré,7,21,14,LIGA,2007,2016,0,16,legende
 Q6552144,Aleksandar Katai,aleksandar katai,Serbie,Serbie,milieu excentré,8,23,19,LIGA,2009,2018,0,21,legende
-Q6552699,Lindsay Elston,lindsay elston,États-Unis,États-Unis,milieu de terrain,4,2,7,L1,2012,2015,0,7,exclu
-Q6552885,Lindsey Heaps,lindsey heaps,États-Unis,États-Unis,attaquant,3,58,29,L1,2012,2023,58,46,difficile
 Q6555882,Lionnel Franck Djimgou,lionnel franck djimgou,Cameroun,Cameroun,attaquant,4,2,4,LIGA,2007,2011,0,4,exclu
 Q6572982,Mats Møller Dæhli,mats moller daehli,Norvège,Norvège,milieu de terrain,5,11,21,PL,2011,2014,0,22,legende
 Q6643086,Ondrej Duda,ondrej duda,Slovaquie,Slovaquie,milieu de terrain,7,215,42,BUN / PL / SA,2012,2025,0,64,difficile
@@ -12368,7 +12309,6 @@ Q6752770,Manuel Nocciolini,manuel nocciolini,Italie,Italie,attaquant,4,0,3,SA,20
 Q6752787,Manuel Panini,manuel panini,Italie,Italie,défenseur,10,0,3,SA,2000,2012,0,3,exclu
 Q6752834,Manuel Ricci,manuel ricci,Italie,Italie,milieu de terrain,6,0,4,SA,2010,2015,0,4,exclu
 Q6752885,Manuel Sinato,manuel sinato,Italie,Italie,milieu de terrain,11,0,3,SA,1999,2012,0,3,exclu
-Q6753044,Manuela Lareo,manuela lareo,Espagne,Espagne,attaquant,3,27,7,LIGA,2010,2015,0,10,legende
 Q6755420,Marc Bridge-Wilkinson,marc bridgewilkinson,Royaume-Uni,Royaume-Uni,milieu de terrain,6,0,6,PL,1998,2012,0,6,exclu
 Q6755548,Marc Fernández Gracia,marc fernandez gracia,Espagne,Espagne,milieu excentré,5,6,8,LIGA,2009,2014,0,9,exclu
 Q6755682,Marc Laird,marc laird,Royaume-Uni,Royaume-Uni,milieu de terrain,10,0,4,PL,2004,2015,0,4,exclu
@@ -12679,7 +12619,6 @@ Q7154016,Paul Tierney,paul tierney,Irlande,Irlande,arrière latéral,8,0,5,PL,20
 Q7154083,Paul Trollope,paul trollope,Pays de Galles,Royaume-Uni,milieu de terrain,9,16,8,PL,1989,2007,0,10,legende
 Q7154330,Paul Wheatcroft,paul wheatcroft,Royaume-Uni,Royaume-Uni,attaquant,11,0,2,PL,1999,2004,0,2,exclu
 Q7154401,Paul Williams,paul williams,Royaume-Uni,Royaume-Uni,défenseur / défenseur central,6,96,6,PL,1989,2005,0,16,legende
-Q7154726,Paula Mateo,paula mateo,Espagne,Espagne,défenseur,1,89,2,LIGA,2005,2010,0,11,legende
 Q7156192,Paweł Olkowski,pawel olkowski,Pologne,Pologne,défenseur / milieu de terrain,5,8,20,BUN,2009,2014,0,21,exclu
 Q7159428,Pedro Alcalá,pedro alcala,Espagne,Espagne,défenseur,10,1,13,LIGA,2007,2015,0,13,exclu
 Q7159449,Pedro Antonio Vega Rodríguez,pedro antonio vega rodriguez,Espagne,Espagne,milieu excentré,6,26,6,LIGA,1998,2013,0,9,legende
@@ -13026,7 +12965,6 @@ Q7901078,Uroš Palibrk,uros palibrk,Slovénie,Slovénie,attaquant,6,0,8,SA,2011,
 Q7901084,Uroš Spajić,uros spajic,Serbie,Serbie,défenseur,6,63,34,L1,2010,2022,0,40,legende
 Q7911384,Valerio Frasca,valerio frasca,Italie,Italie,gardien de but,3,0,2,SA,2010,2011,0,2,exclu
 Q7914503,Vanderson Scardovelli,vanderson scardovelli,Brésil,Brésil,arrière latéral,11,0,6,SA,2004,2015,0,6,exclu
-Q7914612,Vanessa Bernauer,vanessa bernauer,Suisse,Suisse,milieu de terrain,5,58,9,LIGA,2003,2014,0,15,legende
 Q7915044,Vanja Grubač,vanja grubac,Monténégro / République fédérale de Yougoslavie,Monténégro / République fédérale de Yougoslavie,attaquant,9,6,3,BUN,1988,2005,0,4,exclu
 Q7916952,Vassilis Borbokis,vassilis borbokis,Grèce,Grèce,arrière latéral,6,16,3,PL,1987,2005,0,5,legende
 Q7931647,Vincent Acapandié,vincent acapandie,France,France,défenseur,3,3,4,L1,2010,2013,0,4,exclu
@@ -13052,12 +12990,10 @@ Q7983684,Wes Foderingham,wes foderingham,Royaume-Uni,Royaume-Uni,gardien de but,
 Q7983853,Wesley Boyle,wesley boyle,Royaume-Uni,Royaume-Uni,milieu de terrain,3,0,4,PL,1995,2012,0,4,exclu
 Q7983941,Wesley Jobello,wesley jobello,France,France,attaquant,9,1,8,L1,2012,2023,1,8,exclu
 Q7983982,Wesley Ngo Baheng,wesley ngo baheng,France,France,attaquant,5,0,4,PL,2007,2014,0,4,exclu
-Q7996687,Whitney Engen,whitney engen,États-Unis,États-Unis,défenseur,8,13,16,PL,2009,2015,13,20,legende
 Q8018714,William Stanger,william stanger,France,France,milieu de terrain,4,1,3,L1,2005,2010,0,3,exclu
 Q8043187,Xavi Annunziata,xavi annunziata,Espagne,Espagne,milieu excentré,9,7,7,LIGA,2006,2020,0,8,exclu
 Q8043208,Xavier Bécas,xavier becas,France,France,milieu de terrain,7,12,4,L1,1997,2008,0,5,legende
 Q8044465,Ximo Navarro,ximo navarro,Espagne,Espagne,milieu de terrain,6,0,7,LIGA,2008,2015,0,7,exclu
-Q8046615,Yael Averbuch,yael averbuch,États-Unis,États-Unis,milieu de terrain,9,0,14,PL,2002,2014,0,14,exclu
 Q8046795,Yahaya Mohamed,yahaya mohamed,Ghana,Ghana,défenseur central / milieu de terrain,6,0,7,L1,2006,2013,0,7,exclu
 Q8053119,Yevgeni Gavryuk,yevgeni gavryuk,Russie / Ukraine,Russie / Ukraine,attaquant,15,10,4,L1,2004,2015,0,5,legende
 Q8054193,Yoann Arquin,yoann arquin,France,France,attaquant,10,28,10,L1,2006,2016,28,18,legende
@@ -13228,7 +13164,6 @@ Q10520024,Michael O'Halloran,michael ohalloran,Royaume-Uni,Royaume-Uni,attaquant
 Q10520287,Ibrahima Tandia,ibrahima tandia,France / Mali,France / Mali,milieu de terrain,5,0,9,L1,2011,2019,0,9,exclu
 Q10521567,Giampaolo Calzi,giampaolo calzi,Italie,Italie,milieu de terrain,12,0,4,SA,2002,2015,0,4,exclu
 Q10524462,Luca Ricci,luca ricci,Italie,Italie,défenseur,8,2,5,SA,2007,2015,0,5,exclu
-Q10524481,Irune Murua,irune murua,Espagne,Espagne,attaquant,1,314,6,LIGA,2003,2017,0,37,legende
 Q10524798,Rubén Primo Iznardo,ruben primo iznardo,Espagne,Espagne,défenseur,5,0,5,LIGA,2009,2014,0,5,exclu
 Q10526787,Wataru Endō,wataru endo,Japon,Japon,milieu défensif,5,99,66,BUN,2010,2023,0,76,facile
 Q10529418,Samuele Bettoni,samuele bettoni,Italie,Italie,arrière latéral,3,0,3,SA,2009,2012,0,3,exclu
@@ -13292,7 +13227,6 @@ Q11224090,Eirik Birkelund,eirik birkelund,Norvège,Norvège,milieu de terrain,3,
 Q11355490,Pa Konate,pa konate,Suède,Guinée / Suède,défenseur,4,0,21,SA,2013,2018,0,21,exclu
 Q11557367,Takuma Asano,takuma asano,Japon,Japon,attaquant,7,34,60,BUN,2013,2021,0,63,facile
 Q11598914,Saad Trabelsi,saad trabelsi,France,France,attaquant,2,1,1,L1,2010,2014,0,1,exclu
-Q11679809,Amaia Lanbarri,amaia lanbarri,Espagne,Espagne,milieu de terrain,2,12,2,LIGA,2007,2012,0,3,legende
 Q11680001,Asier Ormazábal,asier ormazabal,Espagne,Espagne,arrière latéral,9,2,7,LIGA,1995,2018,0,7,exclu
 Q11681433,Elías Molina,elias molina,Espagne,Espagne,milieu de terrain,13,1,7,LIGA,2001,2014,0,7,exclu
 Q11683608,Iosu Esnaola,iosu esnaola,Espagne,Espagne,défenseur central,7,1,6,LIGA,2005,2019,0,6,exclu
@@ -13525,7 +13459,6 @@ Q15622117,Jacob Murphy,jacob murphy,Royaume-Uni,Royaume-Uni,ailier,8,185,23,PL,2
 Q15627096,Tim Kleindienst,tim kleindienst,Allemagne,Allemagne,attaquant,6,77,26,BUN,2013,2024,0,34,legende
 Q15627679,Kingsley Boateng,kingsley boateng,Ghana / Italie,Ghana / Italie,milieu excentré,4,6,11,SA,2013,2015,0,12,exclu
 Q15627798,Laurent Abergel,laurent abergel,France,France,milieu de terrain,3,1,16,L1,2013,2015,1,16,exclu
-Q15635072,Libby Stout,libby stout,États-Unis,États-Unis,gardien de but,5,26,7,PL,2012,2015,26,15,legende
 Q15639025,Alex N'Gadi,alex ngadi,France,France,attaquant / milieu de terrain,5,2,4,L1,2009,2013,0,4,exclu
 Q15639458,Florent Mollet,florent mollet,France,France,milieu de terrain,3,16,15,L1,2012,2016,0,17,legende
 Q15644548,Robin Gosens,robin gosens,Allemagne,Allemagne,arrière latéral,8,198,50,BUN / SA,2014,2025,39,78,moyen
@@ -13553,7 +13486,6 @@ Q15731783,Sven Michel,sven michel,Allemagne,Allemagne,attaquant,6,83,11,BUN,2010
 Q15731856,Stefano Sturaro,stefano sturaro,Italie,Italie,milieu de terrain,7,156,36,SA,2012,2024,64,64,difficile
 Q15769088,Michele Fornasier,michele fornasier,Italie,Italie,défenseur,2,10,7,SA,2013,2015,0,8,legende
 Q15782448,Allan-Axel Kimbaloula,allanaxel kimbaloula,Congo,France / République du Congo,milieu de terrain,2,26,7,L1,2010,2015,26,15,legende
-Q15783969,Armelle Lago,armelle lago,France,France,attaquant,2,2,4,L1,2000,2007,2,5,exclu
 Q15804512,Daniel Lück,daniel luck,Allemagne,Allemagne,gardien de but,2,4,5,BUN,2012,2015,0,5,exclu
 Q15806075,Dirk Hofmann,dirk hofmann,Allemagne,Allemagne,milieu de terrain,3,11,1,BUN,1989,2001,0,2,legende
 Q15820984,Jeron Al-Hazaimeh,jeron alhazaimeh,Allemagne,Allemagne,défenseur central,4,0,4,BUN,2011,2016,0,4,exclu
@@ -13566,7 +13498,6 @@ Q15831013,Filipe Augusto,filipe augusto,Brésil,Brésil,milieu de terrain,4,6,19
 Q15831026,Guilherme Appelt Pires,guilherme appelt pires,Brésil,Brésil,milieu de terrain,4,0,4,SA,2011,2013,0,4,exclu
 Q15831132,Nícolas Andrade David,nicolas andrade david,Brésil,Brésil,gardien de but,7,1,9,SA,2009,2015,0,9,exclu
 Q15831166,Romário da Silva Santos,romario da silva santos,Brésil,Brésil,défenseur,2,0,4,BUN,2011,2014,0,4,exclu
-Q15833737,Maoua Sanogo,maoua sanogo,France,France,milieu de terrain,1,51,1,L1,2005,2007,51,16,legende
 Q15835255,Milton Tembo,milton tembo,Zambie,Zambie,attaquant,5,9,1,BUN,1998,2009,0,2,exclu
 Q15836846,Niko Gießelmann,niko giesselmann,Allemagne,Allemagne,défenseur,2,73,14,BUN,2010,2013,0,21,legende
 Q15839599,Pascal Pellowski,pascal pellowski,Allemagne,Allemagne,défenseur,6,0,4,BUN,2006,2014,0,4,exclu
@@ -13649,7 +13580,6 @@ Q16206311,Adam Buxton,adam buxton,Royaume-Uni,Royaume-Uni,défenseur,3,0,6,PL,20
 Q16207162,Ryan Edwards,ryan edwards,Australie / Singapour,Australie / Singapour,attaquant intérieur,10,2,13,PL,2007,2024,0,13,exclu
 Q16208222,Damien Dufour,damien dufour,France,France,attaquant,3,132,5,L1,2001,2011,0,18,legende
 Q16208631,Nadjib Baouia,nadjib baouia,Algérie / France,Algérie / France,attaquant,2,4,7,L1,2013,2015,0,7,exclu
-Q16210606,Yeşim Demirel,yesim demirel,Turquie,Turquie,attaquant,3,12,3,BUN,2009,2014,0,4,legende
 Q16211909,Matt Ball,matt ball,Royaume-Uni,Royaume-Uni,milieu excentré,6,0,5,PL,2010,2014,0,5,exclu
 Q16212492,Jan Bednarek,jan bednarek,Pologne,Pologne,défenseur,5,198,44,PL,2013,2025,0,64,difficile
 Q16212543,Iker Begoña,iker begona,Espagne,Espagne,défenseur central / milieu défensif,11,31,9,LIGA,1996,2012,0,12,legende
@@ -13917,7 +13847,6 @@ Q17198441,Thomas Pedrabissi,thomas pedrabissi,Italie,Italie,attaquant,2,0,3,SA,2
 Q17198695,Andrea Scicchitano,andrea scicchitano,Italie,Italie,défenseur,10,0,3,SA,2010,2015,0,3,exclu
 Q17274709,Mike Maignan,mike maignan,France,France,gardien de but,3,282,51,L1 / SA,2012,2021,282,136,moyen
 Q17279293,Diaranké Fofana,diaranke fofana,France / Mali,France / Mali,défenseur,4,24,4,L1,2008,2015,0,6,legende
-Q17281095,Chioma Ubogagu,chioma ubogagu,Royaume-Uni / États-Unis,Royaume-Uni / États-Unis,attaquant,3,14,11,PL,2015,2015,14,15,legende
 Q17305811,Carlo Crialese,carlo crialese,Italie,Italie,défenseur,7,0,4,SA,2011,2014,0,4,exclu
 Q17305846,Luca Del Papa,luca del papa,Italie,Italie,attaquant,3,0,4,SA,2013,2015,0,4,exclu
 Q17306063,James Bittner,james bittner,Royaume-Uni,Royaume-Uni,gardien de but,1,0,6,PL,2000,2002,0,6,exclu
@@ -13926,7 +13855,6 @@ Q17310494,Benno Schmitz,benno schmitz,Allemagne,Allemagne,défenseur,6,126,20,BU
 Q17325280,Naby Keita,naby keita,Guinée,Guinée,milieu de terrain,7,146,47,BUN / PL,2012,2023,142,90,moyen
 Q17350507,Ali Abdi,ali abdi,Tunisie,Tunisie,arrière latéral,8,48,25,L1,2011,2024,0,30,legende
 Q17364178,Aarón Escandell,aaron escandell,Espagne,Espagne,gardien de but,8,102,13,LIGA,2003,2024,0,23,legende
-Q17364574,Francesca Durante,francesca durante,Italie,Italie,gardien de but,7,3,11,SA,2013,2025,0,11,exclu
 Q17385763,Davide Cinaglia,davide cinaglia,Italie,Italie,défenseur central,3,0,5,SA,2012,2014,0,5,exclu
 Q17385833,Timothée Dieng,timothee dieng,France,France,défenseur,2,4,4,L1,2011,2014,0,4,exclu
 Q17385917,Giovanni Fietta,giovanni fietta,Italie,Italie,milieu de terrain,6,7,5,SA,2003,2013,0,6,exclu
@@ -13954,7 +13882,6 @@ Q17466699,Fabio Reato,fabio reato,Italie,Italie,défenseur,3,0,3,SA,2012,2015,0,
 Q17476783,Lyes Houri,lyes houri,France,France,milieu de terrain,7,28,10,L1,2013,2026,0,13,legende
 Q17482445,Mikkel Desler,mikkel desler,Royaume de Danemark,Royaume de Danemark,milieu de terrain,4,69,14,L1,2014,2024,0,21,legende
 Q17482506,Rúnar Alex Rúnarsson,runar alex runarsson,Islande,Islande,gardien de but,5,6,34,PL,2012,2024,6,36,exclu
-Q17487712,Rachael Laws,rachael laws,Royaume-Uni,Royaume-Uni,gardien de but,3,39,9,PL,2006,2020,9,15,legende
 Q17488333,Mounir Bouziane,mounir bouziane,France,France,attaquant,4,75,7,BUN,2009,2015,0,14,legende
 Q17489848,Francisco Rodriguez,francisco rodriguez,Suisse,Suisse,milieu de terrain,4,1,13,BUN,2012,2016,0,13,exclu
 Q17492941,Marvelous Nakamba,marvelous nakamba,Zimbabwe,Zimbabwe,milieu de terrain,5,11,25,L1,2010,2019,0,26,legende
@@ -14009,7 +13936,6 @@ Q17711612,Jak Alnwick,jak alnwick,Royaume-Uni,Royaume-Uni,gardien de but,4,6,19,
 Q17712329,David García Zubiria,david garcia zubiria,Espagne,Espagne,défenseur central / milieu défensif,4,170,23,LIGA,2003,2024,0,40,legende
 Q17712339,Sean Maguire,sean maguire,Royaume-Uni,Royaume-Uni,attaquant,6,0,9,PL,2011,2015,0,9,exclu
 Q17742143,Marcus Maddison,marcus maddison,Angleterre,Royaume-Uni,milieu de terrain,5,0,4,PL,2012,2014,0,4,exclu
-Q17748070,Nadja Pfeiffer,nadja pfeiffer,Allemagne,Allemagne,défenseur,3,57,2,BUN,2009,2016,0,8,legende
 Q17811742,Luismi,luismi,Espagne,Espagne,défenseur / milieu de terrain,6,13,16,LIGA,2011,2024,0,17,legende
 Q17861573,Damian Roßbach,damian rossbach,Allemagne,Allemagne,arrière latéral,3,0,7,BUN,2012,2015,0,7,exclu
 Q17912629,Dennis Salanović,dennis salanovic,Liechtenstein,Liechtenstein,attaquant,5,8,11,LIGA,2013,2016,8,13,exclu
@@ -14123,7 +14049,6 @@ Q18638184,Harry Winks,harry winks,Angleterre,Royaume-Uni,milieu de terrain axial
 Q18638190,Cédric Yambéré,cedric yambere,France / République centrafricaine,France / République centrafricaine,défenseur,2,49,14,L1,2013,2015,49,29,legende
 Q18638195,Amos Youga,amos youga,France / République centrafricaine,France / République centrafricaine,défenseur,4,0,12,L1,2010,2014,0,12,exclu
 Q18649709,Borja Mayoral,borja mayoral,Espagne,Espagne,attaquant,6,244,38,BUN / LIGA / SA,2015,2022,58,74,difficile
-Q18656035,Jade Bailey,jade bailey,Royaume-Uni,Royaume-Uni,défenseur / milieu excentré,3,27,6,PL,2013,2019,27,14,legende
 Q18670270,Konrad Laimer,konrad laimer,Autriche,Autriche,arrière latéral / milieu de terrain,4,189,41,BUN,2014,2023,189,98,moyen
 Q18684812,David Billington,david billington,Royaume-Uni,Royaume-Uni,défenseur,2,0,5,PL,1996,2001,0,5,exclu
 Q18685713,Abdou Diallo,abdou diallo,Sénégal,France / Sénégal,défenseur / défenseur central,8,118,36,BUN / L1,2014,2026,91,66,difficile
@@ -14133,7 +14058,6 @@ Q18712519,Arvid Schenk,arvid schenk,Allemagne,Allemagne,gardien de but,5,19,5,BU
 Q18719485,Borja Iglesias,borja iglesias,Espagne,Espagne,attaquant,10,259,42,BUN / LIGA,2007,2025,7,69,difficile
 Q18719633,Rafael Santos Borré,rafael santos borre,Colombie,Colombie,attaquant,7,99,27,BUN / LIGA,2013,2026,0,37,legende
 Q18719702,Juan Delgado Martínez,juan delgado martinez,Uruguay,Uruguay,attaquant / milieu de terrain,4,0,4,SA,2014,2015,0,4,exclu
-Q18720672,Nina Frausing Pedersen,nina frausing pedersen,Royaume de Danemark,Royaume de Danemark,milieu de terrain,7,8,4,PL,2008,2015,8,6,exclu
 Q18758211,Pablo Ganet,pablo ganet,Espagne / Guinée équatoriale,Espagne / Guinée équatoriale,milieu de terrain,4,24,19,LIGA,2013,2015,0,21,legende
 Q18763835,Pedro Astray López,pedro astray lopez,Espagne,Espagne,milieu de terrain axial,17,2,10,LIGA,2002,2022,0,10,exclu
 Q18764054,Álex Felip,alex felip,Espagne,Espagne,milieu de terrain,4,10,6,LIGA,2011,2015,0,7,legende
@@ -14207,7 +14131,6 @@ Q19667207,Marco Villagatti,marco villagatti,Italie,Italie,défenseur,10,0,3,SA,2
 Q19667244,Alessandro Piacenti,alessandro piacenti,Italie,Italie,gardien de but,7,0,3,SA,2010,2015,0,3,exclu
 Q19667286,Alessandro Luparini,alessandro luparini,Italie,Italie,attaquant,5,0,3,SA,2010,2015,0,3,exclu
 Q19708656,Gabriel Jesus,gabriel jesus,Brésil,Brésil,attaquant,4,243,59,LIGA / PL,2015,2026,243,132,moyen
-Q19720798,Inessa Kaagman,inessa kaagman,Royaume des Pays-Bas,Royaume des Pays-Bas,défenseur,3,5,14,PL,2013,2022,0,14,exclu
 Q19760517,Sergi Palencia,sergi palencia,Espagne,Espagne,défenseur,4,35,20,L1 / LIGA,2015,2020,25,28,legende
 Q19773058,Lorenzo Pellegrini,lorenzo pellegrini,Italie,Italie,milieu de terrain,2,271,43,SA,2014,2017,224,115,moyen
 Q19787021,Haji Wright,haji wright,États-Unis,États-Unis,attaquant,8,7,35,BUN,2015,2020,7,37,exclu
@@ -14309,7 +14232,6 @@ Q20655930,Roberto Crivello,roberto crivello,Italie,Italie,défenseur,5,0,10,SA,2
 Q20656034,Adalberto Peñaranda,adalberto penaranda,Venezuela,Venezuela,attaquant,5,9,22,LIGA / SA,2010,2017,0,23,exclu
 Q20666686,Jonathan Ikoné,jonathan ikone,France / République démocratique du Congo,France / République démocratique du Congo,ailier / attaquant,5,229,33,L1 / SA,2016,2025,125,81,moyen
 Q20675980,Sander Berge,sander berge,Norvège,Norvège,milieu de terrain,6,69,35,PL,2013,2024,0,42,legende
-Q20676057,Florencia Bonsegundo,florencia bonsegundo,Argentine,Argentine,milieu de terrain,5,41,19,LIGA,2011,2021,41,31,legende
 Q20688718,Angeliño,angelino,Espagne,Espagne,arrière latéral / milieu excentré,11,163,39,BUN / LIGA / PL / SA,2014,2026,130,81,moyen
 Q20711307,Victorien Angban,victorien angban,Côte d'Ivoire,Côte d'Ivoire,milieu de terrain,8,46,17,L1,2014,2025,0,22,legende
 Q20716740,Billal Sebaihi,billal sebaihi,France,France,milieu de terrain,7,25,9,L1,2010,2015,0,12,legende
@@ -14412,7 +14334,6 @@ Q21403452,Adam Ounas,adam ounas,Algérie,Algérie / France,milieu excentré,3,88
 Q21407198,Iñigo Barrenetxea,inigo barrenetxea,Espagne,Espagne,milieu de terrain axial,15,4,6,LIGA,2004,2025,0,6,exclu
 Q21484126,Lautaro Martínez,lautaro martinez,Argentine,Argentine,attaquant,2,237,63,SA,2015,2018,237,134,facile
 Q21484766,Ademola Lookman Triplé,ademola lookman triple,Nigéria,Nigeria / Royaume-Uni,ailier,7,235,52,BUN / LIGA / PL / SA,2015,2026,34,82,moyen
-Q21519848,Drew Spence,drew spence,Royaume-Uni,Royaume-Uni,milieu de terrain,2,10,15,PL,2008,2022,10,18,legende
 Q21523340,Raphael Dwamena,raphael dwamena,Ghana,Ghana,attaquant,5,12,27,LIGA,2014,2023,0,28,legende
 Q21523936,Krzysztof Piątek,krzysztof piatek,Pologne,Pologne,attaquant,9,161,43,BUN / SA,2013,2025,37,66,difficile
 Q21540971,Rafa Mir,rafa mir,Espagne,Espagne,attaquant,6,49,32,LIGA / PL,2015,2021,2,37,legende
@@ -14451,7 +14372,6 @@ Q21715241,Marcel Hilßner,marcel hilssner,Allemagne,Allemagne,milieu excentré,2
 Q21751036,Asier Etxaburu,asier etxaburu,Espagne,Espagne,attaquant intérieur,12,1,8,LIGA,2004,2025,0,8,exclu
 Q21772559,Jokin Ezkieta Mendiburu,jokin ezkieta mendiburu,Espagne,Espagne,gardien de but,10,29,10,LIGA,2007,2022,0,13,legende
 Q21872057,Wilfried Zahibo,wilfried zahibo,Côte d'Ivoire / France / République centrafricaine,Côte d'Ivoire / France / République centrafricaine,milieu de terrain,6,28,10,L1 / LIGA,2012,2018,2,13,legende
-Q21872780,Marta Unzué,marta unzue,Espagne,Espagne,arrière latéral,3,72,11,LIGA,2003,2020,0,18,legende
 Q21872796,Alessandro Venezia,alessandro venezia,Italie,Italie,milieu de terrain,9,4,1,SA,2004,2015,4,2,exclu
 Q21923379,Patrick Drewes,patrick drewes,Allemagne,Allemagne,gardien de but,9,22,9,BUN,1995,2025,0,11,legende
 Q22001795,Arnaut Groeneveld,arnaut groeneveld,Pays-Bas,Nigeria / Royaume des Pays-Bas,milieu de terrain,9,138,35,LIGA / PL,2015,2025,39,57,difficile
@@ -14475,7 +14395,6 @@ Q22084560,Kyle Cameron,kyle cameron,Royaume-Uni,Royaume-Uni,arrière latéral / 
 Q22166586,Giuseppe Messina,giuseppe messina,Italie,Italie,gardien de but,4,0,4,SA,2011,2015,0,4,exclu
 Q22237703,Gianluca Scamacca,gianluca scamacca,Italie,Italie,attaquant,8,118,40,PL / SA,2016,2023,0,52,difficile
 Q22255038,Sebastian Ernst,sebastian ernst,Allemagne,Allemagne,milieu de terrain,2,0,9,BUN,2014,2016,0,9,exclu
-Q22278791,Bárbara Latorre,barbara latorre,Espagne,Espagne,attaquant,5,42,13,LIGA,2011,2021,0,17,legende
 Q22279773,Christian Pulisic,christian pulisic,États-Unis,Croatie / États-Unis,milieu de terrain,3,262,59,BUN / PL / SA,2016,2023,262,138,moyen
 Q22342392,Josip Brekalo,josip brekalo,Croatie,Croatie,attaquant,8,105,35,BUN / LIGA / SA,2015,2026,0,46,difficile
 Q22342820,Marco Tumminello,marco tumminello,Italie,Italie,attaquant,5,17,13,SA,2016,2019,2,15,legende
@@ -14525,7 +14444,6 @@ Q23939194,Chadrac Akolo,chadrac akolo,République démocratique du Congo,Républ
 Q24006164,Brian Cufré,brian cufre,Argentine,Argentine,défenseur,3,25,10,LIGA,2015,2022,0,12,legende
 Q24007036,Ander Gayoso,ander gayoso,Espagne,Espagne,arrière latéral,15,1,5,LIGA,2011,2024,0,5,exclu
 Q24007041,Marshall Munetsi,marshall munetsi,Zimbabwe,Zimbabwe,milieu de terrain,4,4,19,L1,2015,2019,0,19,exclu
-Q24026064,Ashley Hodson,ashley hodson,Royaume-Uni,Royaume-Uni,attaquant,1,65,5,PL,2014,,65,24,legende
 Q24050378,Tammy Abraham,tammy abraham,Royaume-Uni,Royaume-Uni,attaquant,5,201,44,PL / SA,2016,2021,170,98,moyen
 Q24061870,Steffen Tigges,steffen tigges,Allemagne,Allemagne,attaquant,5,77,15,BUN,2016,2025,23,27,legende
 Q24068577,Fikayo Tomori,fikayo tomori,Angleterre,Royaume-Uni,défenseur central,5,159,44,PL / SA,2016,2021,155,91,moyen
@@ -14536,8 +14454,6 @@ Q24084301,Donyell Malen,donyell malen,Pays-Bas,Royaume des Pays-Bas,attaquant,5,
 Q24254392,Dominik Greif,dominik greif,Slovaquie,Slovaquie,gardien de but,1,2,23,LIGA,2021,,0,23,exclu
 Q24258610,Sergio Reguilón,sergio reguilon,Espagne,Espagne,défenseur,9,118,42,LIGA / PL,2015,2025,102,74,difficile
 Q24279005,Sergio Herrera Pirón,sergio herrera piron,Espagne,Espagne,gardien de but,7,214,16,LIGA,2004,2017,0,37,legende
-Q24452314,Abbey-Leigh Stringer,abbeyleigh stringer,Royaume-Uni,Royaume-Uni,milieu de terrain,3,3,8,PL,2014,2018,0,8,exclu
-Q24572669,Melissa Lawley,melissa lawley,Royaume-Uni,Royaume-Uni,attaquant,4,22,13,PL,2012,2019,22,20,legende
 Q24579254,Florinel Coman,florinel coman,Roumanie,Roumanie,attaquant,4,9,22,SA,2014,2025,0,23,exclu
 Q24663885,Matt Turner,matt turner,États-Unis,Lituanie / États-Unis,gardien de but,5,0,36,PL,2014,2023,0,36,exclu
 Q24872420,Keita Endō,keita endo,Japon,Japon,milieu de terrain,5,16,38,BUN,2016,2026,0,40,legende
@@ -14656,7 +14572,6 @@ Q28801927,Cody Gakpo,cody gakpo,Pays-Bas,Royaume des Pays-Bas,avant-centre / mil
 Q28842103,Moussa Wagué,moussa wague,Sénégal,Sénégal,défenseur,9,9,41,L1 / LIGA,2017,2026,4,43,exclu
 Q28856040,Jaouad El Yamiq,jaouad el yamiq,Maroc,Maroc,défenseur central,8,54,29,LIGA / SA,2012,2026,0,34,legende
 Q28861547,Raphinha,raphinha,Brésil,Brésil,attaquant,7,222,59,L1 / LIGA / PL,2015,2022,129,107,moyen
-Q28864269,Rinsola Babajide,rinsola babajide,Nigeria / Royaume-Uni,Nigeria / Royaume-Uni,attaquant,3,44,12,PL,2015,2018,29,22,legende
 Q28868192,Kevin Danso,kevin danso,Autriche,Autriche,défenseur central,6,181,38,BUN / L1 / PL,2017,2025,22,60,difficile
 Q28872567,Nayef Aguerd,nayef aguerd,Maroc,Maroc,défenseur / milieu de terrain,6,122,43,L1 / LIGA / PL,2014,2022,0,55,difficile
 Q28966437,Jon Guridi,jon guridi,Espagne,Espagne,milieu défensif,5,147,16,LIGA,2014,2026,0,31,legende
@@ -14676,12 +14591,10 @@ Q29542627,Jhon Steven Mondragón Dosman,jhon steven mondragon dosman,Colombie,Co
 Q29583088,Lamine Ghezali,lamine ghezali,Algérie / France,Algérie / France,attaquant,8,8,6,L1,2015,2024,0,7,exclu
 Q29624459,Scott McTominay,scott mctominay,Écosse,Royaume-Uni,milieu de terrain,2,223,53,PL / SA,2017,2024,223,120,moyen
 Q29629721,Jan Mlakar,jan mlakar,Slovénie,Slovénie,attaquant,6,1,22,PL / SA,2016,2020,0,22,exclu
-Q29656808,Claire Emslie,claire emslie,Royaume-Uni,Royaume-Uni,attaquant,6,31,13,PL,2011,2020,31,22,legende
 Q29841260,Juan Foyth,juan foyth,Argentine,Argentine,défenseur,3,110,42,LIGA / PL,2016,2021,16,56,difficile
 Q29901014,Derek Cornelius,derek cornelius,Canada,Canada / Jamaïque,attaquant,8,23,29,L1,2015,2026,23,36,legende
 Q29943739,Iván Villar,ivan villar,Espagne,Espagne,gardien de but,3,26,23,LIGA,2008,2019,0,26,legende
 Q29950055,Éder Gabriel Militão,eder gabriel militao,Brésil,Brésil,défenseur central,3,131,55,LIGA,2017,2019,131,94,moyen
-Q29963080,Danique Kerkdijk,danique kerkdijk,Royaume des Pays-Bas,Royaume des Pays-Bas,défenseur,3,11,11,PL,2012,2022,0,12,legende
 Q29988852,Angel Gomes,angel gomes,Royaume-Uni,Royaume-Uni,milieu de terrain,3,5,31,PL,2017,2021,5,32,exclu
 Q29998966,Weston McKennie,weston mckennie,États-Unis,États-Unis,milieu de terrain,3,210,44,BUN / PL / SA,2017,2023,200,105,moyen
 Q30006877,Florent Muslija,florent muslija,Kosovo,Albanie / Kosovo,milieu de terrain,2,4,13,BUN,2017,2018,0,13,exclu
@@ -14731,13 +14644,11 @@ Q36694978,Brighton Labeau,brighton labeau,France,France,attaquant,5,2,10,L1,2017
 Q36696865,Trevoh Chalobah,trevoh chalobah,Royaume-Uni,Royaume-Uni,défenseur central,4,29,40,L1,2018,2021,0,43,difficile
 Q37007722,Jack Lahne,jack lahne,Suède / Zambie,Suède / Zambie,milieu de terrain,4,0,14,L1,2017,2019,0,14,exclu
 Q37186853,Nacho Vidal,nacho vidal,Espagne,Espagne,défenseur,5,235,21,LIGA,2006,2025,85,62,difficile
-Q37349828,Garazi Murua,garazi murua,Espagne,Espagne,défenseur,2,178,5,LIGA,2014,2024,0,23,legende
 Q37506695,Unai Núñez,unai nunez,Espagne,Espagne,défenseur central,8,238,26,LIGA / SA,2004,2026,13,52,difficile
 Q37527145,Eddie Salcedo,eddie salcedo,Italie,Italie,attaquant,3,3,14,SA,2017,2019,0,14,exclu
 Q37875995,Vitaliy Mykolenko,vitaliy mykolenko,Ukraine,Ukraine,défenseur,2,94,37,PL,2017,2022,0,46,difficile
 Q37893505,Niccolò Zanellato,niccolo zanellato,Italie,Italie,milieu de terrain,2,8,10,SA,2017,2019,2,11,exclu
 Q38000669,Mason Mount,mason mount,Angleterre,Royaume-Uni,milieu de terrain axial / milieu offensif,4,170,57,PL,2017,2023,170,108,moyen
-Q38026939,Sophie Istillart,sophie istillart,France,France,milieu de terrain,2,20,2,LIGA,2015,2020,0,4,legende
 Q38053896,Ruben Vargas,ruben vargas,Suisse,Suisse,milieu excentré,3,189,41,BUN / LIGA,2017,2025,35,67,difficile
 Q38164088,Cheick Traoré,cheick traore,France / Mali,France / Mali,défenseur,8,26,13,L1,2013,2024,0,16,legende
 Q38306003,Danel Sinani,danel sinani,Luxembourg,Luxembourg,milieu de terrain,3,0,21,PL,2014,2020,0,21,exclu
@@ -14760,7 +14671,6 @@ Q41247384,Ibrahima Sory Conté,ibrahima sory conte,Guinée,Guinée,défenseur,3,
 Q41255844,Alex Dobre,alex dobre,Roumanie,Roumanie,ailier,8,18,15,L1,2016,2024,0,17,legende
 Q41432040,Luke Hemmerich,luke hemmerich,Allemagne,Allemagne,arrière latéral,3,0,5,BUN,2017,2018,0,5,exclu
 Q41445080,Jann-Fiete Arp,jannfiete arp,Allemagne,Allemagne,attaquant,1,2,32,BUN,2017,,0,32,exclu
-Q41616404,Toni Payne,toni payne,Nigeria / États-Unis,Nigeria / États-Unis,attaquant,4,136,17,LIGA,2013,2024,136,58,difficile
 Q41634566,Miguel Crespo,miguel crespo,France / Portugal,France / Portugal,milieu de terrain,9,15,11,LIGA,2014,2024,0,12,legende
 Q41689776,Karlo Letica,karlo letica,Croatie,Croatie,gardien de but,8,11,16,SA,2014,2023,0,17,legende
 Q41896054,Youssoufa Moukoko,youssoufa moukoko,Allemagne,Allemagne / Cameroun,attaquant,4,87,40,BUN / L1,2020,2025,76,64,difficile
@@ -14780,7 +14690,6 @@ Q42383726,Ander Guevara,ander guevara,Espagne,Espagne,milieu de terrain axial,4,
 Q42396622,Callum Hudson-Odoi,callum hudsonodoi,Angleterre,Royaume-Uni,ailier,3,151,45,BUN / PL,2017,2023,86,77,moyen
 Q42427279,Mateu Morey,mateu morey,Espagne,Espagne,défenseur,4,32,24,BUN,2014,2024,32,34,legende
 Q42433448,Federico Baschirotto,federico baschirotto,Italie,Italie,défenseur,8,114,11,SA,2013,2025,0,22,legende
-Q42580600,Taylor Hinds,taylor hinds,Royaume-Uni,Royaume-Uni,milieu de terrain,3,0,12,PL,2017,2020,0,12,exclu
 Q42673059,Matija Sarkic,matija sarkic,Monténégro,Monténégro / Royaume-Uni,gardien de but,8,0,23,PL,2017,2024,0,23,exclu
 Q42725482,Lyle Foster,lyle foster,Afrique du Sud,Afrique du Sud,attaquant,7,46,33,L1 / PL,2017,2023,2,38,legende
 Q42728914,Rodrygo,rodrygo,Brésil,Brésil / Espagne,ailier,2,191,60,LIGA,2017,2019,191,117,facile
@@ -14800,7 +14709,6 @@ Q44297797,Ferran Torres,ferran torres,Espagne,Espagne,ailier / attaquant,5,242,6
 Q44300675,Martin Agirregabiria,martin agirregabiria,Espagne,Espagne,arrière latéral,6,138,18,LIGA,2008,2026,0,32,legende
 Q44737396,Marc Guéhi,marc guehi,Angleterre,Royaume-Uni,défenseur central,4,152,47,PL,2019,2026,0,62,difficile
 Q44737408,Conor Gallagher,conor gallagher,Angleterre,Royaume-Uni,milieu de terrain,7,187,44,LIGA / PL,2019,2026,123,87,moyen
-Q44926335,Candela Andújar,candela andujar,Espagne,Espagne,attaquant,3,29,10,LIGA,2018,2022,29,19,legende
 Q44983091,Lamine Diaby-Fadiga,lamine diabyfadiga,France / Guinée,France / Guinée,attaquant,6,7,12,L1,2017,2024,0,13,exclu
 Q45179405,Anthony Gordon,anthony gordon,Angleterre,Royaume-Uni,ailier,4,179,52,LIGA / PL,2017,2026,3,70,difficile
 Q45369082,Chris Führich,chris fuhrich,Allemagne,Allemagne,milieu de terrain,5,125,31,BUN,2017,2021,0,44,difficile
@@ -14826,12 +14734,10 @@ Q48967361,Kyle Scott,kyle scott,Royaume-Uni / États-Unis,Royaume-Uni / États-U
 Q49166190,Alexis Saelemaekers,alexis saelemaekers,Belgique,Belgique,milieu de terrain,4,162,42,SA,2018,2025,132,85,moyen
 Q49561427,Bryan Mbeumo,bryan mbeumo,Cameroun,Cameroun / France,ailier,3,163,40,PL,2018,2025,15,59,difficile
 Q50073536,Yukinari Sugawara,yukinari sugawara,Japon,Japon,défenseur,3,42,43,BUN / PL,2024,2026,0,47,difficile
-Q50082738,Rasheedat Ajibade,rasheedat ajibade,Nigeria,Nigeria,attaquant,3,54,21,LIGA,2013,2025,54,37,legende
 Q50137347,Aaron Wan-Bissaka,aaron wanbissaka,République démocratique du Congo,Royaume-Uni / République démocratique du Congo,arrière latéral,4,213,43,PL,2016,2024,130,90,moyen
 Q50233588,Leonardo Balerdi,leonardo balerdi,Argentine,Argentine / Italie,défenseur,4,160,27,BUN / L1,2018,2021,160,75,moyen
 Q50315237,Riqui Puig,riqui puig,Espagne,Espagne,milieu de terrain,3,42,41,LIGA,2008,2020,42,54,difficile
 Q50349931,Tiago Djaló,tiago djalo,Portugal,Portugal,défenseur,4,79,24,L1 / SA,2017,2024,79,48,difficile
-Q50375727,Ona Batlle,ona batlle,Espagne,Espagne,défenseur,5,63,30,LIGA,2014,2026,63,49,difficile
 Q50628268,Mehmet Zeki Çelik,mehmet zeki celik,Turquie,Turquie,arrière latéral,6,224,40,L1 / SA,2015,2026,224,107,moyen
 Q50936059,Tjay De Barr,tjay de barr,Gibraltar,Royaume-Uni,avant-centre,4,0,12,LIGA,2015,2019,0,12,exclu
 Q51213832,Connor Metcalfe,connor metcalfe,Australie,Australie,défenseur,2,35,32,BUN,2018,2022,0,36,legende
@@ -14908,7 +14814,6 @@ Q56868118,William Saliba,william saliba,France,France,défenseur,4,199,51,L1 / P
 Q56876908,Kaio Jorge,kaio jorge,Brésil,Brésil,attaquant,2,0,23,SA,2018,2021,0,23,exclu
 Q56877051,Mohammed Kudus,mohammed kudus,Ghana,Ghana,attaquant,4,74,44,PL,2018,2025,10,53,difficile
 Q57017387,Abdallahi Mahmoud,abdallahi mahmoud,Mauritanie,Mauritanie,défenseur central / milieu défensif,6,7,10,LIGA,2017,2024,0,11,exclu
-Q57059347,Megan Walsh,megan walsh,Royaume-Uni,Royaume-Uni,gardien de but,5,33,11,PL,2011,2019,0,14,legende
 Q57293140,Thiago Almada,thiago almada,Argentine,Argentine,attaquant intérieur / milieu de terrain,5,27,39,LIGA,2018,2026,27,47,difficile
 Q57315517,Milutin Osmajić,milutin osmajic,Monténégro,Monténégro,attaquant,6,11,11,LIGA,2018,2026,0,12,legende
 Q57415806,Altay Bayındır,altay bayindir,Turquie,Turquie,gardien de but,3,0,42,PL,2015,2023,0,42,exclu
@@ -14920,7 +14825,6 @@ Q58174760,Riccardo Sottil,riccardo sottil,Italie,Italie,attaquant,2,9,18,SA,2018
 Q58174944,Adrià Pedrosa,adria pedrosa,Espagne,Espagne,défenseur,3,82,23,LIGA,2017,2023,0,31,legende
 Q58303188,Haitham Hassan,haitham hassan,Égypte,France / Égypte,ailier droit,6,38,28,LIGA,2018,2026,0,32,legende
 Q58323172,Bruno Guimarães,bruno guimaraes,Brésil,Brésil / Espagne,milieu de terrain,5,209,49,L1 / PL,2015,2026,56,81,moyen
-Q58457114,Lena Lattwein,lena lattwein,Allemagne,Allemagne,milieu de terrain,2,32,16,BUN,2017,2017,0,19,legende
 Q58465451,Khéphren Thuram-Ulien,khephren thuramulien,France,France,milieu de terrain,3,188,34,L1 / SA,2018,2024,47,62,difficile
 Q58494476,Mykhaylo Mudryk,mykhaylo mudryk,Ukraine,Ukraine,ailier,5,40,47,PL,2018,2023,40,59,difficile
 Q58756067,Javier Sánchez de Felipe,javier sanchez de felipe,Espagne,Espagne,défenseur,2,5,16,LIGA,2018,,5,18,exclu
@@ -14970,7 +14874,6 @@ Q61594963,Ionuț Pop,ionut pop,Roumanie,Roumanie,gardien de but,7,0,2,SA,2012,20
 Q61598452,Morgan Rogers,morgan rogers,Angleterre,Royaume-Uni,ailier / milieu offensif,8,85,43,PL,2019,2026,0,52,difficile
 Q61744153,Jakub Kiwior,jakub kiwior,Pologne,Pologne,défenseur,5,83,39,PL / SA,2019,2026,44,56,difficile
 Q61746657,Alex Sola,alex sola,Espagne,Espagne,arrière latéral,8,78,14,LIGA,2016,2026,0,22,legende
-Q61762234,Salma Paralluelo,salma paralluelo,Espagne / Guinée équatoriale,Espagne / Guinée équatoriale,milieu de terrain,4,37,35,LIGA,2019,2026,0,39,legende
 Q61780902,Khvicha Kvaratskhelia,khvicha kvaratskhelia,Géorgie,Géorgie,attaquant / milieu de terrain,7,129,65,L1 / SA,2017,2025,129,104,facile
 Q61899299,Strahinja Pavlović,strahinja pavlovic,Serbie,Serbie,défenseur,6,31,39,L1 / SA,2019,2024,31,48,difficile
 Q61964665,Andrei Răuță,andrei rauta,Roumanie,Roumanie,défenseur,11,0,2,L1,2012,2024,0,2,exclu
@@ -14994,7 +14897,6 @@ Q63368196,Daniel Vivian,daniel vivian,Espagne,Espagne,défenseur central,9,190,3
 Q63384759,Martín Zubimendi,martin zubimendi,Espagne,Espagne,milieu de terrain axial,5,196,47,LIGA / PL,2006,2025,16,70,difficile
 Q63791594,Luke Dreher,luke dreher,Royaume-Uni,Royaume-Uni,milieu de terrain,1,1,5,PL,2016,,0,5,exclu
 Q63928290,Sergio Camello,sergio camello,Espagne,Espagne,attaquant,4,72,27,LIGA,2018,2023,3,35,legende
-Q63953182,Léa Khelifi,lea khelifi,France,France,milieu de terrain,3,36,6,L1,2019,2022,20,14,legende
 Q64005114,João Pedro Junqueira de Jesus,joao pedro junqueira de jesus,Brésil,Brésil,attaquant,4,109,40,PL,2019,2025,16,54,difficile
 Q64006653,Gaizka Larrazabal,gaizka larrazabal,Espagne,Espagne,ailier / arrière latéral,8,11,10,LIGA,2015,2026,0,11,legende
 Q64006699,Jesus Areso,jesus areso,Espagne,Espagne,arrière latéral,4,121,14,LIGA,2014,2025,0,26,legende
@@ -15020,7 +14922,6 @@ Q64748320,Jhon Durán,jhon duran,Colombie,Colombie,attaquant,7,55,29,PL,2019,202
 Q64896366,Lorenzo Colombo,lorenzo colombo,Italie,Italie,attaquant,2,43,20,SA,2020,2026,5,25,legende
 Q65029258,Theo Bair,theo bair,Canada,Canada,attaquant,7,31,15,L1,2017,2026,0,18,legende
 Q65029821,Wesley Fofana,wesley fofana,France,France,défenseur central,3,57,39,L1 / PL,2018,2022,0,45,difficile
-Q65114196,Lineth Cedeño,lineth cedeno,Panama,Panama,attaquant,8,13,8,SA,2019,2025,0,9,legende
 Q65154083,Bruno Amione,bruno amione,Argentine,Argentine,défenseur,5,37,15,SA,2019,2024,0,19,legende
 Q65159598,Marcin Bulka,marcin bulka,Pologne,Pologne,gardien de but,6,73,27,L1,2017,2025,2,35,legende
 Q65205090,Ilaix Moriba,ilaix moriba,Espagne / Guinée,Espagne / Guinée,milieu de terrain,2,14,33,LIGA,2021,2022,14,37,legende
@@ -15070,7 +14971,6 @@ Q67070943,Tanguy Kouassi,tanguy kouassi,France,France,défenseur central,4,74,37
 Q67076381,Lee O'Connor,lee oconnor,Irlande,Irlande,défenseur / milieu de terrain,2,0,9,PL,2016,2019,0,9,exclu
 Q67165839,Ethan Galbraith,ethan galbraith,Irlande du Nord,Royaume-Uni,milieu de terrain,2,1,17,PL,2017,,1,17,exclu
 Q67198835,Jeremie Frimpong,jeremie frimpong,Pays-Bas,Royaume des Pays-Bas,arrière latéral,3,144,43,BUN / PL,2019,2025,144,86,moyen
-Q67215745,Imke Kessels,imke kessels,Royaume des Pays-Bas,Royaume des Pays-Bas,attaquant,1,18,1,BUN,2023,,0,3,legende
 Q67222776,Samuel Lino,samuel lino,Brésil,Brésil,milieu de terrain,5,103,28,LIGA,2017,2025,103,59,difficile
 Q67243168,Troy Parrott,troy parrott,République d'Irlande,Irlande,attaquant,8,2,28,LIGA / PL,2019,2026,2,29,exclu
 Q67498669,Zion Suzuki,zion suzuki,Japon,Ghana / Japon / États-Unis,gardien de but,4,57,35,SA,2021,2026,0,41,legende
@@ -15108,12 +15008,9 @@ Q80314837,Maximilian Beier,maximilian beier,Allemagne,Allemagne,attaquant,3,67,3
 Q80661874,Ali Al-Hamadi,ali alhamadi,Irak,Irak / Royaume-Uni,attaquant,5,8,21,PL,2021,2024,0,22,exclu
 Q81003636,Ricardo Mangas,ricardo mangas,Portugal,Portugal,défenseur,7,29,11,L1,2017,2025,29,20,legende
 Q83433961,Gorka Zabarte,gorka zabarte,Espagne,Espagne,arrière latéral / défenseur central,5,1,2,LIGA,2016,2022,0,2,exclu
-Q83632876,Melchie Dumonay,melchie dumonay,Haïti,Haïti,milieu de terrain,2,17,15,L1,2019,2021,0,17,legende
 Q83632882,Kiernan Dewsbury-Hall,kiernan dewsburyhall,Royaume-Uni,Royaume-Uni,milieu de terrain,5,101,28,PL,2017,2025,13,41,legende
 Q83639138,Iguinho,iguinho,Brésil,Brésil,attaquant,4,38,37,PL,2020,2024,0,41,legende
 Q83750159,Ignacio Fernández,ignacio fernandez,Argentine,Argentine,milieu de terrain,4,8,21,BUN,2021,2025,8,23,exclu
-Q83880803,Roseline Éloissaint,roseline eloissaint,Haïti,Haïti,milieu excentré,2,14,6,L1,2019,2019,0,7,legende
-Q83887546,Kethna Louis,kethna louis,Haïti,Haïti,défenseur central,3,9,6,L1,2018,2021,0,7,exclu
 Q84158344,Nick Woltemade,nick woltemade,Allemagne,Allemagne,attaquant / milieu offensif,5,82,37,BUN / PL,2020,2025,0,45,difficile
 Q84247209,Daniel Maldini,daniel maldini,Italie,Italie,meneur de jeu,1,1,33,SA,2020,,1,33,exclu
 Q84314202,Marcelo Pitaluga,marcelo pitaluga,Brésil,Brésil,gardien de but,2,0,9,PL,2019,2020,0,9,exclu
@@ -15149,7 +15046,6 @@ Q97365426,Matteo Ruggeri,matteo ruggeri,Italie,Italie,défenseur,4,125,24,LIGA /
 Q97570439,Rafael Obrador,rafael obrador,Espagne,Espagne,défenseur,5,0,11,LIGA,2008,2024,0,11,exclu
 Q97711680,Krisztofer Horváth,krisztofer horvath,Hongrie,Hongrie,milieu offensif,6,3,17,SA,2018,2023,0,17,exclu
 Q97724521,Arthur Theate,arthur theate,Belgique,Belgique,défenseur,4,130,35,BUN / L1 / SA,2020,2025,0,48,difficile
-Q97736015,Julia Glaser,julia glaser,Suisse,Suisse,attaquant,10,31,2,BUN,2006,2024,0,5,legende
 Q97999586,Riccardo Calafiori,riccardo calafiori,Italie,Italie,défenseur,5,72,45,PL / SA,2020,2024,40,60,difficile
 Q98091477,Cenk Özkacar,cenk ozkacar,Turquie,Turquie,défenseur,9,72,13,BUN / L1 / LIGA,2018,2026,40,28,legende
 Q98102459,Lucas Chevalier,lucas chevalier,France,France,gardien de but,4,116,28,L1,2018,2025,116,63,difficile
@@ -15163,7 +15059,6 @@ Q98637678,Mihai Popa,mihai popa,Roumanie,Roumanie,gardien de but,7,0,15,SA,2018,
 Q98777530,Mohamed-Ali Cho,mohamedali cho,Côte d'Ivoire / France / Maroc / Royaume-Uni,Côte d'Ivoire / France / Maroc / Royaume-Uni,attaquant,4,165,22,L1 / LIGA,2020,2026,0,38,legende
 Q98815258,Cody Drameh,cody drameh,Royaume-Uni,Royaume-Uni,arrière latéral,6,11,12,PL,2021,2026,0,13,legende
 Q98815671,Pierre Kalulu,pierre kalulu,France / République démocratique du Congo,France / République démocratique du Congo,défenseur,3,101,37,SA,2018,2025,101,67,difficile
-Q98834629,Sara Ismael,sara ismael,Espagne / Égypte,Espagne / Égypte,attaquant / milieu de terrain,4,8,4,LIGA,2014,2022,0,5,exclu
 Q98872225,Fran García,fran garcia,Espagne,Espagne,arrière latéral,4,141,33,LIGA,2018,2026,69,61,difficile
 Q98929942,Jon Morcillo,jon morcillo,Espagne,Espagne,attaquant,8,58,14,LIGA,2013,2025,0,20,legende
 Q98959994,Asier Córdoba,asier cordoba,Espagne,Espagne,ailier,11,1,4,LIGA,2010,2025,0,4,exclu
@@ -15230,7 +15125,6 @@ Q105956269,Iliman Ndiaye,iliman ndiaye,Sénégal,France / Sénégal,ailier droit
 Q106091717,Dário Essugo,dario essugo,Portugal,Portugal,milieu de terrain,6,28,21,L1 / LIGA / PL,2021,2025,2,24,legende
 Q106095219,Mandela Keita,mandela keita,Belgique,Belgique,milieu défensif,3,0,15,SA,2021,2024,0,15,exclu
 Q106200290,Vítor Oliveira,vitor oliveira,Portugal,Portugal,attaquant,4,81,14,L1 / SA,2020,2024,32,28,legende
-Q106341269,Nerea Onaindia,nerea onaindia,Espagne,Espagne,milieu de terrain,4,38,2,LIGA,1986,2005,0,6,legende
 Q106366721,Lesley Ugochukwu,lesley ugochukwu,France,France,milieu de terrain,2,47,28,L1,2021,2023,0,33,legende
 Q106625792,Nico González,nico gonzalez,Espagne,Espagne,milieu de terrain,7,89,39,LIGA / PL,2008,2026,89,66,difficile
 Q106637226,Julen Agirrezabala,julen agirrezabala,Espagne,Espagne,gardien de but,7,55,18,LIGA,2011,2026,19,27,legende
@@ -15294,7 +15188,6 @@ Q108762713,Charlie Patiño,charlie patino,Royaume-Uni,Royaume-Uni,milieu de terr
 Q108776426,Filip Jörgensen,filip jorgensen,Royaume de Danemark / Suède,Royaume de Danemark / Suède,gardien de but,3,38,29,LIGA,2020,2024,0,33,legende
 Q108861032,Unai Marrero,unai marrero,Espagne,Espagne,gardien de but,3,20,8,LIGA,2016,2023,0,10,legende
 Q108910786,Maghnes Akliouche,maghnes akliouche,France,Algérie / France,ailier droit / milieu offensif,2,109,34,L1,2021,2026,109,67,difficile
-Q108982715,Aisha Masaka,aisha masaka,Tanzanie,Tanzanie,attaquant,3,1,7,PL,2020,2024,0,7,exclu
 Q109184766,Giorgio Scalvini,giorgio scalvini,Italie,Italie,défenseur,1,87,22,SA,2021,,0,31,legende
 Q109255453,Mario Gila,mario gila,Espagne,Espagne,défenseur central,4,90,23,LIGA / SA,2019,2026,90,50,difficile
 Q109327842,Abdessamad Ezzalzouli,abdessamad ezzalzouli,Maroc,Espagne / Maroc,milieu excentré,6,52,36,LIGA,2019,2023,14,44,difficile
@@ -15346,7 +15239,6 @@ Q112349548,Răzvan Sava,razvan sava,Roumanie,Roumanie,gardien de but,4,19,11,SA,
 Q112604843,Lucas Beraldo,lucas beraldo,Brésil,Brésil,défenseur central,2,13,31,L1,2022,2023,13,35,legende
 Q112620020,Wesley Gassova,wesley gassova,Brésil,Brésil,milieu offensif gauche,4,5,17,LIGA,2022,2026,0,18,exclu
 Q112624634,Rareș Burnete,rares burnete,Roumanie,Roumanie,attaquant,3,4,3,SA,2023,2026,0,3,exclu
-Q112791100,Nesryne El Chad,nesryne el chad,France / Maroc,France / Maroc,défenseur central,2,8,7,L1,2021,2022,0,8,exclu
 Q112805598,Abde Rebbach,abde rebbach,Algérie,Algérie,attaquant,7,75,13,LIGA,2010,2025,0,20,legende
 Q112813857,Jarell Quansah,jarell quansah,Royaume-Uni,Royaume-Uni,défenseur central,3,58,37,PL,2021,2025,58,54,difficile
 Q112877211,Alejo Véliz,alejo veliz,Argentine,Argentine,attaquant,5,41,22,LIGA / PL,2021,2026,14,29,legende
@@ -15385,7 +15277,6 @@ Q115162374,Luka Vušković,luka vuskovic,Croatie,Croatie,défenseur,6,28,35,BUN 
 Q115186979,Unai Gómez,unai gomez,Espagne,Espagne,ailier / attaquant intérieur,5,117,16,LIGA,2014,2026,0,28,legende
 Q115399505,Yankuba Minteh,yankuba minteh,Gambie,Gambie,attaquant,4,44,26,PL,2022,2024,0,30,legende
 Q115481197,Niklas Niehoff,niklas niehoff,Allemagne,Allemagne,attaquant,1,1,5,BUN,2024,,0,5,exclu
-Q115492033,Clarissa Larisey,clarissa larisey,Canada,Canada,attaquant,7,9,8,PL,2014,2025,0,9,exclu
 Q115618762,Adrian Mazilu,adrian mazilu,Roumanie,Roumanie,ailier,4,0,11,PL,2022,2025,0,11,exclu
 Q115923122,Félix Garreta,felix garreta,Espagne,Espagne,arrière latéral / défenseur central,8,2,7,LIGA,2008,2026,0,7,exclu
 Q115978703,Diego Gómez,diego gomez,Paraguay,Paraguay,milieu de terrain,3,10,33,PL,2022,2024,0,34,legende
@@ -15410,7 +15301,6 @@ Q117661592,César Palacios,cesar palacios,Espagne,Espagne,attaquant intérieur,4
 Q118382966,Luis Rodríguez Chacón,luis rodriguez chacon,Espagne,Espagne,attaquant,4,0,4,LIGA,2016,2024,0,4,exclu
 Q118472572,Marc Guiu,marc guiu,Espagne,Espagne,avant-centre,5,15,35,LIGA / PL,2023,2026,14,39,legende
 Q118473161,Pau Cubarsí,pau cubarsi,Espagne,Espagne,défenseur central,2,68,53,LIGA,2023,2024,68,73,difficile
-Q118519235,Michelle Agyemang,michelle agyemang,Royaume-Uni,Royaume-Uni,attaquant,3,17,19,PL,2022,2025,0,21,legende
 Q118780753,Lewis Miley,lewis miley,Royaume-Uni,Royaume-Uni,milieu de terrain,1,44,19,PL,2023,,0,23,legende
 Q118799181,Can Uzun,can uzun,Turquie,Allemagne / Turquie,milieu offensif,3,18,24,BUN,2023,2024,0,26,legende
 Q118876123,Jon Martín,jon martin,Espagne,Espagne,défenseur central,4,50,13,LIGA,2018,2025,0,18,legende
