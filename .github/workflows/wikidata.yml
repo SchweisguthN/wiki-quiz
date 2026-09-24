@@ -1,7 +1,7 @@
 name: Collecte Wikidata
 on:
   push:
-    paths: ["queries/**", "wiki/**", "scripts/fetch.py", "scripts/wiki.py", "scripts/infobox.py"]
+    paths: [".github/workflows/wikidata.yml", "queries/**", "wiki/**", "scripts/fetch.py", "scripts/wiki.py", "scripts/infobox.py"]
   workflow_dispatch:
 permissions:
   contents: write
