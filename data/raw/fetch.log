@@ -1,8 +1,1 @@
-joueuses lot 1/8 : 9 lignes en 54s
-joueuses lot 2/8 : 12 lignes en 28s
-joueuses lot 3/8 : 8 lignes en 36s
-joueuses lot 4/8 : 9 lignes en 18s
-joueuses lot 5/8 : 7 lignes en 45s
-joueuses lot 6/8 : 11 lignes en 32s
-joueuses lot 7/8 : 17 lignes en 57s
-joueuses lot 8/8 : 37 lignes en 2s
+abandon : https://www.wikidata.org/w/api.php {'action': 'wbgetentities', 'ids': 'Q20110|Q43913|Q357984|Q42731|Q1255625|Q193706|Q11557367|Q150268|Q31981|Q44977|Q165014|Q2011456|Q15401668|Q4254043|Q659634|Q147589|Q482947|Q49704|Q1935|Q173139|Q3195361|Q183967|Q188241|Q57148|Q294951|Q19560313|Q558887|Q187891|Q160472|Q367474|Q248141|Q310607|Q186330|Q294806|Q5981954|Q558820|Q1756086|Q185572|Q483577|Q210453|Q313137|Q204848|Q26965570|Q431455|Q299367|Q456617|Q314259|Q522068|Q705601|Q970864', 'props': 'sitelinks', 'sitefilter': 'enwiki', 'format': 'json', 'formatversion': 2, 'maxlag': 5}
