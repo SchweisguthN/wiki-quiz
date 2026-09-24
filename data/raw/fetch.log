@@ -1,18 +1,7 @@
-data/raw/wiki_complet/titres.json : 15223 entrées
-data/raw/wiki_complet/infobox_00.json : 1000 entrées
-data/raw/wiki_complet/infobox_01.json : 1000 entrées
-data/raw/wiki_complet/infobox_02.json : 1000 entrées
-data/raw/wiki_complet/infobox_03.json : 1000 entrées
-data/raw/wiki_complet/infobox_04.json : 1000 entrées
-data/raw/wiki_complet/infobox_05.json : 1000 entrées
-data/raw/wiki_complet/infobox_06.json : 1000 entrées
-data/raw/wiki_complet/infobox_07.json : 1000 entrées
-data/raw/wiki_complet/infobox_08.json : 1000 entrées
-data/raw/wiki_complet/infobox_09.json : 1000 entrées
-data/raw/wiki_complet/infobox_10.json : 1000 entrées
-data/raw/wiki_complet/infobox_11.json : 1000 entrées
-data/raw/wiki_complet/infobox_12.json : 1000 entrées
-data/raw/wiki_complet/infobox_13.json : 1000 entrées
-data/raw/wiki_complet/infobox_14.json : 1000 entrées
-data/raw/wiki_complet/infobox_15.json : 223 entrées
-data/raw/wiki_complet/clubs.json : 12144 entrées
+libelles_clubs lot 1/5 : 210 lignes en 36s
+  503, pause 30s
+libelles_clubs lot 2/5 : 283 lignes en 49s
+  503, pause 30s
+libelles_clubs lot 3/5 : 362 lignes en 51s
+libelles_clubs lot 4/5 : 312 lignes en 1s
+libelles_clubs lot 5/5 : 79 lignes en 7s
