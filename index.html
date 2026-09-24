@@ -173,7 +173,7 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
 .score{font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-mut)}
 .score b{color:var(--green-deep);font-family:'Saira Stencil One',sans-serif;font-size:22px;margin-left:7px;vertical-align:-2px}
 
-.stage{display:grid;grid-template-columns:1.08fr .92fr;gap:26px;align-items:start}
+.stage{display:grid;grid-template-columns:.92fr 1.08fr;gap:26px;align-items:start}
 @media(max-width:820px){.stage{grid-template-columns:1fr;gap:20px}}
 
 /* ============ LA FICHE (feuille dans la chemise) ============ */
@@ -234,12 +234,6 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
   font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mut)}
 
 /* annotations (indices) collées sur la marge */
-.hints{padding:12px 16px 16px 44px;display:flex;gap:10px;flex-wrap:wrap}
-.hint-chip{font-size:12.5px;background:#fffcf0;border:1px solid var(--paper-edge);border-left:3px solid var(--blue);
-  padding:6px 11px;font-family:'Courier Prime',monospace;box-shadow:1px 1px 0 rgba(0,0,0,.08);transform:rotate(-.6deg)}
-.hint-chip:nth-child(2){transform:rotate(.7deg)}
-.hint-chip .k{color:var(--ink-mut);text-transform:uppercase;font-size:9px;letter-spacing:.1em;display:block;margin-bottom:1px}
-.hint-chip .v{font-weight:700;color:var(--blue)}
 
 /* footer fiche : cote de difficulté tamponnée */
 .sh-f{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px 14px 44px;border-top:2px solid var(--ink)}
@@ -410,8 +404,8 @@ function pickPool(leagues,yr,diff){
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 
 function Setup({onStart}){
-  const [leagues,setLeagues]=useState(LEAGUES.map(l=>l.id));
-  const [yr,setYr]=useState([2000,2026]);
+  const [leagues,setLeagues]=useState(['L1']);
+  const [yr,setYr]=useState([2020,2026]);
   const [diff,setDiff]=useState('facile');
   const pool=useMemo(()=>pickPool(leagues,yr,diff),[leagues,yr,diff]);
   const toggle=id=>setLeagues(v=>v.includes(id)?v.filter(x=>x!==id):[...v,id]);
@@ -509,7 +503,7 @@ function Career({p,shown,revealed,outcome}){
      <div className="ident-wrap">
       <div className="ident">
         <div className="lines">
-          <div className="fl"><span className="k">Nom</span>{revealed?<span className="reveal-name">{p.name}</span>:<span className="redact"></span>}</div>
+          <div className="fl"><span className="k">Nom</span>{revealed?<span className="reveal-name">{p.name}</span>:shown.ini?<span className="v">{p.name.split(' ').map(w=>w[0]).join('.')+'.'}</span>:<span className="redact"></span>}</div>
           <div className="fl"><span className="k">Nationalité</span>{(revealed||shown.nat)?<span className="v">{p.nat}</span>:<span className="redact short"></span>}</div>
           <div className="fl"><span className="k">Poste</span>{(revealed||shown.pos)?<span className="v">{p.pos}</span>:<span className="redact short"></span>}</div>
         </div>
@@ -536,11 +530,6 @@ function Career({p,shown,revealed,outcome}){
       );})}
       <div className="tot"><span>Total consigné</span><span>{nClubs} club{nClubs>1?'s':''} · {totApps} matchs</span></div>
      </div>
-
-     {(shown.ini) &&
-       <div className="hints">
-         <span className="hint-chip"><span className="k">Annotation — initiales</span><span className="v">{p.name.split(' ').map(w=>w[0]).join('.')+'.'}</span></span>
-       </div>}
 
      <div className="sh-f">
        <span className="meta">Cote de recrutement</span>
@@ -594,8 +583,9 @@ function GuessHost({p,onResolve}){
   function resolve(good){setLocked(true);setOutcome(good?'good':'bad');
     setFb(good?{type:'good',msg:'Identité confirmée.',sub:p.name}:{type:'reveal',msg:'Dossier déclassé. C’était :',sub:p.name});
     setTimeout(()=>onResolve(good),2300);}
-  function submitName(name){if(locked)return;const t=tries+1;setTries(t);
+  function submitName(name){if(locked)return;
     if(norm(name)===p.key){resolve(true);return;}
+    const t=tries+1;setTries(t);
     if(t>=3)resolve(false);
     else{setFb({type:'err',msg:'Nom non concordant.',sub:(3-t)+' essai'+(3-t>1?'s':'')+' restant'+(3-t>1?'s':'')});setQ('');setSel(0);setTimeout(()=>inputRef.current&&inputRef.current.focus(),30);}}
   function onKey(e){if(locked)return;
@@ -607,7 +597,6 @@ function GuessHost({p,onResolve}){
   const hint=k=>setShown(s=>({...s,[k]:true}));
   return (
    <React.Fragment>
-     <Career p={p} shown={shown} revealed={locked} outcome={outcome}/>
      <div className="guess">
        <div className="guess-h"><span className="qm">?</span>Identification</div>
        <div className="guess-body">
@@ -635,6 +624,7 @@ function GuessHost({p,onResolve}){
          <button className="skip" onClick={()=>resolve(false)}>Abandonner et déclasser</button>}
        </div>
      </div>
+     <Career p={p} shown={shown} revealed={locked} outcome={outcome}/>
    </React.Fragment>
   );
 }
