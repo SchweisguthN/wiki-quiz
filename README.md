@@ -73,6 +73,13 @@ Une ligne par passage en club pro. Colonnes : `player`, `name`, `club` (Q-ID),
 de formation exclus ; pour les rares joueurs sans infobox, à partir de
 `carrieres_wikidata.csv`, avec des prêts déduits des dates.
 
+## Reconstruire les données
+
+Dans l'ordre : `scripts/carrieres.py` (carrières), `scripts/difficulte.py`
+(matchs top 5, score, niveaux), `scripts/noms.py` (noms d'usage d'après le titre
+Wikipédia, sans les prénoms en trop), puis `scripts/prototype_data.py`
+(échantillon injecté dans `index.html`).
+
 ## Collecte automatisée
 
 `scripts/fetch.py` exécute les requêtes de `queries/<job>/` (une requête
