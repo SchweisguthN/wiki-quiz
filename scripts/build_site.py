@@ -32,10 +32,10 @@ for t, d in tranches.items():
     (out / f'{t}.json').write_text(json.dumps(d, ensure_ascii=False, separators=(',', ':')))
 
 data = {
-    'players': [[r['player'], r['name'], r['search_key'], r.get('search_alias', ''), r['difficulte'],
+    'players': [[r['player'], r['name'], r['search_key'], r['search_alias'], r['difficulte'],
                  r['championnats'].split(' / ') if r['championnats'] else [], num(r['first_year']), num(r['last_year'])]
                 for r in jouables],
-    'others': [[r['name'], r['search_key'], r.get('search_alias', '')] for r in agg if r['player'] not in ids],
+    'others': [[r['name'], r['search_key'], r['search_alias']] for r in agg if r['player'] not in ids],
     'shards': TRANCHES,
 }
 html = open('index.html', encoding='utf-8').read()

@@ -1,7 +1,0 @@
-SELECT ?player ?playerLabel ?natLabel ?posLabel ?sitelinks WHERE {
-  VALUES ?player { {{VALUES}} }
-  ?player wikibase:sitelinks ?sitelinks .
-  OPTIONAL { ?player wdt:P27 ?nat . }
-  OPTIONAL { ?player wdt:P413 ?pos . }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en,es,it,de,pt,nl". }
-}

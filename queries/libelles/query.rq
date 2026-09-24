@@ -1,5 +1,0 @@
-SELECT ?player (SAMPLE(?l) AS ?label) WHERE {
-  VALUES ?player { {{VALUES}} }
-  ?player rdfs:label ?l .
-}
-GROUP BY ?player

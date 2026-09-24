@@ -6,7 +6,7 @@ Facile : 60 pages ou plus. Sinon (10 matchs top 5 minimum) :
 Moyen si score >= 75, Difficile si score >= 42, Légende en dessous.
 """
 import csv, sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 sys.path.insert(0, 'scripts')
 from top5 import load_ref, top5_share
 
@@ -41,8 +41,6 @@ for r in rows:
     r['matchs_grands_clubs'], r['score'] = g, round(score)
     r['difficulte'] = ('facile' if pages >= SEUIL_FACILE else 'exclu' if t5 < 10 else
                        'moyen' if score >= SEUIL_MOYEN else 'difficile' if score >= SEUIL_DIFFICILE else 'legende')
-fields = [k for k in rows[0] if k not in ('matchs_grands_clubs', 'score', 'difficulte')] + ['matchs_grands_clubs', 'score', 'difficulte']
 with open(path, 'w', newline='', encoding='utf-8') as f:
-    w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(rows)
-from collections import Counter
+    w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 print(Counter(r['difficulte'] for r in rows))

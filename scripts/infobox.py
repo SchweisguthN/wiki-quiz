@@ -14,9 +14,8 @@ def raw(text):
             return text[i + 2:j]
     return text[i + 2:]
 
-def fields(text):
-    """Champs de l'infobox : {nom: valeur brute}. Accepte une page entière ou le texte de raw()."""
-    body = raw(text) or (text if text.lstrip().lower().startswith("infobox football biography") else "")
+def fields(body):
+    """Champs de l'infobox (texte renvoyé par raw()) : {nom: valeur brute}."""
     if not body:
         return {}
     body = re.sub(r"<!--.*?-->", "", body, flags=re.S)

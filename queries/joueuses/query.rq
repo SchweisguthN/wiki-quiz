@@ -1,4 +1,0 @@
-SELECT ?player WHERE {
-  VALUES ?player { {{VALUES}} }
-  ?player wdt:P21 wd:Q6581072 .
-}

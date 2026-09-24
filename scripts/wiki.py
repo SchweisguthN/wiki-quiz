@@ -41,6 +41,11 @@ def step(path, build):
     print(f"{path} : {len(data)} entrées", flush=True)
     return data
 
+def resolve(d, t):
+    """Titre final d'une page après normalisation et redirection."""
+    alias = {r["from"]: r["to"] for r in d.get("redirects", []) + d.get("normalized", [])}
+    return alias.get(alias.get(t, t), alias.get(t, t))
+
 def titles(ids):
     out = {}
     for b in batches(ids):
@@ -54,12 +59,10 @@ def wikitexts(pages):
     out = {}
     for b in batches(pages):
         d = api(EN, action="query", prop="revisions", rvprop="content", rvslots="main", redirects=1, titles="|".join(b))["query"]
-        alias = {r["from"]: r["to"] for r in d.get("redirects", []) + d.get("normalized", [])}
         text = {p["title"]: p["revisions"][0]["slots"]["main"]["content"] for p in d["pages"] if "revisions" in p}
         for t in b:
-            t2 = alias.get(t, t); t2 = alias.get(t2, t2)
-            if t2 in text:
-                out[t] = raw(text[t2])
+            if resolve(d, t) in text:
+                out[t] = raw(text[resolve(d, t)])
         time.sleep(1)
     return out
 
@@ -70,12 +73,10 @@ def club_qids(texts):
     out = {}
     for b in batches(sorted(links)):
         d = api(EN, action="query", prop="pageprops", ppprop="wikibase_item", redirects=1, titles="|".join(b))["query"]
-        alias = {r["from"]: r["to"] for r in d.get("redirects", []) + d.get("normalized", [])}
         qid = {p["title"]: p.get("pageprops", {}).get("wikibase_item") for p in d["pages"]}
         for t in b:
-            t2 = alias.get(t, t); t2 = alias.get(t2, t2)
-            if qid.get(t2):
-                out[t] = qid[t2]
+            if qid.get(resolve(d, t)):
+                out[t] = qid[resolve(d, t)]
         time.sleep(1)
     return out
 

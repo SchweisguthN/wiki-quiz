@@ -25,10 +25,9 @@ for r in rows:
     mots_t, mots_n = key(t).split(), key(r['name']).split()
     if t and len(mots_t) < len(mots_n) and set(mots_t) <= set(mots_n):
         changes.append((r['name'], t))
-        r['search_alias'] = r.get('search_alias') or key(r['name'])
+        r['search_alias'] = r['search_alias'] or key(r['name'])
         r['name'], r['search_key'] = t, key(t)
 with open(path, 'w', newline='', encoding='utf-8') as f:
-    fields = list(rows[0]) + ([] if 'search_alias' in rows[0] else ['search_alias'])
-    w = csv.DictWriter(f, fieldnames=fields, restval=''); w.writeheader(); w.writerows(rows)
+    w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 print(len(changes), 'noms raccourcis')
 for a, b in changes[:40]: print(f'  {a}  ->  {b}')

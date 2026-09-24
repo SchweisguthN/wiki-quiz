@@ -6,8 +6,6 @@ data/clubs_saisons_top5.csv ; ses matchs sont proratisés selon la part de ces s
 import csv
 from collections import defaultdict
 
-q = lambda u: u.rsplit('/', 1)[-1]
-
 def load_ref(path='data/clubs_saisons_top5.csv'):
     ref = defaultdict(dict)  # club -> {année de début de saison: ligue}
     for r in csv.DictReader(open(path, encoding='utf-8')):
