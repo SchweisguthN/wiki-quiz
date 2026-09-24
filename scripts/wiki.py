@@ -15,14 +15,14 @@ WD = "https://www.wikidata.org/w/api.php"
 EN = "https://en.wikipedia.org/w/api.php"
 
 def api(url, **params):
-    params.update(format="json", formatversion=2, maxlag=5)
+    params.update(format="json", formatversion=2)
     req = urllib.request.Request(url + "?" + urllib.parse.urlencode(params), headers={"User-Agent": UA})
     for attempt in range(5):
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
                 data = json.load(r)
-            if data.get("error", {}).get("code") == "maxlag":
-                time.sleep(5 * (attempt + 1)); continue
+            if "error" in data:
+                print(f"  erreur API : {data['error']}", flush=True); time.sleep(10 * (attempt + 1)); continue
             return data
         except OSError as e:
             print(f"  erreur réseau ({e}), nouvel essai", flush=True); time.sleep(10 * (attempt + 1))
