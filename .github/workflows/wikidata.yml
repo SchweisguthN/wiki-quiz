@@ -19,9 +19,10 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           set +e
+          export PYTHONDONTWRITEBYTECODE=1
           mkdir -p data/raw
           (python3 -u scripts/fetch.py && python3 -u scripts/wiki.py) 2>&1 | tee /tmp/fetch.log
           code=${PIPESTATUS[0]}
           cp /tmp/fetch.log data/raw/fetch.log
-          git add data/raw && git commit -qm "Collecte : log et résultats" && git pull -q --rebase origin main && git push -q origin HEAD:main
+          git add data/raw && git commit -qm "Collecte : log et résultats" && git pull -q --rebase --autostash origin main && git push -q origin HEAD:main || { echo "ÉCHEC du push des résultats"; exit 1; }
           exit $code
