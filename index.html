@@ -274,7 +274,9 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
 .hintrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
 .link{background:#fffdf6;border:1.5px solid var(--paper-edge);border-left:3px solid var(--blue);color:var(--blue);font-weight:600;padding:8px 12px;
   font-size:12px;border-radius:4px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;transition:all .14s var(--ease)}
-.link:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.link:hover:not(:disabled){background:var(--blue);color:#fff;border-color:var(--blue)}
+.link .left{font-weight:400;opacity:.75;margin-left:4px;font-size:.92em}
+.link:disabled{border-left-color:var(--paper-edge);color:var(--ink-mut);opacity:.55;cursor:not-allowed;text-decoration:line-through}
 .skip{margin-top:18px;background:none;border:1.5px solid var(--paper-edge);color:var(--ink-mut);border-radius:5px;
   padding:12px 16px;font-weight:600;font-size:12px;width:100%;transition:all .14s var(--ease);font-family:'Oswald',sans-serif;
   text-transform:uppercase;letter-spacing:.05em}
@@ -540,8 +542,10 @@ function Career({p,shown,revealed,outcome}){
   );
 }
 
+const STOCK_INDICES=2;
 function Game({series,onEnd}){
   const [i,setI]=useState(0);
+  const [stock,setStock]=useState({nat:STOCK_INDICES,pos:STOCK_INDICES,ini:STOCK_INDICES});
   const [results,setResults]=useState([]);
   const p=series[i];
   function resolve(good){
@@ -565,12 +569,12 @@ function Game({series,onEnd}){
        <div className="score">Score<b>{score}</b></div>
      </div>
      <div className="stage">
-       <GuessHost key={p.id} p={p} onResolve={resolve}/>
+       <GuessHost key={p.id} p={p} onResolve={resolve} stock={stock} onHint={k=>setStock(s=>({...s,[k]:s[k]-1}))}/>
      </div>
    </div>
   );
 }
-function GuessHost({p,onResolve}){
+function GuessHost({p,onResolve,stock,onHint}){
   const [shown,setShown]=useState({nat:false,pos:false,ini:false});
   const [q,setQ]=useState('');const [tries,setTries]=useState(0);
   const [fb,setFb]=useState(null);const [locked,setLocked]=useState(false);const [sel,setSel]=useState(0);
@@ -594,7 +598,7 @@ function GuessHost({p,onResolve}){
     else if(e.key==='Enter'){e.preventDefault();
       if(matches.length)submitName(matches[sel].n);
       else{const ex=ALLKEYS.find(x=>x.k===nq);if(ex)submitName(ex.n);}}}
-  const hint=k=>setShown(s=>({...s,[k]:true}));
+  const hint=k=>{if(stock[k]<1)return;setShown(s=>({...s,[k]:true}));onHint(k);};
   return (
    <React.Fragment>
      <div className="guess">
@@ -616,9 +620,9 @@ function GuessHost({p,onResolve}){
        {fb && <div className={"feedback "+fb.type}>{fb.msg}{fb.sub&&<div className="sub">{fb.sub}</div>}</div>}
        {!locked &&
          <div className="hintrow">
-           {!shown.nat && <button className="link" onClick={()=>hint('nat')}>+ Nationalité</button>}
-           {!shown.pos && <button className="link" onClick={()=>hint('pos')}>+ Poste</button>}
-           {!shown.ini && <button className="link" onClick={()=>hint('ini')}>+ Initiales</button>}
+           {!shown.nat && <button className="link" disabled={stock.nat<1} onClick={()=>hint('nat')}>+ Nationalité <span className="left">{stock.nat} restant{stock.nat>1?'s':''}</span></button>}
+           {!shown.pos && <button className="link" disabled={stock.pos<1} onClick={()=>hint('pos')}>+ Poste <span className="left">{stock.pos} restant{stock.pos>1?'s':''}</span></button>}
+           {!shown.ini && <button className="link" disabled={stock.ini<1} onClick={()=>hint('ini')}>+ Initiales <span className="left">{stock.ini} restant{stock.ini>1?'s':''}</span></button>}
          </div>}
        {!locked &&
          <button className="skip" onClick={()=>resolve(false)}>Abandonner et déclasser</button>}
