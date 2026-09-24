@@ -25,8 +25,8 @@ navigateur pour jouer.
 C'est un MVP fonctionnel : réglages de partie (championnats, période,
 difficulté), série de 10 joueurs, autocomplétion tolérante aux accents,
 3 essais par joueur, indices optionnels, récapitulatif final. Le design suit une
-direction « album de vignettes ». Il tourne sur l'échantillon de 320 joueurs de
-`mvp_data.json` (pas la base complète).
+direction « album de vignettes ». Il couvre toute la base jouable ; les carrières sont chargées à la demande
+(voir « Reconstruire les données »).
 
 ## Les données
 
