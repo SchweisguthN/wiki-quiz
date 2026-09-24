@@ -2,7 +2,8 @@
 une version courte : moins de mots, tous présents dans le nom (accents ignorés).
 Retire ainsi les prénoms en trop (« Jeremy Henoc Pied » -> « Jérémy Pied »)
 sans remplacer un nom français par sa transcription anglaise.
-Met à jour name et search_key dans data/joueurs_agrege.csv.
+Met à jour name et search_key dans data/joueurs_agrege.csv, et garde la clé de
+l'ancien nom complet dans search_alias pour que la recherche le trouve encore.
 """
 import csv, json, re, unicodedata
 
@@ -24,8 +25,10 @@ for r in rows:
     mots_t, mots_n = key(t).split(), key(r['name']).split()
     if t and len(mots_t) < len(mots_n) and set(mots_t) <= set(mots_n):
         changes.append((r['name'], t))
+        r['search_alias'] = r.get('search_alias') or key(r['name'])
         r['name'], r['search_key'] = t, key(t)
 with open(path, 'w', newline='', encoding='utf-8') as f:
-    w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+    fields = list(rows[0]) + ([] if 'search_alias' in rows[0] else ['search_alias'])
+    w = csv.DictWriter(f, fieldnames=fields, restval=''); w.writeheader(); w.writerows(rows)
 print(len(changes), 'noms raccourcis')
 for a, b in changes[:40]: print(f'  {a}  ->  {b}')

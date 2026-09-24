@@ -20,7 +20,7 @@ data = {
                  'first': num(r['first_year']), 'last': num(r['last_year']),
                  'leagues': r['championnats'].split(' / ') if r['championnats'] else [],
                  'career': car[r['player']]} for r in sample],
-    'names': [{'n': r['name'], 'k': r['search_key']} for r in agg],
+    'names': [{'n': r['name'], 'k': r['search_key'], **({'a': r['search_alias']} if r.get('search_alias') else {})} for r in agg],
 }
 json.dump(data, open('data/mvp_data.json', 'w', encoding='utf-8'), ensure_ascii=False)
 html = open('index.html', encoding='utf-8').read()
