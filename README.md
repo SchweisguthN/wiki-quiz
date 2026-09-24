@@ -64,12 +64,14 @@ dans le script. Un match dans un grand club pèse donc trois fois plus qu'ailleu
 
 Les colonnes `matchs_grands_clubs` et `score` permettent de réajuster les seuils.
 
-### `carrieres_nettoyees.csv` — les carrières (121 143 lignes)
+### `carrieres_nettoyees.csv` — les carrières (140 887 lignes)
 
-Une ligne par passage en club. Colonnes : `player`, `name`, `club`,
-`clubLabel`, `apps` (matchs), `start`, `end` (années). Sélections nationales
-retirées, dates aberrantes corrigées. C'est la source pour l'affichage des
-parcours.
+Une ligne par passage en club pro. Colonnes : `player`, `name`, `club` (Q-ID),
+`clubLabel`, `apps` (matchs de championnat), `start`, `end` (années), `pret`
+(1 si prêt) et `source` (`wikipedia` ou `wikidata`). Construit par
+`scripts/carrieres.py` à partir de l'infobox Wikipédia (anglais) du joueur, clubs
+de formation exclus ; pour les rares joueurs sans infobox, à partir de
+`carrieres_wikidata.csv`, avec des prêts déduits des dates.
 
 ## Collecte automatisée
 
@@ -91,8 +93,9 @@ Les données viennent de **Wikidata**, interrogé en SPARQL. Grandes étapes :
    championnat à l'époque du passage, pas aujourd'hui → 15 392 joueurs.
    Les matchs d'un passage à cheval sur plusieurs divisions sont proratisés
    selon la part des saisons jouées en top 5.
-2. **Carrières complètes** — pour chaque joueur retenu, récupération de tous ses
-   clubs (y compris hors top 5) pour l'affichage.
+2. **Carrières complètes** — l'infobox Wikipédia de chaque joueur (99 % en ont une),
+   récupérée par `scripts/wiki.py` : clubs pros, matchs de championnat, prêts. Les
+   clubs y sont des liens convertis en Q-ID Wikidata. Wikidata sert de secours.
 3. **Nettoyage** — exclusion des sélections nationales (via la classe Wikidata
    « équipe nationale de football », pas par le libellé), correction des dates
    aberrantes, assainissement des nombres de matchs (plafond ~45/saison,
@@ -110,6 +113,9 @@ la période récente). Les seuils de difficulté et la nationalité de secours
 peuvent être affinés.
 
 ## Licence des données
+
+Les carrières proviennent des infobox de Wikipédia (CC BY-SA), dont les contributeurs sont remerciés.
+
 
 Les données sont dérivées de Wikidata, sous licence
 [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
