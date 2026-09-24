@@ -2,13 +2,13 @@
 
 Sorties dans data/raw/wiki_<job>/ :
   titres.json    Q-ID joueur -> titre de la page en.wikipedia (via Wikidata)
-  wikitext.json  titre -> wikitexte de la page (redirections suivies)
+  infobox_NN.json titre -> texte de l'infobox, par tranches de 1000 pages
   clubs.json     titre de page de club -> Q-ID Wikidata (liens trouvés dans les infobox)
 Un fichier déjà présent n'est pas recollecté.
 """
 import json, pathlib, re, sys, time, urllib.parse, urllib.request
 sys.path.insert(0, "scripts")
-from infobox import fields, links as infobox_links
+from infobox import fields, raw, links as infobox_links
 
 UA = "IconicCareersBot/1.0 (https://github.com/SchweisguthN/wiki-quiz; n.schweisguth+claude@gmail.com)"
 WD = "https://www.wikidata.org/w/api.php"
@@ -59,7 +59,7 @@ def wikitexts(pages):
         for t in b:
             t2 = alias.get(t, t); t2 = alias.get(t2, t2)
             if t2 in text:
-                out[t] = text[t2]
+                out[t] = raw(text[t2])
         time.sleep(1)
     return out
 
@@ -84,5 +84,8 @@ for job in sorted(pathlib.Path("wiki").iterdir()):
     out = pathlib.Path("data/raw") / f"wiki_{job.name}"
     out.mkdir(parents=True, exist_ok=True)
     t = step(out / "titres.json", lambda: titles(ids))
-    w = step(out / "wikitext.json", lambda: wikitexts(t.values()))
+    pages = sorted(set(t.values()))
+    w = {}
+    for n in range(0, len(pages), 1000):
+        w.update(step(out / f"infobox_{n // 1000:02d}.json", lambda: wikitexts(pages[n:n + 1000])))
     step(out / "clubs.json", lambda: club_qids(w))

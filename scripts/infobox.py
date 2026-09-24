@@ -1,19 +1,24 @@
 """Lecture de l'infobox « Infobox football biography » de Wikipédia (anglais)."""
 import re
 
-def fields(text):
-    """Champs de l'infobox : {nom: valeur brute}."""
+def raw(text):
+    """Texte de l'infobox (sans les accolades extérieures), ou chaîne vide."""
     m = re.search(r"\{\{\s*Infobox football biography", text, re.I)
     if not m:
-        return {}
+        return ""
     i, depth = m.start(), 0
     for j in range(i, len(text) - 1):          # fin de l'infobox : accolades équilibrées
         pair = text[j:j + 2]
         depth += (pair == "{{") - (pair == "}}")
         if depth == 0:
-            body = text[i + 2:j]; break
-    else:
-        body = text[i + 2:]
+            return text[i + 2:j]
+    return text[i + 2:]
+
+def fields(text):
+    """Champs de l'infobox : {nom: valeur brute}. Accepte une page entière ou le texte de raw()."""
+    body = raw(text) or (text if text.lstrip().lower().startswith("infobox football biography") else "")
+    if not body:
+        return {}
     body = re.sub(r"<!--.*?-->", "", body, flags=re.S)
     body = re.sub(r"<ref[^>/]*/>|<ref[^>]*>.*?</ref>", "", body, flags=re.S)
     body = re.sub(r"\[\[([^\]|]+)\|[^\]]*\]\]", r"[[\1]]", body)   # [[Page|texte]] -> [[Page]]
