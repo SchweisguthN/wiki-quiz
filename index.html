@@ -307,11 +307,44 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
 .ritem.bad .mk{background:var(--red);color:#fff}
 .ritem .nm{font-family:'Courier Prime',monospace;font-weight:700;font-size:14px}
 .ritem .meta{color:var(--ink-mut);font-size:11px;margin-left:auto;text-align:right;font-family:'Courier Prime',monospace;text-transform:uppercase;letter-spacing:.02em}
-.again{margin-top:26px;background:linear-gradient(180deg,var(--green-br),var(--green));color:#eafff2;border:none;border-radius:7px;padding:15px 34px;
-  font-family:'Oswald',sans-serif;font-weight:700;font-size:17px;text-transform:uppercase;letter-spacing:.06em;
-  box-shadow:0 4px 0 var(--green-d),0 14px 26px -12px rgba(30,122,73,.6);transition:transform .12s var(--ease),box-shadow .12s var(--ease)}
-.again:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--green-d),0 18px 30px -12px rgba(30,122,73,.7)}
-.again:active{transform:translateY(2px);box-shadow:0 2px 0 var(--green-d)}
+.again{margin-top:26px;background:transparent;color:var(--green-d);border:2px solid var(--green);border-radius:7px;min-height:48px;padding:0 28px;
+  font-family:'Oswald',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.06em;transition:background .12s var(--ease)}
+.again:hover{background:rgba(30,122,73,.08)}
+
+/* Bordereau de transmission : partager la série */
+.recap-top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch;margin:16px 0 24px}
+.recap-top .recap-head{margin:0}
+@media(max-width:900px){.recap-top{grid-template-columns:1fr}}
+.bordereau{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-radius:6px;padding:26px 24px 20px;
+  display:flex;flex-direction:column;gap:14px;color:var(--ink);box-shadow:0 26px 60px -28px rgba(0,0,0,.6)}
+.bordereau::before{content:"";position:absolute;left:0;right:0;top:0;height:9px;border-bottom:2px dashed var(--paper-edge)}
+.bd-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mut)}
+.bd-h .ref{font-family:'Courier Prime',monospace;letter-spacing:0;text-transform:none}
+.bordereau h2{margin:0;font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(24px,2.6vw,30px);line-height:1.05;text-transform:uppercase}
+.bordereau p{margin:0;font-family:'Courier Prime',monospace;font-size:14.5px;line-height:1.45;color:var(--ink-mut)}
+.releve{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:5px}
+.releve span{height:30px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.releve .g{background:var(--green);color:#eafff2}
+.releve .b{background:var(--red);color:#fff}
+.bd-act{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.share{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:none;border-radius:9px;
+  background:linear-gradient(180deg,var(--green-br),var(--green));color:#eafff2;font-family:'Oswald',sans-serif;font-weight:700;font-size:16px;
+  letter-spacing:.06em;text-transform:uppercase;box-shadow:0 4px 0 var(--green-d);transition:transform .12s var(--ease),box-shadow .12s var(--ease)}
+.share:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--green-d)}
+.share:active{transform:translateY(2px);box-shadow:0 2px 0 var(--green-d)}
+.bd-link{display:flex;flex-direction:column;gap:6px}
+.bd-link label{font-family:'Oswald',sans-serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mut)}
+.bd-link .row2{display:flex;gap:8px}
+.bd-link input{flex:1;min-width:0;min-height:44px;box-sizing:border-box;padding:0 12px;border:1.5px solid var(--paper-edge);border-radius:6px;
+  background:#fffdf6;font-family:'Courier Prime',monospace;font-size:13.5px;color:var(--ink)}
+.bd-link button{min-height:44px;padding:0 16px;border:1.5px solid var(--blue);border-radius:6px;background:#fffdf6;color:var(--blue);
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.copylink{display:none;align-self:center;min-height:44px;padding:0 12px;border:none;background:none;color:var(--blue);
+  font-family:'Courier Prime',monospace;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+@media(pointer:coarse){.bd-link{display:none}.copylink{display:block}.share{width:100%}}
+.vs{font-family:'Courier Prime',monospace;font-weight:700;font-size:14px;margin-top:10px;color:var(--ink)}
+.target{font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--red-d)}
+.target b{font-family:'Saira Stencil One',sans-serif;font-size:22px;margin-left:7px;vertical-align:-2px}
 
 /* ============ Modale ============ */
 .overlay{position:fixed;inset:0;background:rgba(4,10,6,.72);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:20px;z-index:100;animation:fade .16s ease-out}
@@ -394,6 +427,24 @@ function norm(s){
   s=s.replace(/[^a-z ]/g,' ').replace(/\s+/g,' ').trim();
   return s;
 }
+// Une série tient dans l'URL : ?d=<Q-ID en base 36, séparés par "-">&r=<championnats>.<début>.<fin>.<niveau>[&s=<score à battre>]
+const SERIE={
+  query(series,cfg){return 'd='+series.map(p=>parseInt(p.id.slice(1)).toString(36)).join('-')+'&r='+cfg.leagues.join('_')+'.'+cfg.yr[0]+'.'+cfg.yr[1]+'.'+cfg.diff;},
+  parse(search){
+    const u=new URLSearchParams(search), d=u.get('d');
+    if(!d) return null;
+    const ids=d.split('-').map(x=>parseInt(x,36)).filter(n=>n>0).slice(0,10).map(n=>'Q'+n);
+    const [lg,y0,y1,diff]=(u.get('r')||'').split('.');
+    const s=u.get('s');
+    return {ids,cfg:{leagues:lg?lg.split('_'):[],yr:[+y0||2000,+y1||2026],diff:diff||''},target:/^\d+$/.test(s||'')?+s:null};
+  },
+  ref(series){let h=0;for(const c of series.map(p=>p.id).join()) h=(h*31+c.charCodeAt(0))>>>0;return 'IC-'+h.toString(36).toUpperCase().slice(-6).padStart(6,'0');},
+  label(cfg){
+    const lg=cfg.leagues.map(id=>(LEAGUES.find(l=>l.id===id)||{}).name).filter(Boolean).join(', ');
+    const per=(PERIODS.find(x=>x.range[0]===cfg.yr[0]&&x.range[1]===cfg.yr[1])||{}).label||(cfg.yr[0]+'–'+cfg.yr[1]);
+    return [lg,per,(DIFFS.find(x=>x.id===cfg.diff)||{}).t].filter(Boolean).join(' · ');
+  }
+};
 const PLAYERS=DATA.players.map(([id,name,key,alias,diff,leagues,first,last])=>({id,name,key,alias,diff,leagues,first,last}));
 const ALLKEYS=[...PLAYERS.map(p=>({n:p.name,k:p.key,a:p.alias})),...DATA.others.map(([n,k,a])=>({n,k,a}))];
 // Les carrières sont chargées à la demande, par tranche (voir scripts/build_site.py)
@@ -434,7 +485,7 @@ function Setup({onStart}){
   const [err,setErr]=useState('');
   async function start(){
     setBusy(true); setErr('');
-    try{ onStart(await loadSeries(shuffle(pool).slice(0,n))); }
+    try{ onStart(await loadSeries(shuffle(pool).slice(0,n)),{leagues,yr,diff}); }
     catch(e){ setBusy(false); setErr('Impossible de charger les fiches. Vérifie ta connexion, puis réessaie.'); }
   }
   useEffect(()=>{document.body.classList.add('home');return()=>document.body.classList.remove('home');},[]);
@@ -567,7 +618,7 @@ function Career({p,shown,revealed,outcome}){
 }
 
 const STOCK_INDICES=2;
-function Game({series,onEnd}){
+function Game({series,onEnd,target}){
   const [i,setI]=useState(0);
   const [stock,setStock]=useState({nat:STOCK_INDICES,pos:STOCK_INDICES,ini:STOCK_INDICES});
   const [results,setResults]=useState([]);
@@ -590,6 +641,7 @@ function Game({series,onEnd}){
          })}
        </div>
        <div className="qn">Fiche {i+1} / {series.length}</div>
+       {target!=null && <div className="target">À battre<b>{target}</b></div>}
        <div className="score">Score<b>{score}</b></div>
      </div>
      <div className="stage">
@@ -657,20 +709,62 @@ function GuessHost({p,onResolve,stock,onHint}){
   );
 }
 
-function Recap({results,onAgain}){
+function Recap({results,onAgain,cfg,target}){
   const score=results.filter(r=>r.good).length;
   const total=results.length;
   const pct=total?score/total:0;
   const rank=pct>=.9?'Recruteur en chef':pct>=.7?'Titulaire':pct>=.4?'Recrue':pct>=.2?'Stagiaire':'Tribune';
   const msg=score>=8?'Chapeau, tu connais ton football.':score>=5?'Joli, mais quelques trous.':score>=2?'La mémoire flanche un peu.':'Rude série. On y retourne ?';
+  const [copied,setCopied]=useState(false);
+  const inputRef=useRef();
+  const series=results.map(r=>r.p);
+  const ref=SERIE.ref(series);
+  const url=location.origin+location.pathname+'?'+SERIE.query(series,cfg)+'&s='+score;
+  const label=SERIE.label(cfg);
+  const text='Iconic Careers · Dossier '+ref+'\nJ\u2019ai identifié '+score+' fiche'+(score>1?'s':'')+' sur '+total+(label?' ('+label+')':'')+'. À toi de faire mieux !\n'+results.map(r=>r.good?'\u{1F7E9}':'\u{1F7E5}').join('');
+  const vs=target==null?null:score>target?'Défi relevé : tu bats le score de '+target+'/'+total+'.':score===target?'Égalité : '+target+'/'+total+' de part et d\u2019autre.':'Défi perdu : le score à battre était '+target+'/'+total+'.';
+  function copy(str){
+    const done=()=>setCopied(true);
+    if(navigator.clipboard) navigator.clipboard.writeText(str).then(done,()=>{inputRef.current&&inputRef.current.select();});
+    else if(inputRef.current){inputRef.current.select();}
+  }
+  function share(){
+    if(navigator.share && matchMedia('(pointer:coarse)').matches) navigator.share({title:'Iconic Careers',text,url}).catch(()=>{});
+    else copy(text+'\n'+url);
+  }
   return (
    <div className="wrap recap">
-     <div className="recap-head">
-       <div className="rh-in">
-         <div className="grade"><div className="gs">{score}<span>/{total}</span></div><div className="gl">{rank}</div></div>
-         <div className="rmsg"><div className="rt">Dossier clos</div><p>{msg}</p></div>
-         <span className="stamp tilt green" style={{alignSelf:'flex-start'}}>Traité</span>
+     <div className="recap-top">
+       <div className="recap-head">
+         <div className="rh-in">
+           <div className="grade"><div className="gs">{score}<span>/{total}</span></div><div className="gl">{rank}</div></div>
+           <div className="rmsg"><div className="rt">Dossier clos</div><p>{msg}</p>{vs && <div className="vs">{vs}</div>}</div>
+           <span className="stamp tilt green" style={{alignSelf:'flex-start'}}>Traité</span>
+         </div>
        </div>
+       <section className="bordereau" aria-labelledby="bd-titre">
+         <div className="bd-h"><span>Bordereau de transmission</span><span className="ref">Réf. {ref}</span></div>
+         <h2 id="bd-titre">Défie un ami sur ce dossier</h2>
+         <p>Il recevra les mêmes {total} fiches, dans le même ordre, avec ton score à battre.</p>
+         <div className="releve" aria-label={'Ton relevé : '+score+' sur '+total}>
+           {results.map((r,i)=><span key={i} className={r.good?'g':'b'}>{r.good?'✓':'✗'}</span>)}
+         </div>
+         <div className="bd-act">
+           <button className="share" onClick={share}>
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>
+             {copied?'Message copié':'Transmettre le dossier'}
+           </button>
+           {copied && <span className="stamp tilt pop">Copié</span>}
+         </div>
+         <div className="bd-link">
+           <label htmlFor="bd-url">Ou copie le lien</label>
+           <div className="row2">
+             <input id="bd-url" ref={inputRef} readOnly value={url} onFocus={e=>e.target.select()}/>
+             <button onClick={()=>copy(url)}>Copier</button>
+           </div>
+         </div>
+         <button className="copylink" onClick={()=>copy(url)}>{copied?'Lien copié':'Copier le lien'}</button>
+       </section>
      </div>
      <div className="rlist">
        {results.map((r,i)=>(
@@ -691,14 +785,26 @@ function App(){
   const [series,setSeries]=useState([]);
   const [results,setResults]=useState([]);
   const [confirm,setConfirm]=useState(false);
-  function goHome(){ setScreen('setup'); setSeries([]); setResults([]); setConfirm(false); }
+  const [cfg,setCfg]=useState(null);
+  const [target,setTarget]=useState(null);
+  const [boot,setBoot]=useState(()=>SERIE.parse(location.search));   // série reçue par un lien
+  const setUrl=q=>history.replaceState(null,'',location.pathname+(q?'?'+q:''));
+  function play(s,c,t){ setSeries(s); setCfg(c); setTarget(t); setResults([]); setScreen('game'); setUrl(SERIE.query(s,c)+(t!=null?'&s='+t:'')); }
+  useEffect(()=>{
+    if(!boot) return;
+    const picks=boot.ids.map(id=>PLAYERS.find(p=>p.id===id)).filter(Boolean);
+    if(!picks.length){ setUrl(''); setBoot(null); return; }
+    loadSeries(picks).then(s=>{ play(s,boot.cfg,boot.target); setBoot(null); },()=>{ setUrl(''); setBoot(null); });
+  },[]);
+  function goHome(){ setScreen('setup'); setSeries([]); setResults([]); setConfirm(false); setTarget(null); setUrl(''); }
   function onBrand(){ if(screen==='game') setConfirm(true); else goHome(); }
+  if(boot) return <React.Fragment><Brand onHome={()=>{}}/><div className="wrap"><p className="pool">Ouverture du dossier…</p></div></React.Fragment>;
   return (
    <React.Fragment>
      <Brand onHome={onBrand}/>
-     {screen==='setup' && <Setup onStart={s=>{setSeries(s);setScreen('game');}}/>}
-     {screen==='game' && <Game series={series} onEnd={r=>{setResults(r);setScreen('recap');}}/>}
-     {screen==='recap' && <Recap results={results} onAgain={goHome}/>}
+     {screen==='setup' && <Setup onStart={(s,c)=>play(s,c,null)}/>}
+     {screen==='game' && <Game series={series} target={target} onEnd={r=>{setResults(r);setScreen('recap');}}/>}
+     {screen==='recap' && <Recap results={results} cfg={cfg} target={target} onAgain={goHome}/>}
      {confirm &&
        <div className="overlay" onClick={()=>setConfirm(false)}>
          <div className="dialog" role="dialog" aria-modal="true" onClick={e=>e.stopPropagation()}>
