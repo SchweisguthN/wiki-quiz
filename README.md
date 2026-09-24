@@ -31,7 +31,7 @@ direction « album de vignettes ». Il tourne sur l'échantillon de 320 joueurs 
 
 ## Les données
 
-### `joueurs_agrege.csv` — la table joueurs (14 100 lignes)
+### `joueurs_agrege.csv` — la table joueurs (15 502 lignes)
 
 Une ligne par joueur. Colonnes :
 
@@ -56,21 +56,33 @@ Niveaux de difficulté :
 - **legende** : 10 à 100 matchs
 - **exclu** : moins de 10 matchs (hors périmètre de jeu)
 
-### `carrieres_nettoyees.csv` — les carrières (112 760 lignes)
+### `carrieres_nettoyees.csv` — les carrières (121 772 lignes)
 
 Une ligne par passage en club. Colonnes : `player`, `name`, `club`,
 `clubLabel`, `apps` (matchs), `start`, `end` (années). Sélections nationales
 retirées, dates aberrantes corrigées. C'est la source pour l'affichage des
 parcours.
 
+## Collecte automatisée
+
+`scripts/fetch.py` exécute les requêtes de `queries/<job>/` (une requête
+`query.rq` et ses lots de Q-IDs dans `lots.txt`) et écrit les résultats dans
+`data/raw/<job>/`. Le workflow GitHub Actions *Collecte Wikidata* le lance à
+chaque modification de `queries/`. Les lots déjà récupérés sont sautés ; un lot
+qui timeoute ou revient tronqué est découpé automatiquement.
+
 ## Méthodologie des données
 
 Les données viennent de **Wikidata**, interrogé en SPARQL. Grandes étapes :
 
-1. **Sélection** — pour chaque grand championnat (Ligue 1, Premier League,
-   La Liga, Bundesliga, Serie A), extraction des joueurs ayant au moins un
-   passage renseigné (matchs + dates + nationalité + poste), actifs en 2000 ou
-   après. Union des cinq → ~14 100 joueurs.
+1. **Sélection** — `data/clubs_saisons_top5.csv` liste, pour chaque grand
+   championnat (Ligue 1, Premier League, La Liga, Bundesliga, Serie A), les clubs
+   présents chaque saison depuis 1999-2000. Un joueur est retenu si l'un de ses
+   passages renseignés (matchs + dates, avec nationalité et poste) chevauche une
+   saison où son club était dans un de ces championnats. On évalue donc le
+   championnat à l'époque du passage, pas aujourd'hui → 15 502 joueurs.
+   Les matchs d'un passage à cheval sur plusieurs divisions sont proratisés
+   selon la part des saisons jouées en top 5.
 2. **Carrières complètes** — pour chaque joueur retenu, récupération de tous ses
    clubs (y compris hors top 5) pour l'affichage.
 3. **Nettoyage** — exclusion des sélections nationales (via la classe Wikidata
