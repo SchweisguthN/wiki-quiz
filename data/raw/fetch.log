@@ -1,27 +1,5 @@
-nouveaux_carrieres lot 2/13 : 2887 lignes en 35s
-nouveaux_carrieres lot 3/13 : 2864 lignes en 58s
-nouveaux_carrieres lot 4/13 : 450 lignes en 58s
-nouveaux_carrieres lot 5/13 : 2751 lignes en 63s
-nouveaux_carrieres lot 6/13 : 2615 lignes en 68s
-nouveaux_carrieres lot 7/13 : 2638 lignes en 32s
-nouveaux_carrieres lot 8/13 : 2568 lignes en 8s
-nouveaux_carrieres lot 9/13 : 2730 lignes en 38s
-nouveaux_carrieres lot 10/13 : 1793 lignes en 36s
-nouveaux_carrieres lot 11/13 : 2426 lignes en 4s
-nouveaux_carrieres lot 12/13 : 2004 lignes en 56s
-nouveaux_carrieres lot 13/13 : 1058 lignes en 20s
-nouveaux_details lot 1/13 : 389 lignes en 5s
-nouveaux_details lot 2/13 : 381 lignes en 23s
-nouveaux_details lot 3/13 : 366 lignes en 7s
-nouveaux_details lot 4/13 : 354 lignes en 6s
-nouveaux_details lot 5/13 : 340 lignes en 11s
-nouveaux_details lot 6/13 : 348 lignes en 5s
-nouveaux_details lot 7/13 : 358 lignes en 6s
-nouveaux_details lot 8/13 : 338 lignes en 4s
-nouveaux_details lot 9/13 : 327 lignes en 23s
+nouveaux_carrieres lot 4/13 : 2863 lignes en 38s
   429, pause 120s
-nouveaux_details lot 10/13 : 321 lignes en 144s
-nouveaux_details lot 11/13 : 321 lignes en 39s
-  429, pause 120s
-nouveaux_details lot 12/13 : 348 lignes en 129s
-nouveaux_details lot 13/13 : 218 lignes en 17s
+  timeout sur 300 ids, découpage
+  timeout sur 150 ids, découpage
+nouveaux_carrieres lot 10/13 : 2467 lignes en 248s
