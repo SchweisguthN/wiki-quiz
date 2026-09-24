@@ -1,7 +1,7 @@
 name: Collecte Wikidata
 on:
   push:
-    paths: ["queries/**", "scripts/fetch.py"]
+    paths: ["queries/**", "wiki/**", "scripts/fetch.py", "scripts/wiki.py", "scripts/infobox.py"]
   workflow_dispatch:
 permissions:
   contents: write
@@ -20,8 +20,8 @@ jobs:
           git config user.email "github-actions@users.noreply.github.com"
           set +e
           mkdir -p data/raw
-          python3 -u scripts/fetch.py 2>&1 | tee /tmp/fetch.log
+          (python3 -u scripts/fetch.py && python3 -u scripts/wiki.py) 2>&1 | tee /tmp/fetch.log
           code=${PIPESTATUS[0]}
           cp /tmp/fetch.log data/raw/fetch.log
-          git add data/raw/fetch.log && git commit -qm "Log de collecte" && git pull -q --rebase origin main && git push -q origin HEAD:main
+          git add data/raw && git commit -qm "Collecte : log et résultats" && git pull -q --rebase origin main && git push -q origin HEAD:main
           exit $code
