@@ -314,6 +314,8 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
 /* Bordereau de transmission : partager la série */
 .recap-top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch;margin:16px 0 24px}
 .recap-top .recap-head{margin:0}
+.recap-top .rh-in{grid-template-columns:auto 1fr;align-content:center;height:100%;box-sizing:border-box}
+.recap-top .recap-head>.rh-in>.stamp{position:absolute;top:18px;right:18px}
 @media(max-width:900px){.recap-top{grid-template-columns:1fr}}
 .bordereau{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-radius:6px;padding:26px 24px 20px;
   display:flex;flex-direction:column;gap:14px;color:var(--ink);box-shadow:0 26px 60px -28px rgba(0,0,0,.6)}
