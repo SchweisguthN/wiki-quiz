@@ -15,7 +15,12 @@ def run(query):
     data = urllib.parse.urlencode({"query": query}).encode()
     req = urllib.request.Request(ENDPOINT, data=data, headers={"User-Agent": UA, "Accept": "text/csv"})
     with urllib.request.urlopen(req, timeout=70) as r:
-        return list(csv.reader(io.StringIO(r.read().decode("utf-8"))))
+        text = r.read().decode("utf-8")
+    rows = list(csv.reader(io.StringIO(text)))
+    # Wikidata peut couper une réponse trop longue sans signaler d'erreur
+    if not text.endswith("\n") or any(len(row) != len(rows[0]) for row in rows):
+        raise http.client.IncompleteRead(b"")
+    return rows
 
 def fetch(template, ids):
     for attempt in range(4):
