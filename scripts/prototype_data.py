@@ -10,7 +10,7 @@ random.seed(42)
 agg = list(csv.DictReader(open('data/joueurs_agrege.csv', encoding='utf-8')))
 car = defaultdict(list)
 for r in csv.DictReader(open('data/carrieres_nettoyees.csv', encoding='utf-8')):
-    car[r['player']].append({'club': r['clubLabel'], 'start': r['start'], 'end': r['end'], 'apps': r['apps']})
+    car[r['player']].append({'club': r['clubLabel'], 'start': r['start'], 'end': r['end'], 'apps': r['apps'], 'loan': r['pret'] == '1'})
 num = lambda x: int(x) if x.isdigit() else None
 sample = [r for d, n in TAILLE.items() for r in random.sample([r for r in agg if r['difficulte'] == d], n)]
 random.shuffle(sample)
