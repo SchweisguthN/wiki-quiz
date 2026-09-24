@@ -1,0 +1,5 @@
+SELECT ?club ?label WHERE {
+  VALUES ?club { {{VALUES}} }
+  ?club rdfs:label ?label .
+  FILTER(LANG(?label) = "fr")
+}
