@@ -11,7 +11,6 @@ iconic-careers/
 ├── data/
 │   ├── joueurs_agrege.csv        # 1 ligne par joueur : la table de sélection et d'indices
 │   ├── carrieres_nettoyees.csv   # 1 ligne par passage en club : ce qu'on affiche
-│   └── mvp_data.json             # échantillon de 320 joueurs + noms, embarqué dans le prototype
 ├── prototype/
 │   └── index.html                # prototype jouable, autonome (à ouvrir dans un navigateur)
 └── README.md
@@ -77,8 +76,12 @@ de formation exclus ; pour les rares joueurs sans infobox, à partir de
 
 Dans l'ordre : `scripts/carrieres.py` (carrières), `scripts/difficulte.py`
 (matchs top 5, score, niveaux), `scripts/noms.py` (noms d'usage d'après le titre
-Wikipédia, sans les prénoms en trop), puis `scripts/prototype_data.py`
-(échantillon injecté dans `index.html`).
+Wikipédia, sans les prénoms en trop), puis `scripts/build_site.py`.
+
+`build_site.py` injecte dans `index.html` un index léger de tous les joueurs
+jouables (réglages, tirage, autocomplétion) et écrit leurs carrières dans
+`careers/<n>.json` (512 tranches de quelques Ko). La page ne charge que les
+tranches des 10 joueurs tirés au lancement d'une série.
 
 ## Collecte automatisée
 
