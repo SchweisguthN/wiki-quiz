@@ -208,19 +208,6 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
 .ident-wrap{position:relative}
 .ident-wrap .cross{position:absolute;right:14px;top:50%;transform:translateY(-50%) rotate(-9deg);z-index:3;font-size:13px}
 @media(max-width:420px){.ident-wrap .cross{display:none}}
-@media(max-width:480px){
-  .wrap,.brandbar{padding-left:14px;padding-right:14px}
-  .grouphead{flex-wrap:wrap}.grouphead .hint{flex-basis:100%;margin:2px 0 0;text-align:left;max-width:none}
-  .recap-top .rh-in{grid-template-columns:1fr;justify-items:center;text-align:center;padding-top:44px}
-}
-@media(max-width:400px){
-  .topbar{gap:10px 12px}.topbar .qn{display:none}
-  .row{grid-template-columns:minmax(0,1fr) auto auto;gap:8px}
-  .sheet .sh-h{flex-wrap:wrap}
-  .bordereau{padding:24px 16px 18px}
-  .share{padding:0 14px;font-size:15px;white-space:nowrap}
-}
-
 /* révélation */
 .reveal-name{font-family:'Courier Prime',monospace;font-weight:700;font-size:16px;color:var(--green-deep);
   animation:typein .4s var(--ease)}
@@ -374,6 +361,19 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
 .dialog button:hover{background:#f1ebd9}
 .dialog button.danger{background:var(--red);border-color:var(--red-d);color:#fff}
 .dialog button.danger:hover{background:var(--red-d)}
+/* Petits écrans : en dernier pour primer sur les règles de base */
+@media(max-width:480px){
+  .wrap,.brandbar{padding-left:14px;padding-right:14px}
+  .grouphead{flex-wrap:wrap}.grouphead .hint{flex-basis:100%;margin:2px 0 0;text-align:left;max-width:none}
+  .recap-top .rh-in{grid-template-columns:1fr;justify-items:center;text-align:center;padding-top:44px}
+}
+@media(max-width:400px){
+  .topbar{gap:10px 12px}.topbar .qn{display:none}
+  .row{grid-template-columns:minmax(0,1fr) auto auto;gap:8px}
+  .sheet .sh-h{flex-wrap:wrap}
+  .bordereau{padding:24px 16px 18px}
+  .share{padding:0 14px;font-size:15px;white-space:nowrap}
+}
 </style>
 </head>
 <body>
