@@ -681,7 +681,7 @@ function GuessHost({p,onResolve,stock,onHint}){
   const [outcome,setOutcome]=useState(null);
   const inputRef=useRef();
   useEffect(()=>{setShown({nat:false,pos:false,ini:false});setQ('');setTries(0);setFb(null);setLocked(false);setSel(0);setOutcome(null);
-    setTimeout(()=>inputRef.current&&inputRef.current.focus(),50);},[p.id]);
+    if(!matchMedia('(pointer:coarse)').matches) setTimeout(()=>inputRef.current&&inputRef.current.focus(),50);},[p.id]);
   const nq=norm(q);
   const matches=useMemo(()=>nq.length<2?[]:ALLKEYS.filter(x=>x.k.includes(nq)||x.a.includes(nq)).slice(0,8),[nq]);
   function resolve(good){setLocked(true);setOutcome(good?'good':'bad');
