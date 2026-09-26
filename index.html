@@ -222,7 +222,7 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
 .rec-h span:nth-child(2){text-align:center}
 .rec-h span:nth-child(3){text-align:right}
 .row{display:grid;grid-template-columns:1fr 88px 62px;gap:8px;align-items:baseline;padding:9px 0;position:relative;border-bottom:1px solid var(--paper-line)}
-.row .club{font-family:'Courier Prime',monospace;font-weight:700;font-size:14px;color:var(--ink);line-height:1.3}
+.row .club{font-family:'Courier Prime',monospace;font-weight:700;font-size:14px;color:var(--ink);line-height:1.3;overflow-wrap:anywhere}
 .row.big .club{color:var(--green-deep)}
 .row .yr{font-family:'Courier Prime',monospace;font-size:12px;color:var(--ink-mut);text-align:center;white-space:nowrap}
 .row .ap{font-family:'Courier Prime',monospace;font-size:12px;color:var(--ink-mut);text-align:right;white-space:nowrap}
@@ -366,10 +366,19 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
   .wrap,.brandbar{padding-left:14px;padding-right:14px}
   .grouphead{flex-wrap:wrap}.grouphead .hint{flex-basis:100%;margin:2px 0 0;text-align:left;max-width:none}
   .recap-top .rh-in{grid-template-columns:1fr;justify-items:center;text-align:center;padding-top:44px}
+  .folder{padding:14px 10px 18px}
+  .sheet{transform:none}
+  .sheet::before{left:18px}
+  .sheet .sh-h,.ident,.rec,.sh-f{padding-left:28px;padding-right:12px}
+  .ident .fl .k{width:84px}
+  .row,.rec-h{grid-template-columns:minmax(0,1fr) 72px 44px;gap:6px}
+  .play,.again{width:100%}
+  .row.nested .club{padding-left:0}.row.nested .club::before{position:static;display:table;margin-bottom:4px}
+  .ritem{flex-wrap:wrap;row-gap:4px}.ritem .meta{flex-basis:100%;margin-left:38px;text-align:left}
 }
 @media(max-width:400px){
+  .row,.rec-h{grid-template-columns:minmax(0,1fr) 64px 36px}.row .club{font-size:13px}.rec-h{letter-spacing:0;font-size:9.5px}
   .topbar{gap:10px 12px}.topbar .qn{display:none}
-  .row{grid-template-columns:minmax(0,1fr) auto auto;gap:8px}
   .sheet .sh-h{flex-wrap:wrap}
   .bordereau{padding:24px 16px 18px}
   .share{padding:0 14px;font-size:15px;white-space:nowrap}
