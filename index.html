@@ -434,6 +434,12 @@ button.fold:hover .fold-sheet,button.fold:focus-visible .fold-sheet{transform:tr
 button.fold:hover .ld-cta .ic,button.fold:focus-visible .ld-cta .ic{transform:translate(2px,-2px) scale(1.08)}
 .ld-stamp{position:absolute;right:26px;top:72px;z-index:4;font:400 15px 'Saira Stencil One',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--red);padding:5px 12px;border-radius:6px;box-shadow:inset 0 0 0 2.5px var(--red);transform:rotate(-9deg);mix-blend-mode:multiply;transition:transform .8s var(--ease)}
 button.fold:hover .ld-stamp,button.fold:focus-visible .ld-stamp{transform:translateY(-30px) rotate(-11deg)}
+.ld-lvl{display:flex;align-items:center;gap:8px;margin:-6px 0 16px;font:700 10px/1 'Courier Prime',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mut)}
+.ld-lvl b{font:700 14px/1 'Oswald',sans-serif;letter-spacing:.08em;color:var(--acc)}
+.ld-lvl .cote{display:inline-flex;gap:2px;color:var(--acc)}
+.ld-lvl .cote i{width:9px;height:9px;background:currentColor;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);opacity:.25}
+.ld-lvl .cote i.f{opacity:1}
+.ld-lvl.facile{--acc:var(--green)}.ld-lvl.moyen{--acc:var(--blue)}.ld-lvl.difficile{--acc:#8a6420}
 .ld-clock{display:block;margin:-4px 0 18px;font:400 24px/1 'Saira Stencil One',sans-serif;color:var(--ink);letter-spacing:.04em;font-variant-numeric:tabular-nums}
 .ld-clock small{display:block;font:700 9.5px 'Courier Prime',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mut);margin-bottom:5px}
 .f-challenge{--c1:#2f6c48;--c2:#23553a;--c3:#3c7f58}
@@ -443,7 +449,7 @@ button.fold:hover .ld-stamp,button.fold:focus-visible .ld-stamp{transform:transl
 @media(min-width:861px) and (max-width:1180px){
  .cascade{flex-wrap:wrap;gap:70px 26px;max-width:760px}
  .fold{margin-left:0;width:330px;height:410px}
- .fold.big{width:330px;height:444px}
+ .fold.big{width:330px;height:460px}
 }
 @media(max-width:860px){
  .ld-hero{grid-template-columns:1fr;padding-top:40px}
@@ -541,7 +547,7 @@ const SERIE={
   },
   ref(series){let h=0;for(const c of series.map(p=>p.id).join()) h=(h*31+c.charCodeAt(0))>>>0;return 'IC-'+h.toString(36).toUpperCase().slice(-6).padStart(6,'0');},
   label(cfg){
-    if(cfg.daily!=null) return 'Challenge du jour '+dailyNo(cfg.daily);
+    if(cfg.daily!=null) return 'Challenge du jour '+dailyNo(cfg.daily)+' · '+DIFF_MAP[dailyLevel(cfg.daily)].t;
     const lg=cfg.leagues.map(id=>(LEAGUES.find(l=>l.id===id)||{}).name).filter(Boolean).join(', ');
     const per=(PERIODS.find(x=>x.range[0]===cfg.yr[0]&&x.range[1]===cfg.yr[1])||{}).label||(cfg.yr[0]+'–'+cfg.yr[1]);
     return [lg,per,(DIFFS.find(x=>x.id===cfg.diff)||{}).t].filter(Boolean).join(' · ');
@@ -577,23 +583,24 @@ function shuffle(a,rand=Math.random){a=a.slice();for(let i=a.length-1;i>0;i--){c
 
 /* ===== Challenge du jour : série déterministe, renouvelée à minuit (heure de Paris) ===== */
 const TZ='Europe/Paris', EPOCH='2026-09-29'; // challenge #001
-const DAILY_MIX=[['facile',3],['moyen',3],['difficile',2],['legende',2]];
+const DAILY_LEVELS=[['facile',.35],['moyen',.9],['difficile',1]]; // 35 % / 55 % / 10 %, jamais Légende
 const PARTS_FMT=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
 function parisParts(d){return Object.fromEntries(PARTS_FMT.formatToParts(d).map(x=>[x.type,+x.value]));}
 function dayIndex(d){const p=parisParts(d),[y,m,j]=EPOCH.split('-').map(Number);return Math.round((Date.UTC(p.year,p.month-1,p.day)-Date.UTC(y,m-1,j))/864e5);}
 function rng(seed){let h=2166136261;for(const c of seed)h=Math.imul(h^c.charCodeAt(0),16777619);
   return()=>{h=h+0x6D2B79F5|0;let t=Math.imul(h^h>>>15,1|h);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function dailyLevel(n){const x=rng('iconic-niveau-'+n)();return DAILY_LEVELS.find(([,c])=>x<c)[0];}
 function dailySeries(n){
-  return DAILY_MIX.flatMap(([diff,k])=>{
-    // ordre figé par niveau, puis chaque jour prend les k fiches suivantes : pas de doublon avant d'avoir tout vu
-    const pool=shuffle(PLAYERS.filter(p=>p.diff===diff).sort((a,b)=>a.id<b.id?-1:1),rng('iconic-'+diff));
-    return Array.from({length:k},(_,j)=>pool[(((n*k+j)%pool.length)+pool.length)%pool.length]);
-  });
+  // ordre figé par niveau ; chaque série prend les 10 fiches suivantes de son niveau : pas de doublon avant d'avoir tout vu
+  const diff=dailyLevel(n);
+  let k=0; for(let d=0;d<n;d++) if(dailyLevel(d)===diff) k++;
+  const pool=shuffle(PLAYERS.filter(p=>p.diff===diff).sort((a,b)=>a.id<b.id?-1:1),rng('iconic-'+diff));
+  return Array.from({length:10},(_,j)=>pool[(k*10+j)%pool.length]);
 }
 const dailyNo=n=>'#'+String(n+1).padStart(3,'0');
 function challengeInfo(d){
   const p=parisParts(d),left=86400-(p.hour*3600+p.minute*60+p.second),n=dayIndex(d);
-  return {n,no:dailyNo(n),left:[left/3600,left/60%60,left%60].map(v=>String(Math.floor(v)).padStart(2,'0')).join(':')};
+  return {n,no:dailyNo(n),level:DIFF_MAP[dailyLevel(n)],left:[left/3600,left/60%60,left%60].map(v=>String(Math.floor(v)).padStart(2,'0')).join(':')};
 }
 function useNow(){const [now,setNow]=useState(()=>new Date());
   useEffect(()=>{const t=setInterval(()=>setNow(new Date()),1000);return()=>clearInterval(t);},[]);return now;}
@@ -630,6 +637,7 @@ function Landing({onChallenge,onClassic}){
          {ch && <span className="ld-stamp">{c.no}</span>}
          <span className="fold-front"><span className="label">
            <span className="ld-t">{m.t}</span><span className="ld-d">{m.d}</span>
+           {ch && <span className={'ld-lvl '+c.level.id}>Aujourd’hui : <b>{c.level.t}</b><Cote n={c.level.cote}/></span>}
            {ch && <span className="ld-clock"><small>Nouvelle série dans</small>{c.left}</span>}
            {act ? <span className={'ld-cta'+(ch?' gold':'')}>{ch?'Jouer le challenge':'Ouvrir le dossier'}<span className="ic">{ARROW}</span></span>
                 : <span className="ld-soon">Bientôt disponible</span>}
