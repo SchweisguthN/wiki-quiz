@@ -393,6 +393,8 @@ body.landing .brandbar{max-width:1180px;padding:26px 28px 0 24px;justify-content
 .ld-cta .ic{width:26px;height:26px;flex:none;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);transition:transform .6s var(--ease)}
 .ld-cta.gold{background:linear-gradient(180deg,#f4cf63,#e0a92e);color:#231603;box-shadow:0 10px 22px -12px rgba(150,100,20,.7)}
 .ld-cta.gold .ic{background:rgba(35,22,3,.12)}
+.ld-score{margin-top:auto;display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--green);font:600 11px/1 'Oswald',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.ld-score b{font:400 18px/1 'Saira Stencil One',sans-serif;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums}
 .ld-soon{margin-top:auto;display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--ink-faint);font:600 11px/1 'Oswald',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mut)}
 .ld-soon::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ink-faint)}
 .ld-foot{max-width:1180px;margin:0 auto;padding:44px 28px 70px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mut);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -585,6 +587,7 @@ function challengeInfo(d){
   const p=parisParts(d),left=86400-(p.hour*3600+p.minute*60+p.second),n=dayIndex(d);
   return {n,no:dailyNo(n),level:DIFF_MAP[dailyLevel(n)],left:[left/3600,left/60%60,left%60].map(v=>String(Math.floor(v)).padStart(2,'0')).join(':')};
 }
+const PLAYED={get(n){try{return localStorage.getItem('fa-daily-'+n)}catch(e){return null}},set(n,v){try{localStorage.setItem('fa-daily-'+n,v)}catch(e){}}};
 function useNow(){const [now,setNow]=useState(()=>new Date());
   useEffect(()=>{const t=setInterval(()=>setNow(new Date()),1000);return()=>clearInterval(t);},[]);return now;}
 
@@ -602,7 +605,8 @@ function ChallengePill(){
 function Landing({onChallenge,onClassic}){
   const c=challengeInfo(useNow());
   useEffect(()=>{document.body.classList.add('landing');return()=>document.body.classList.remove('landing');},[]);
-  const on={challenge:onChallenge,classique:onClassic};
+  const done=PLAYED.get(c.n);
+  const on={challenge:done==null?onChallenge:null,classique:onClassic};
   return (
    <div className="landing">
     <section className="ld-hero">
@@ -622,7 +626,8 @@ function Landing({onChallenge,onClassic}){
            <span className="ld-t">{m.t}</span><span className="ld-d">{m.d}</span>
            {ch && <span className={'ld-lvl '+c.level.id}>Aujourd’hui : <b>{c.level.t}</b><Cote n={c.level.cote}/></span>}
            {ch && <span className="ld-clock"><small>Nouvelle série dans</small>{c.left}</span>}
-           {act ? <span className={'ld-cta'+(ch?' gold':'')}>{ch?'Jouer le challenge':'Ouvrir le dossier'}<span className="ic">{ARROW}</span></span>
+           {ch && done!=null ? <span className="ld-score">{done?<React.Fragment>Ton score <b>{done}</b></React.Fragment>:'Partie interrompue'}</span>
+            : act ? <span className={'ld-cta'+(ch?' gold':'')}>{ch?'Jouer le challenge':'Ouvrir le dossier'}<span className="ic">{ARROW}</span></span>
                 : <span className="ld-soon">Bientôt disponible</span>}
          </span></span>
         </Tag>);
@@ -950,7 +955,8 @@ function App(){
   useEffect(()=>{
     if(!boot) return;
     const picks=boot.ids.map(id=>PLAYERS.find(p=>p.id===id)).filter(Boolean);
-    if(!picks.length){ setUrl(''); setBoot(null); return; }
+    if(!picks.length || (boot.cfg.daily!=null && PLAYED.get(boot.cfg.daily)!=null)){ setUrl(''); setBoot(null); return; }
+    if(boot.cfg.daily!=null) PLAYED.set(boot.cfg.daily,'');
     loadSeries(picks).then(s=>{ play(s,boot.cfg,boot.target); setBoot(null); },()=>{ setUrl(''); setBoot(null); });
   },[boot]);
   function playDaily(){ const n=challengeInfo(new Date()).n; setBoot({ids:dailySeries(n).map(p=>p.id),cfg:{leagues:[],yr:[YMIN,YMAX],diff:'',daily:n},target:null}); }
@@ -962,7 +968,7 @@ function App(){
      <Brand onHome={onBrand}>{screen==='landing' && <ChallengePill/>}</Brand>
      {screen==='landing' && <Landing onChallenge={playDaily} onClassic={()=>setScreen('setup')}/>}
      {screen==='setup' && <Setup onStart={(s,c)=>play(s,c,null)}/>}
-     {screen==='game' && <Game series={series} target={target} onEnd={r=>{setResults(r);setScreen('recap');}}/>}
+     {screen==='game' && <Game series={series} target={target} onEnd={r=>{ if(cfg.daily!=null) PLAYED.set(cfg.daily,r.filter(x=>x.good).length+'/'+r.length); setResults(r); setScreen('recap'); }}/>}
      {screen==='recap' && <Recap results={results} cfg={cfg} target={target} onAgain={goHome}/>}
      {confirm &&
        <div className="overlay" onClick={()=>setConfirm(false)}>
