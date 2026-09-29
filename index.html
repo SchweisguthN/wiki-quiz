@@ -383,6 +383,82 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
   .bordereau{padding:24px 16px 18px}
   .share{padding:0 14px;font-size:15px;white-space:nowrap}
 }
+/* ============ Accueil — choix du mode (chemises) ============ */
+body.landing::before{display:none}
+body.landing::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.07;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27220%27%20height%3D%27220%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.85%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%20.25%20%200%200%200%200%20.2%20%200%200%200%200%20.1%20%200%200%200%20.55%200%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23n%29%27%2F%3E%3C%2Fsvg%3E")}
+body.landing .brandbar{max-width:1180px;padding:26px 28px 0 24px;justify-content:space-between;gap:20px}
+.landing{--ease:cubic-bezier(.32,.72,0,1);--paper:#f8f2e3;--desk-a:#e6e9d9;font-family:'Courier Prime',ui-monospace,monospace;position:relative;z-index:2;line-height:1.5}
+.ld-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 8px 7px 14px;border-radius:999px;background:rgba(255,252,242,.55);box-shadow:0 0 0 1px rgba(60,45,20,.10),0 10px 24px -16px rgba(40,30,10,.4);font:11.5px 'Courier Prime',monospace;letter-spacing:.06em;color:var(--ink-mut)}
+.ld-pill b{font:400 14px 'Saira Stencil One',sans-serif;color:var(--ink);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.ld-pill .ld-dot{width:22px;height:22px;border-radius:50%;background:var(--green);display:grid;place-items:center}
+.ld-pill .ld-dot i{width:7px;height:7px;border-radius:50%;background:#bff5d2;animation:ld-pulse 2.4s cubic-bezier(.32,.72,0,1) infinite}
+@keyframes ld-pulse{50%{transform:scale(.55);opacity:.5}}
+@media(max-width:700px){.ld-pill{display:none}}
+.ld-hero{max-width:1180px;margin:0 auto;padding:72px 28px 0;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);column-gap:56px;align-items:end}
+.ld-hero h1{font:700 clamp(44px,6.4vw,94px)/.9 'Oswald',sans-serif;text-transform:uppercase;letter-spacing:-.005em;margin:22px 0 0;max-width:17ch;text-wrap:balance;hyphens:manual;color:var(--ink)}
+.ld-hero h1 em{font-style:normal;color:var(--green)}
+.ld-hero p{margin:24px 0 8px;max-width:40ch;font-size:14px;line-height:1.7;color:var(--ink-mut)}
+.ld-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:12px;white-space:nowrap;margin-top:auto;max-width:100%;padding:5px 5px 5px 15px;border-radius:999px;background:var(--ink);color:var(--paper);font:600 11px/1 'Oswald',sans-serif;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 10px 20px -12px rgba(20,15,5,.6)}
+.ld-cta .ic{width:26px;height:26px;flex:none;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);transition:transform .6s var(--ease)}
+.ld-cta.gold{background:linear-gradient(180deg,#f4cf63,#e0a92e);color:#231603;box-shadow:0 10px 22px -12px rgba(150,100,20,.7)}
+.ld-cta.gold .ic{background:rgba(35,22,3,.12)}
+.ld-soon{margin-top:auto;display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--ink-faint);font:600 11px/1 'Oswald',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mut)}
+.ld-soon::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ink-faint)}
+.ld-foot{max-width:1180px;margin:0 auto;padding:44px 28px 70px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mut);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cascade{display:flex;justify-content:center;align-items:flex-end;max-width:1240px;margin:52px auto 0;padding:48px 20px 20px}
+.fold{--tabw:132px;position:relative;display:block;flex:none;width:272px;height:420px;margin:0 0 0 -12px;padding:0;border:0;background:none;text-align:left;font:inherit;color:var(--ink);
+ transform:translateY(var(--y,0px)) rotate(var(--r,0deg));z-index:var(--z,1);transition:transform .8s var(--ease);animation:ld-rise 1s var(--ease) backwards;animation-delay:calc(var(--i)*95ms)}
+.fold:first-child{margin-left:0}
+.fold.big{width:336px;height:464px}
+.fold.soon{cursor:default}
+button.fold:hover,button.fold:focus-visible{transform:translateY(calc(var(--y,0px) - 26px)) rotate(0deg);z-index:20}
+button.fold:focus-visible{outline:none}
+button.fold:focus-visible .fold-back{box-shadow:0 0 0 3px var(--desk-a),0 0 0 5.5px var(--green),0 34px 60px -34px rgba(35,28,12,.65)}
+button.fold:active{transform:translateY(calc(var(--y,0px) - 20px)) rotate(0deg) scale(.99)}
+@keyframes ld-rise{from{transform:translateY(calc(var(--y,0px) + 70px)) rotate(var(--r,0deg))}}
+.fold-back{position:absolute;inset:0;border-radius:5px 5px 12px 12px;background:linear-gradient(180deg,var(--c1),var(--c2));box-shadow:0 34px 60px -34px rgba(35,28,12,.65),0 10px 20px -12px rgba(35,28,12,.3);transition:box-shadow .5s var(--ease)}
+.fold-tab{position:absolute;top:-30px;left:var(--tx);width:var(--tabw);height:32px;display:flex;align-items:center;justify-content:center;border-radius:9px 9px 0 0;background:var(--c1)}
+.fold-tab span{max-width:calc(100% - 14px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:var(--paper);padding:5px 8px;border-radius:3px;font:700 10px/1 'Courier Prime',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.fold-sheet{position:absolute;left:16px;right:20px;top:20px;height:62%;overflow:hidden;border-radius:4px;padding:18px;background:linear-gradient(180deg,#fcf8ee,#f1e7d1);box-shadow:0 3px 8px rgba(40,30,10,.14);transform:rotate(-1.4deg);transition:transform .8s var(--ease)}
+button.fold:hover .fold-sheet,button.fold:focus-visible .fold-sheet{transform:translateY(-30px) rotate(-3deg)}
+.fold-sheet .h{display:block;font:700 9px 'Oswald',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mut);border-bottom:1.5px solid var(--ink);padding-bottom:6px}
+.fold-sheet .rb{display:block;height:10px;border-radius:2px;background:#1b160d;margin:12px 0 0;width:70%}
+.fold-sheet .rb.s{width:44%;margin-top:7px}
+.fold-sheet .l{display:block;height:1.5px;background:var(--paper-line);margin:14px 0 0}
+.fold-front{position:absolute;left:0;right:0;bottom:0;height:72%;border-radius:4px 4px 12px 12px;padding:44px 18px 18px;display:flex;flex-direction:column;
+ background:linear-gradient(180deg,var(--c3),var(--c1) 70%);box-shadow:inset 0 1px 0 rgba(255,255,255,.28);
+ -webkit-mask:radial-gradient(circle 27px at 50% 0,transparent 26px,#000 27px);mask:radial-gradient(circle 27px at 50% 0,transparent 26px,#000 27px)}
+.fold .label{flex:1 1 auto;display:flex;flex-direction:column;align-items:flex-start;background:var(--paper);border-radius:6px;padding:18px 16px 16px;transform:rotate(var(--lr,-.6deg));box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 10px 18px -12px rgba(0,0,0,.5)}
+.fold .ld-t{display:block;font:700 23px/1.02 'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.015em;color:var(--ink);text-wrap:balance}
+.fold .ld-d{display:block;font-size:12.5px;line-height:1.55;color:var(--ink-mut);margin:10px 0 18px}
+button.fold:hover .ld-cta .ic,button.fold:focus-visible .ld-cta .ic{transform:translate(2px,-2px) scale(1.08)}
+.ld-stamp{position:absolute;right:26px;top:72px;z-index:4;font:400 15px 'Saira Stencil One',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--red);padding:5px 12px;border-radius:6px;box-shadow:inset 0 0 0 2.5px var(--red);transform:rotate(-9deg);mix-blend-mode:multiply;transition:transform .8s var(--ease)}
+button.fold:hover .ld-stamp,button.fold:focus-visible .ld-stamp{transform:translateY(-30px) rotate(-11deg)}
+.ld-clock{display:block;margin:-4px 0 18px;font:400 24px/1 'Saira Stencil One',sans-serif;color:var(--ink);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.ld-clock small{display:block;font:700 9.5px 'Courier Prime',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mut);margin-bottom:5px}
+.f-challenge{--c1:#2f6c48;--c2:#23553a;--c3:#3c7f58}
+.f-classique{--c1:#d9bf84;--c2:#c4a66a;--c3:#e6d09d}
+.f-chrono{--c1:#3d5b84;--c2:#2f4a6e;--c3:#4a6a96}
+.f-tronque{--c1:#9e3b2f;--c2:#842f25;--c3:#b04a3b}
+@media(min-width:861px) and (max-width:1180px){
+ .cascade{flex-wrap:wrap;gap:70px 26px;max-width:760px}
+ .fold{margin-left:0;width:330px;height:410px}
+ .fold.big{width:330px;height:444px}
+}
+@media(max-width:860px){
+ .ld-hero{grid-template-columns:1fr;padding-top:40px}
+ .cascade{flex-direction:column;align-items:stretch;gap:50px;padding:44px 16px 0;margin-top:28px}
+ .fold,.fold.big{width:100%;max-width:440px;height:auto;margin:0 auto!important;padding-top:40px;transform:none!important;animation:none}
+ .fold-sheet{top:12px;height:66px;padding:12px 14px;transform:rotate(-1deg)!important}
+ .fold-sheet .l,.fold-sheet .rb.s{display:none}
+ .fold-front{position:relative;height:auto;padding:40px 14px 14px}
+ .fold .label{padding:16px 14px 14px}
+ .fold .ld-t{font-size:21px}
+ .fold .ld-d{margin-top:8px}
+ .ld-clock{margin:-6px 0 16px}
+ .ld-stamp{top:14px;right:20px;font-size:12px;transform:rotate(-8deg)!important}
+}
+
 </style>
 </head>
 <body>
@@ -429,13 +505,14 @@ const CREST=(
     <text x="50" y="108" textAnchor="middle" fontFamily="Oswald,sans-serif" fontSize="9" fontWeight="700" fill="#0a3d29" letterSpacing="1.5">IC</text>
   </svg>
 );
-function Brand({onHome}){
+function Brand({onHome,children}){
   return (
    <div className="brandbar">
      <button className="brand" onClick={onHome} aria-label="Iconic Careers — retour à l'accueil">
        {CREST}
        <span className="wordmark"><span className="t1">Iconic Careers</span><span className="t2">Archives des carrières</span></span>
      </button>
+     {children}
    </div>
   );
 }
@@ -451,19 +528,20 @@ function norm(s){
   s=s.replace(/[^a-z ]/g,' ').replace(/\s+/g,' ').trim();
   return s;
 }
-// Une série tient dans l'URL : ?d=<Q-ID en base 36, séparés par "-">&r=<championnats>.<début>.<fin>.<niveau>[&s=<score à battre>]
+// Une série tient dans l'URL : ?d=<Q-ID en base 36, séparés par "-">&r=<championnats>.<début>.<fin>.<niveau> (ou &c=<n° du challenge du jour>)[&s=<score à battre>]
 const SERIE={
-  query(series,cfg){return 'd='+series.map(p=>parseInt(p.id.slice(1)).toString(36)).join('-')+'&r='+cfg.leagues.join('_')+'.'+cfg.yr[0]+'.'+cfg.yr[1]+'.'+cfg.diff;},
+  query(series,cfg){return 'd='+series.map(p=>parseInt(p.id.slice(1)).toString(36)).join('-')+(cfg.daily!=null?'&c='+cfg.daily:'&r='+cfg.leagues.join('_')+'.'+cfg.yr[0]+'.'+cfg.yr[1]+'.'+cfg.diff);},
   parse(search){
     const u=new URLSearchParams(search), d=u.get('d');
     if(!d) return null;
     const ids=d.split('-').map(x=>parseInt(x,36)).filter(n=>n>0).slice(0,10).map(n=>'Q'+n);
     const [lg,y0,y1,diff]=(u.get('r')||'').split('.');
-    const s=u.get('s');
-    return {ids,cfg:{leagues:lg?lg.split('_'):[],yr:[+y0||2000,+y1||2026],diff:diff||''},target:/^\d+$/.test(s||'')?+s:null};
+    const s=u.get('s'), c=u.get('c');
+    return {ids,cfg:{leagues:lg?lg.split('_'):[],yr:[+y0||2000,+y1||2026],diff:diff||'',daily:/^\d+$/.test(c||'')?+c:null},target:/^\d+$/.test(s||'')?+s:null};
   },
   ref(series){let h=0;for(const c of series.map(p=>p.id).join()) h=(h*31+c.charCodeAt(0))>>>0;return 'IC-'+h.toString(36).toUpperCase().slice(-6).padStart(6,'0');},
   label(cfg){
+    if(cfg.daily!=null) return 'Challenge du jour '+dailyNo(cfg.daily);
     const lg=cfg.leagues.map(id=>(LEAGUES.find(l=>l.id===id)||{}).name).filter(Boolean).join(', ');
     const per=(PERIODS.find(x=>x.range[0]===cfg.yr[0]&&x.range[1]===cfg.yr[1])||{}).label||(cfg.yr[0]+'–'+cfg.yr[1]);
     return [lg,per,(DIFFS.find(x=>x.id===cfg.diff)||{}).t].filter(Boolean).join(' · ');
@@ -495,7 +573,74 @@ function pickPool(leagues,yr,diff){
     return true;
   });
 }
-function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function shuffle(a,rand=Math.random){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+/* ===== Challenge du jour : série déterministe, renouvelée à minuit (heure de Paris) ===== */
+const TZ='Europe/Paris', EPOCH='2026-09-29'; // challenge #001
+const DAILY_MIX=[['facile',3],['moyen',3],['difficile',2],['legende',2]];
+const PARTS_FMT=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+function parisParts(d){return Object.fromEntries(PARTS_FMT.formatToParts(d).map(x=>[x.type,+x.value]));}
+function dayIndex(d){const p=parisParts(d),[y,m,j]=EPOCH.split('-').map(Number);return Math.round((Date.UTC(p.year,p.month-1,p.day)-Date.UTC(y,m-1,j))/864e5);}
+function rng(seed){let h=2166136261;for(const c of seed)h=Math.imul(h^c.charCodeAt(0),16777619);
+  return()=>{h=h+0x6D2B79F5|0;let t=Math.imul(h^h>>>15,1|h);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function dailySeries(n){
+  return DAILY_MIX.flatMap(([diff,k])=>{
+    // ordre figé par niveau, puis chaque jour prend les k fiches suivantes : pas de doublon avant d'avoir tout vu
+    const pool=shuffle(PLAYERS.filter(p=>p.diff===diff).sort((a,b)=>a.id<b.id?-1:1),rng('iconic-'+diff));
+    return Array.from({length:k},(_,j)=>pool[(((n*k+j)%pool.length)+pool.length)%pool.length]);
+  });
+}
+const dailyNo=n=>'#'+String(n+1).padStart(3,'0');
+function challengeInfo(d){
+  const p=parisParts(d),left=86400-(p.hour*3600+p.minute*60+p.second),n=dayIndex(d);
+  return {n,no:dailyNo(n),left:[left/3600,left/60%60,left%60].map(v=>String(Math.floor(v)).padStart(2,'0')).join(':')};
+}
+function useNow(){const [now,setNow]=useState(()=>new Date());
+  useEffect(()=>{const t=setInterval(()=>setNow(new Date()),1000);return()=>clearInterval(t);},[]);return now;}
+
+const ARROW=<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>;
+const MODES=[
+  {k:'challenge',n:'01',tab:'Du jour',t:'Challenge du jour',d:'La même série pour tous les visiteurs. Compare ton score : elle change toutes les 24 h.',tx:'20px',r:'-2.2deg',y:'0px',z:4,lr:'-.8deg'},
+  {k:'classique',n:'02',tab:'Classique',t:'Partie classique',d:'Choisis championnats, période et difficulté, puis enchaîne 10 fiches.',tx:'70px',r:'2.4deg',y:'22px',z:3,lr:'.7deg'},
+  {k:'chrono',n:'03',tab:'Chrono',t:'Contre-la-montre',d:'Le parcours se dévoile peu à peu. Plus tu tardes, moins tu marques.',tx:'126px',r:'-1.6deg',y:'8px',z:2,lr:'-.5deg'},
+  {k:'tronque',n:'04',tab:'Tronqué',t:'Mode tronqué',d:'Le club principal est caviardé. À toi de recouper le reste.',tx:'20px',r:'3deg',y:'28px',z:1,lr:'.9deg'},
+];
+function ChallengePill(){
+  const c=challengeInfo(useNow());
+  return <div className="ld-pill">Challenge <b>{c.no}</b> · renouvelé dans <b>{c.left}</b><span className="ld-dot"><i></i></span></div>;
+}
+function Landing({onChallenge,onClassic}){
+  const c=challengeInfo(useNow());
+  useEffect(()=>{document.body.classList.add('landing');return()=>document.body.classList.remove('landing');},[]);
+  const on={challenge:onChallenge,classique:onClassic};
+  return (
+   <div className="landing">
+    <section className="ld-hero">
+     <div><h1>Quel <em>dossier</em> ouvres{'‑'}tu{' '}?</h1></div>
+     <p>Quatre façons de démasquer les joueurs. Le challenge du jour se renouvelle chaque nuit à minuit.</p>
+    </section>
+    <nav className="cascade" aria-label="Modes de jeu">
+     {MODES.map((m,i)=>{
+       const ch=m.k==='challenge', act=on[m.k], Tag=act?'button':'div';
+       return (
+        <Tag key={m.k} type={act?'button':undefined} onClick={act} className={'fold f-'+m.k+(ch?' big':'')+(act?'':' soon')}
+          style={{'--i':i,'--r':m.r,'--y':m.y,'--z':m.z,'--tx':m.tx,'--lr':m.lr}}>
+         <span className="fold-back"><span className="fold-tab"><span>{m.n} · {m.tab}</span></span></span>
+         <span className="fold-sheet" aria-hidden="true"><span className="h">Fiche joueur — n° {m.n}</span><span className="rb"></span><span className="rb s"></span><span className="l"></span><span className="l"></span><span className="l"></span></span>
+         {ch && <span className="ld-stamp">{c.no}</span>}
+         <span className="fold-front"><span className="label">
+           <span className="ld-t">{m.t}</span><span className="ld-d">{m.d}</span>
+           {ch && <span className="ld-clock"><small>Nouvelle série dans</small>{c.left}</span>}
+           {act ? <span className={'ld-cta'+(ch?' gold':'')}>{ch?'Jouer le challenge':'Ouvrir le dossier'}<span className="ic">{ARROW}</span></span>
+                : <span className="ld-soon">Bientôt disponible</span>}
+         </span></span>
+        </Tag>);
+     })}
+    </nav>
+    <div className="ld-foot"><span>Fonds : 5 grands championnats · depuis 2000</span><span>Iconic Careers — archives</span></div>
+   </div>
+  );
+}
 
 function Setup({onStart}){
   const [leagues,setLeagues]=useState(['L1']);
@@ -762,7 +907,7 @@ function Recap({results,onAgain,cfg,target}){
        <div className="recap-head">
          <div className="rh-in">
            <div className="grade"><div className="gs">{score}<span>/{total}</span></div><div className="gl">{rank}</div></div>
-           <div className="rmsg"><div className="rt">Dossier clos</div><p>{msg}</p>{vs && <div className="vs">{vs}</div>}</div>
+           <div className="rmsg">{cfg.daily!=null && <div className="kline">{SERIE.label(cfg)}</div>}<div className="rt">Dossier clos</div><p>{msg}</p>{vs && <div className="vs">{vs}</div>}</div>
            <span className="stamp tilt green" style={{alignSelf:'flex-start'}}>Traité</span>
          </div>
        </div>
@@ -805,7 +950,7 @@ function Recap({results,onAgain,cfg,target}){
 }
 
 function App(){
-  const [screen,setScreen]=useState('setup');
+  const [screen,setScreen]=useState('landing');
   const [series,setSeries]=useState([]);
   const [results,setResults]=useState([]);
   const [confirm,setConfirm]=useState(false);
@@ -819,13 +964,15 @@ function App(){
     const picks=boot.ids.map(id=>PLAYERS.find(p=>p.id===id)).filter(Boolean);
     if(!picks.length){ setUrl(''); setBoot(null); return; }
     loadSeries(picks).then(s=>{ play(s,boot.cfg,boot.target); setBoot(null); },()=>{ setUrl(''); setBoot(null); });
-  },[]);
-  function goHome(){ setScreen('setup'); setSeries([]); setResults([]); setConfirm(false); setTarget(null); setUrl(''); }
+  },[boot]);
+  function playDaily(){ const n=challengeInfo(new Date()).n; setBoot({ids:dailySeries(n).map(p=>p.id),cfg:{leagues:[],yr:[YMIN,YMAX],diff:'',daily:n},target:null}); }
+  function goHome(){ setScreen('landing'); setSeries([]); setResults([]); setConfirm(false); setTarget(null); setUrl(''); }
   function onBrand(){ if(screen==='game') setConfirm(true); else goHome(); }
   if(boot) return <React.Fragment><Brand onHome={()=>{}}/><div className="wrap"><p className="pool">Ouverture du dossier…</p></div></React.Fragment>;
   return (
    <React.Fragment>
-     <Brand onHome={onBrand}/>
+     <Brand onHome={onBrand}>{screen==='landing' && <ChallengePill/>}</Brand>
+     {screen==='landing' && <Landing onChallenge={playDaily} onClassic={()=>setScreen('setup')}/>}
      {screen==='setup' && <Setup onStart={(s,c)=>play(s,c,null)}/>}
      {screen==='game' && <Game series={series} target={target} onEnd={r=>{setResults(r);setScreen('recap');}}/>}
      {screen==='recap' && <Recap results={results} cfg={cfg} target={target} onAgain={goHome}/>}
