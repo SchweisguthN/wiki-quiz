@@ -954,7 +954,9 @@ function App(){
   const [target,setTarget]=useState(null);
   const [boot,setBoot]=useState(()=>SERIE.parse(location.search));   // série reçue par un lien
   const setUrl=q=>history.replaceState(null,'',location.pathname+(q?'?'+q:''));
-  function play(s,c,t){ setSeries(s); setCfg(c); setTarget(t); setResults([]); setScreen('game'); setUrl(SERIE.query(s,c)+(t!=null?'&s='+t:'')); }
+  const screenRef=useRef(screen); screenRef.current=screen;
+  const guard=()=>history.pushState({garde:1},'',location.href);   // précédent pendant une partie : demander confirmation
+  function play(s,c,t){ setSeries(s); setCfg(c); setTarget(t); setResults([]); setScreen('game'); setUrl(SERIE.query(s,c)+(t!=null?'&s='+t:'')); guard(); }
   useEffect(()=>{
     if(!boot) return;
     const picks=boot.ids.map(id=>PLAYERS.find(p=>p.id===id)).filter(Boolean);
@@ -965,7 +967,7 @@ function App(){
   function playDaily(){ const n=challengeInfo(new Date()).n; setBoot({ids:dailySeries(n).map(p=>p.id),cfg:{leagues:[],yr:[YMIN,YMAX],diff:'',daily:n},target:null}); }
   function goTo(path){ history.pushState(null,'',path); setScreen(pageOf()); setSeries([]); setResults([]); setConfirm(false); setTarget(null); }
   const goHome=()=>goTo('/');
-  useEffect(()=>{ const back=()=>{ setScreen(pageOf()); setConfirm(false); }; addEventListener('popstate',back); return ()=>removeEventListener('popstate',back); },[]);
+  useEffect(()=>{ const back=()=>{ if(screenRef.current==='game'){ guard(); setConfirm(true); return; } setScreen(pageOf()); setConfirm(false); }; addEventListener('popstate',back); return ()=>removeEventListener('popstate',back); },[]);
   function onBrand(){ if(screen==='game') setConfirm(true); else goHome(); }
   if(boot) return <React.Fragment><Brand onHome={()=>{}}/><div className="wrap"><p className="pool">Ouverture du dossier…</p></div></React.Fragment>;
   return (
