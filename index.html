@@ -88,70 +88,89 @@ button{font:inherit;cursor:pointer;color:inherit}
 .stamp.blue{color:var(--blue)}
 .stamp.gold{color:var(--gold)}
 
-/* ============ Accueil (Compo B — bento) ============ */
-.homeB .bento{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 0}
-.homeB .card{background:linear-gradient(180deg,var(--paper),var(--paper-2));border:1px solid var(--paper-edge);border-radius:16px;padding:18px 20px;box-shadow:0 12px 28px -18px rgba(0,0,0,.45)}
-.homeB .card.hero{grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center}
-.homeB .card.champ{grid-column:1/-1}
-.homeB .card.cta{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media(max-width:720px){.homeB .bento{grid-template-columns:1fr}.homeB .card.hero{grid-template-columns:1fr}.homeB .card.periode,.homeB .card.diff{grid-column:1/-1}.homeB .scene{display:none}}
+/* ============ Partie classique : réglages dans la chemise ouverte ============ */
+.cf{--ease-o:cubic-bezier(.32,.72,0,1);--paper:#f8f2e3;max-width:1180px;margin:0 auto;padding:34px 28px 80px;position:relative;z-index:2;font-family:'Courier Prime',monospace;line-height:1.5}
+.cf-back{display:inline-flex;align-items:center;gap:8px;background:none;border:0;padding:6px 0;font:700 11px 'Courier Prime',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mut)}
+.cf-back:hover{color:var(--ink)}
+.cf-head h1{font:700 clamp(40px,5.4vw,72px)/.92 'Oswald',sans-serif;text-transform:uppercase;margin:16px 0 0;color:var(--ink);text-wrap:balance}
+.cf-head h1 em{font-style:normal;color:var(--green)}
+.cf-head p{margin:16px 0 0;max-width:52ch;font-size:14px;line-height:1.7;color:var(--ink-mut)}
+.cf-fold{position:relative;margin-top:64px;padding:34px;border-radius:6px 6px 14px 14px;background:linear-gradient(180deg,#e6d09d,#d9bf84 38%,#c4a66a);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 40px 70px -40px rgba(35,28,12,.6),0 12px 24px -14px rgba(35,28,12,.3);animation:cf-rise .9s var(--ease-o) backwards}
+@keyframes cf-rise{from{transform:translateY(40px);opacity:0}}
+.cf-tab{position:absolute;top:-30px;left:40px;width:152px;height:32px;border-radius:9px 9px 0 0;background:#e6d09d;display:flex;align-items:center;justify-content:center}
+.cf-tab span{background:var(--paper);padding:5px 9px;border-radius:3px;font:700 10px/1 'Courier Prime',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.cf-grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:28px;align-items:start}
+.cf-sheet{background:linear-gradient(180deg,#fcf8ee,#f3e9d1);border-radius:6px;padding:26px 30px 30px;box-shadow:0 3px 8px rgba(40,30,10,.14);display:grid;gap:26px}
+.cf-sh{font:700 11px 'Oswald',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mut);border-bottom:1.5px solid var(--ink);padding-bottom:9px}
+.cf-sec h2{font:600 17px 'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em;margin:0;color:var(--ink)}
+.cf-hint{margin:4px 0 14px;font-size:12px;color:var(--ink-mut)}
+.cf-sec h2+.cf-lv{margin-top:14px}
+/* championnats : cases à cocher */
+.cf-lgs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.cf-lg{position:relative;display:flex;flex-direction:column;gap:12px;padding:12px;border-radius:8px;background:#fffdf6;box-shadow:0 0 0 1px var(--paper-edge);cursor:pointer;user-select:none;transition:transform .5s var(--ease-o),box-shadow .2s}
+.cf-lg:hover{transform:translateY(-2px)}
+.cf-lg:has(input:focus-visible){outline:2.5px solid var(--green-br);outline-offset:2px}
+.cf-lg.on{box-shadow:0 0 0 2px var(--green),0 10px 18px -12px rgba(30,122,73,.55);background:#f6f8ee}
+.cf-lg input{position:absolute;opacity:0;pointer-events:none}
+.cf-lg .top{display:flex;align-items:center;justify-content:space-between}
+.cf-lg .flag{width:30px;height:20px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.18) inset}
+.cf-lg .box{width:20px;height:20px;border-radius:5px;box-shadow:inset 0 0 0 2px var(--paper-edge);display:grid;place-items:center;transition:background .2s}
+.cf-lg.on .box{background:var(--green);box-shadow:none}
+.cf-lg .box svg{width:11px;height:11px;opacity:0}
+.cf-lg.on .box svg{opacity:1}
+.cf-lg .nm{font:500 15px/1.15 'Oswald',sans-serif;color:var(--ink)}
+/* période : sélecteur segmenté */
+.cf-seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:4px;border-radius:10px;background:#ece0c2;box-shadow:inset 0 1px 2px rgba(60,45,20,.18)}
+.cf-seg button{border:0;border-radius:7px;padding:11px 8px;background:none;font:600 13.5px 'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-mut);transition:background .2s,color .2s}
+.cf-seg button:hover{color:var(--ink)}
+.cf-seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:0 6px 12px -8px rgba(20,15,5,.7)}
+/* niveau : cote de recrutement */
+.cf-lv{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cf-lv button{display:flex;flex-direction:column;align-items:flex-start;border:0;text-align:left;padding:13px 13px 14px;border-radius:8px;background:#fffdf6;box-shadow:0 0 0 1px var(--paper-edge);color:var(--ink);transition:transform .5s var(--ease-o),box-shadow .2s}
+.cf-lv button:hover{transform:translateY(-2px)}
+.cf-lv button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--acc),0 10px 18px -12px rgba(35,28,12,.5)}
+.cf-lv .tt{display:flex;flex-direction:column;align-items:flex-start;gap:6px;font:700 15px/1 'Oswald',sans-serif;text-transform:uppercase}
+.cf-lv .cote{display:inline-flex;gap:2px;color:var(--acc)}
+.cf-lv .cote i{width:9px;height:9px;background:currentColor;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);opacity:.25}
+.cf-lv .cote i.f{opacity:1}
+.cf-lv .d{display:block;margin-top:8px;font:italic 500 12px/1.4 'Bitter',Georgia,serif;color:var(--ink-mut)}
+.cf-lv .facile{--acc:var(--green)}.cf-lv .moyen{--acc:var(--blue)}.cf-lv .difficile{--acc:var(--gold)}.cf-lv .legende{--acc:var(--red)}
+/* synthèse + lancement */
+.cf-sum{position:sticky;top:24px;display:flex;flex-direction:column;align-items:flex-start;padding:24px 22px 22px;border-radius:6px;background:var(--paper);transform:rotate(.6deg);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 16px 26px -16px rgba(35,28,12,.55)}
+.cf-sum .stamp{position:absolute;right:18px;top:20px}
+.cf-k{font:700 10px 'Courier Prime',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mut)}
+.cf-n{font:400 58px/1 'Saira Stencil One',sans-serif;color:var(--ink);margin-top:8px;font-variant-numeric:tabular-nums}
+.cf-crit{margin:14px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink)}
+.cf-msg{margin:6px 0 20px;font-size:12.5px;color:var(--ink-mut)}
+.cf-msg.warn{color:var(--red-d);font-weight:700}
+.cf-go{border:0;width:100%;padding:8px 8px 8px 20px;font-size:13px;cursor:pointer;transition:transform .5s var(--ease-o)}
+.cf-go .ic{width:32px;height:32px}
+.cf-go:hover .ic{transform:translate(2px,-2px) scale(1.08)}
+.cf-go:active{transform:scale(.98)}
+.cf-go:disabled{background:#8b8170;color:#e9e2d0;box-shadow:none;cursor:not-allowed}
+@media(max-width:1100px){
+ .cf-grid{grid-template-columns:1fr}
+ .cf-sum{position:sticky;top:auto;bottom:12px;transform:none;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:16px;padding:12px 12px 12px 16px;box-shadow:0 0 0 1px var(--paper-edge),0 18px 30px -12px rgba(35,28,12,.55)}
+ .cf-sum .stamp,.cf-crit{display:none}
+ .cf-k{grid-column:1;font-size:9px}
+ .cf-n{grid-column:1;font-size:30px;margin-top:2px}
+ .cf-msg{grid-column:1/-1;grid-row:3;margin:6px 0 0;font-size:11.5px}
+ .cf-msg:empty{display:none}
+ .cf-go{grid-column:2;grid-row:1/3;justify-self:end;width:auto;max-width:100%}
+}
+@media(max-width:760px){
+ .cf{padding:22px 16px 40px}
+ .cf-fold{margin-top:54px;padding:14px}
+ .cf-tab{left:20px}
+ .cf-sheet{padding:20px 16px 22px;gap:24px}
+ .cf-lgs{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+ .cf-seg,.cf-lv{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 .kline{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mut);display:inline-flex;align-items:center;gap:10px}
 .kline::before{content:"";width:26px;height:2px;background:var(--gold)}
-h1.big{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(28px,4.4vw,46px);line-height:1;letter-spacing:.01em;margin:12px 0 0;color:var(--ink);text-wrap:balance}
-h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transparent 62%,rgba(30,122,73,.2) 0);padding:0 .06em}
-.lead{margin:14px 0 0;color:var(--ink-mut);font-family:'Courier Prime',monospace;font-size:13px;max-width:44ch;line-height:1.6}
-.scene{position:relative;height:210px}
-.scene .o{position:absolute;border-radius:7px;box-shadow:0 16px 34px -16px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.25)}
-.scene .folder{width:180px;height:144px;background:linear-gradient(160deg,var(--kraft),var(--kraft-d));border:1px solid var(--kraft-edge)}
-.scene .folder::before{content:"";position:absolute;top:-11px;left:20px;width:74px;height:14px;border-radius:5px 5px 0 0;background:linear-gradient(180deg,var(--green),var(--green-d))}
-.scene .f1{left:2%;top:56px;transform:rotate(-7deg)}
-.scene .f2{right:4%;top:70px;transform:rotate(9deg)}
-.scene .fiche{width:164px;height:190px;left:33%;top:4px;transform:rotate(2.5deg);background:var(--paper);border:1px solid var(--paper-edge);padding:13px 12px;z-index:3}
-.scene .fiche .fh{font-family:'Oswald',sans-serif;font-weight:700;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--green-deep);border-bottom:1.5px solid var(--ink);padding-bottom:6px}
-.scene .fiche .rb{height:12px;background:#1b160d;border-radius:2px;margin:11px 0 4px}
-.scene .fiche .rb.s{width:60%}
-.scene .fiche .ln{height:1px;background:var(--paper-line);margin:13px 0}
-.scene .fiche .st{position:absolute;right:-8px;top:48px;font-family:'Saira Stencil One',sans-serif;font-size:8.5px;letter-spacing:.06em;color:var(--red);border:2px solid var(--red);border-radius:4px;padding:3px 6px;transform:rotate(-8deg);background:var(--paper)}
-.scene .clip{position:absolute;left:30%;top:-2px;width:13px;height:38px;border:3px solid #9aa3ad;border-radius:8px;z-index:4;transform:rotate(6deg)}
-.grouphead{display:flex;align-items:baseline;gap:10px;margin:0 0 12px}
-.grouphead .n{font-family:'Courier Prime',monospace;font-weight:700;font-size:12px;color:var(--green-deep);border:1.5px solid var(--green-d);border-radius:4px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex:none}
-.grouphead h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:14.5px;margin:0;color:var(--ink)}
-.grouphead .hint{margin:0 0 0 auto;font-family:'Courier Prime',monospace;font-size:11px;color:var(--ink-mut);text-align:right;max-width:40ch;line-height:1.4}
-.leagues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px}
-.lg{display:flex;align-items:center;gap:10px;border:1px solid var(--paper-edge);border-radius:9px;padding:10px 12px;background:#fffdf6;color:var(--ink);user-select:none;position:relative;transition:all .14s var(--ease);box-shadow:0 1px 0 rgba(0,0,0,.04)}
-.lg:hover{border-color:var(--kraft-edge);transform:translateY(-1px)}
-.lg.on{border-color:var(--green);box-shadow:0 0 0 1.5px var(--green) inset;background:#f3f6ec}
-.lg input{position:absolute;opacity:0;pointer-events:none}
-.lg .flag{width:26px;height:18px;border-radius:2px;flex:none;box-shadow:0 0 0 1px rgba(0,0,0,.2) inset}
-.lg .nm{font-family:'Oswald',sans-serif;font-weight:500;font-size:14px}
-.lg .box{margin-left:auto;width:19px;height:19px;border-radius:4px;border:2px solid var(--paper-edge);background:#fff;flex:none;display:flex;align-items:center;justify-content:center;transition:all .14s var(--ease)}
-.lg.on .box{background:var(--green);border-color:var(--green)}
-.lg .box svg{width:11px;height:11px;opacity:0}
-.lg.on .box svg{opacity:1}
-.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:9px}
-.choice{border:1px solid var(--paper-edge);border-radius:9px;padding:11px 13px;background:#fffdf6;color:var(--ink);text-align:left;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.02em;font-size:14px;transition:all .14s var(--ease)}
-.choice:hover{border-color:var(--kraft-edge);transform:translateY(-1px)}
-.choice.on{border-color:var(--green);box-shadow:0 0 0 1.5px var(--green) inset;color:var(--green-deep);background:#f3f6ec}
-.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px}
-.tier{border:1px solid var(--paper-edge);border-radius:10px;padding:12px 13px;background:#fffdf6;color:var(--ink);text-align:left;position:relative;overflow:hidden;transition:all .16s var(--ease)}
-.tier::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--acc)}
-.tier:hover{transform:translateY(-2px)}
-.tier.on{border-color:var(--acc);box-shadow:0 0 0 1.5px var(--acc) inset}
-.tier .tt{display:flex;justify-content:space-between;align-items:center;gap:6px}
-.tier .t{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:14.5px}
-.tier .cote{display:inline-flex;gap:2px;color:var(--acc)}
-.tier .cote i{width:8px;height:8px;display:inline-block;background:currentColor;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);opacity:.3}
-.tier .cote i.f{opacity:1}
-.tier .lab{font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-top:7px}
-.tier .d{color:var(--ink-mut);font-size:11.5px;margin-top:3px;font-family:'Bitter',Georgia,serif;font-style:italic;line-height:1.35}
-.tier.t-facile{--acc:var(--green)}.tier.t-moyen{--acc:var(--blue)}.tier.t-difficile{--acc:var(--gold)}.tier.t-legende{--acc:var(--red)}
 .pool{color:var(--ink-mut);font-family:'Courier Prime',monospace;font-size:13px}
 .pool .err{color:var(--red,#b3261e);font-weight:700}
-.pool b{color:var(--ink);font-family:'Oswald',sans-serif;font-weight:700;font-size:17px;margin:0 2px}
-.play{position:relative;background:linear-gradient(180deg,var(--green-br),var(--green));color:#eafff2;border:none;border-radius:11px;padding:15px 34px;font-family:'Oswald',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.06em;box-shadow:0 4px 0 var(--green-d),0 14px 24px -12px rgba(30,122,73,.5);transition:transform .12s var(--ease),box-shadow .12s var(--ease)}
-.play:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--green-d),0 18px 30px -12px rgba(30,122,73,.6)}
-.play:active{transform:translateY(2px);box-shadow:0 2px 0 var(--green-d)}
-.play:disabled{background:#3a4a40;color:#8fa093;box-shadow:none;cursor:not-allowed;transform:none}
 
 /* ============ Jeu — topbar ============ */
 .topbar{display:flex;align-items:center;justify-content:space-between;margin:10px 0 24px;gap:16px;flex-wrap:wrap;
@@ -356,7 +375,6 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
 /* Petits écrans : en dernier pour primer sur les règles de base */
 @media(max-width:480px){
   .wrap,.brandbar{padding-left:14px;padding-right:14px}
-  .grouphead{flex-wrap:wrap}.grouphead .hint{flex-basis:100%;margin:2px 0 0;text-align:left;max-width:none}
   .recap-top .rh-in{grid-template-columns:1fr;justify-items:center;text-align:center;padding-top:44px}
   .folder{padding:14px 10px 18px}
   .sheet{transform:none}
@@ -364,7 +382,7 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
   .sheet .sh-h,.ident,.rec,.sh-f{padding-left:28px;padding-right:12px}
   .ident .fl .k{width:84px}
   .row,.rec-h{grid-template-columns:minmax(0,1fr) 72px 44px;gap:6px}
-  .play,.again{width:100%}
+  .again{width:100%}
   .row.nested .club{padding-left:0}.row.nested .club::before{position:static;display:table;margin-bottom:4px}
   .ritem{flex-wrap:wrap;row-gap:4px}.ritem .meta{flex-basis:100%;margin-left:38px;text-align:left}
 }
@@ -377,7 +395,7 @@ h1.big em{font-style:normal;color:var(--green);background:linear-gradient(transp
 }
 /* ============ Accueil — choix du mode (chemises) ============ */
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.07;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27220%27%20height%3D%27220%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.85%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%20.25%20%200%200%200%200%20.2%20%200%200%200%200%20.1%20%200%200%200%20.55%200%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23n%29%27%2F%3E%3C%2Fsvg%3E")}
-body.landing .brandbar{max-width:1180px;padding:26px 28px 0 24px;justify-content:space-between;gap:20px}
+body.wide .brandbar{max-width:1180px;padding:26px 28px 0 24px;justify-content:space-between;gap:20px}
 .landing{--ease:cubic-bezier(.32,.72,0,1);--paper:#f8f2e3;--desk-a:#e6e9d9;font-family:'Courier Prime',ui-monospace,monospace;position:relative;z-index:2;line-height:1.5}
 .ld-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 8px 7px 14px;border-radius:999px;background:rgba(255,252,242,.55);box-shadow:0 0 0 1px rgba(60,45,20,.10),0 10px 24px -16px rgba(40,30,10,.4);font:11.5px 'Courier Prime',monospace;letter-spacing:.06em;color:var(--ink-mut)}
 .ld-pill b{font:400 14px 'Saira Stencil One',sans-serif;color:var(--ink);letter-spacing:.04em;font-variant-numeric:tabular-nums}
@@ -604,7 +622,7 @@ function ChallengePill(){
 }
 function Landing({onChallenge,onClassic}){
   const c=challengeInfo(useNow());
-  useEffect(()=>{document.body.classList.add('landing');return()=>document.body.classList.remove('landing');},[]);
+  useEffect(()=>{document.body.classList.add('wide');return()=>document.body.classList.remove('wide');},[]);
   const done=PLAYED.get(c.n);
   const on={challenge:done==null?onChallenge:null,classique:onClassic};
   return (
@@ -638,7 +656,7 @@ function Landing({onChallenge,onClassic}){
   );
 }
 
-function Setup({onStart}){
+function Setup({onStart,onBack}){
   const [leagues,setLeagues]=useState(['L1']);
   const [yr,setYr]=useState([2020,2026]);
   const [diff,setDiff]=useState('facile');
@@ -653,78 +671,66 @@ function Setup({onStart}){
     try{ onStart(await loadSeries(shuffle(pool).slice(0,n)),{leagues,yr,diff}); }
     catch(e){ setBusy(false); setErr('Impossible de charger les fiches. Vérifie ta connexion, puis réessaie.'); }
   }
+  const cfg={leagues,yr,diff}, d=DIFF_MAP[diff];
+  const msg=err || (canPlay ? 'Série de '+n+' fiche'+(n>1?'s':'')+' tirée'+(n>1?'s':'')+' au hasard.' : leagues.length===0 ? 'Coche au moins un championnat.' : 'Aucune fiche ne correspond. Élargis tes critères.');
+  useEffect(()=>{document.body.classList.add('wide');return()=>document.body.classList.remove('wide');},[]);
   return (
-   <React.Fragment>
-    <div className="wrap homeB">
-     <div className="bento">
-      <section className="card hero">
-       <div>
-        <div className="kline">La collection des carrières</div>
-        <h1 className="big">Devine le joueur derrière la <em>carrière</em></h1>
-        <p className="lead">Un parcours en club, saison après saison. Retrouve le nom avant de lever le caviardage.</p>
-       </div>
-       <div className="scene" aria-hidden="true">
-        <div className="o folder f1"></div>
-        <div className="o folder f2"></div>
-        <span className="clip"></span>
-        <div className="o fiche">
-         <div className="fh">Fiche joueur — Nº 007</div>
-         <div className="rb"></div><div className="rb s"></div>
-         <div className="ln"></div><div className="ln"></div><div className="ln"></div>
-         <span className="st">Identité masquée</span>
+   <div className="cf">
+    <div className="cf-head">
+     <button className="cf-back" onClick={onBack}>← Tous les dossiers</button>
+     <h1>Partie <em>classique</em></h1>
+     <p>Choisis les championnats, la période et le niveau : on sort dix fiches du fonds.</p>
+    </div>
+    <div className="cf-fold">
+     <span className="cf-tab" aria-hidden="true"><span>02 · Classique</span></span>
+     <div className="cf-grid">
+      <div className="cf-sheet">
+       <div className="cf-sh">Bordereau de recherche</div>
+       <section className="cf-sec">
+        <h2>Championnats</h2>
+        <p className="cf-hint">Le joueur est passé par au moins un des championnats cochés.</p>
+        <div className="cf-lgs">
+         {LEAGUES.map(l=>{
+           const on=leagues.includes(l.id);
+           return (
+            <label key={l.id} className={"cf-lg"+(on?" on":"")}>
+             <input type="checkbox" checked={on} onChange={()=>toggle(l.id)}/>
+             <span className="top"><span className="flag" style={{background:l.flag}}></span>
+              <span className="box"><svg viewBox="0 0 12 12"><path d="M2 6.5 L5 9.5 L10 3" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg></span></span>
+             <span className="nm">{l.name}</span>
+            </label>);
+         })}
         </div>
-       </div>
-      </section>
-
-      <section className="card champ">
-       <div className="grouphead"><span className="n">1</span><h3>Championnats</h3><p className="hint">Au moins un des championnats cochés dans la carrière.</p></div>
-       <div className="leagues">
-        {LEAGUES.map(l=>{
-          const on=leagues.includes(l.id);
-          return (
-          <label key={l.id} className={"lg"+(on?" on":"")}>
-            <input type="checkbox" checked={on} onChange={()=>toggle(l.id)}/>
-            <span className="flag" style={{background:l.flag}}></span>
-            <span className="nm">{l.name}</span>
-            <span className="box"><svg viewBox="0 0 12 12"><path d="M2 6.5 L5 9.5 L10 3" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-          </label>
-        );})}
-       </div>
-      </section>
-
-      <section className="card periode">
-       <div className="grouphead"><span className="n">2</span><h3>Période</h3></div>
-       <div className="choices">
-        {PERIODS.map(p=>(
-          <button key={p.label} className={"choice"+(yr[0]===p.range[0]&&yr[1]===p.range[1]?" on":"")} onClick={()=>setYr(p.range)}>{p.label}</button>
-        ))}
-       </div>
-      </section>
-
-      <section className="card diff">
-       <div className="grouphead"><span className="n">3</span><h3>Difficulté</h3></div>
-       <div className="tiers">
-        {DIFFS.map(d=>(
-          <button key={d.id} className={"tier t-"+d.id+(diff===d.id?" on":"")} onClick={()=>setDiff(d.id)}>
-            <div className="tt"><span className="t">{d.t}</span><Cote n={d.cote}/></div>
-            <div className="lab">Cote {d.cote}/4</div>
-            <div className="d">{d.d}</div>
-          </button>
-        ))}
-       </div>
-      </section>
-
-      <section className="card cta">
-       <div className="pool">
-        {err ? <span className="err">{err}</span> : canPlay
-          ? <span>Série de <b>{n}</b> fiche{n>1?'s':''}{pool.length<10 && <span> — pool limité à <b>{pool.length}</b></span>}</span>
-          : (leagues.length===0 ? <span>Coche au moins un championnat.</span> : <span>Aucune fiche ne correspond — élargis tes critères.</span>)}
-       </div>
-       <button className="play" disabled={!canPlay||busy} onClick={start}>{busy?'Chargement…':'Ouvrir le dossier'}</button>
-      </section>
+       </section>
+       <section className="cf-sec">
+        <h2>Période</h2>
+        <p className="cf-hint">Au moins une saison jouée sur la période.</p>
+        <div className="cf-seg" role="group" aria-label="Période">
+         {PERIODS.map(p=><button key={p.label} aria-pressed={yr[0]===p.range[0]&&yr[1]===p.range[1]} onClick={()=>setYr(p.range)}>{p.label}</button>)}
+        </div>
+       </section>
+       <section className="cf-sec">
+        <h2>Niveau</h2>
+        <div className="cf-lv" role="group" aria-label="Niveau">
+         {DIFFS.map(x=>(
+          <button key={x.id} className={x.id} aria-pressed={diff===x.id} onClick={()=>setDiff(x.id)}>
+           <span className="tt">{x.t}<Cote n={x.cote}/></span>
+           <span className="d">{x.d}</span>
+          </button>))}
+        </div>
+       </section>
+      </div>
+      <aside className="cf-sum" aria-live="polite">
+       <span className={"stamp tilt "+(diff==='legende'?'':diff==='difficile'?'gold':diff==='moyen'?'blue':'green')}>{d.t} · {d.cote}/4</span>
+       <span className="cf-k">Fiches au fonds</span>
+       <b className="cf-n">{(leagues.length?pool.length:0).toLocaleString('fr-FR')}</b>
+       <p className="cf-crit">{SERIE.label(cfg)}</p>
+       <p className={"cf-msg"+(canPlay&&!err?"":" warn")}>{msg}</p>
+       <button className="ld-cta cf-go" disabled={!canPlay||busy} onClick={start}>{busy?'Ouverture…':'Ouvrir le dossier'}<span className="ic">{ARROW}</span></button>
+      </aside>
      </div>
     </div>
-   </React.Fragment>
+   </div>
   );
 }
 
@@ -974,7 +980,7 @@ function App(){
    <React.Fragment>
      <Brand onHome={onBrand}>{screen==='landing' && <ChallengePill/>}</Brand>
      {screen==='landing' && <Landing onChallenge={playDaily} onClassic={()=>goTo('/partie-classique')}/>}
-     {screen==='setup' && <Setup onStart={(s,c)=>play(s,c,null)}/>}
+     {screen==='setup' && <Setup onStart={(s,c)=>play(s,c,null)} onBack={goHome}/>}
      {screen==='game' && <Game series={series} target={target} onEnd={r=>{ if(cfg.daily!=null) PLAYED.set(cfg.daily,r.filter(x=>x.good).length+'/'+r.length); setResults(r); setScreen('recap'); }}/>}
      {screen==='recap' && <Recap results={results} cfg={cfg} target={target} onAgain={goHome}/>}
      {confirm &&
