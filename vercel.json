@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/partie-classique", "destination": "/index.html" },
+    { "source": "/partie-classique/", "destination": "/index.html" }
+  ]
+}

@@ -543,7 +543,7 @@ const ALLKEYS=[...PLAYERS.map(p=>({n:p.name,k:p.key,a:p.alias})),...DATA.others.
 // Les carrières sont chargées à la demande, par tranche (voir scripts/build_site.py)
 const shardCache={};
 async function loadSeries(picks){
-  const file=p=>'careers/'+(parseInt(p.id.slice(1))%DATA.shards)+'.json';
+  const file=p=>'/careers/'+(parseInt(p.id.slice(1))%DATA.shards)+'.json';
   await Promise.all([...new Set(picks.map(file))].map(async f=>{
     if(shardCache[f]) return;
     const r=await fetch(f); if(!r.ok) throw new Error(f+' '+r.status);
@@ -942,8 +942,11 @@ function Recap({results,onAgain,cfg,target}){
   );
 }
 
+// Pages : l'accueil à « / », les réglages de la partie classique à « /partie-classique » (réécriture dans vercel.json)
+const PAGES={'/partie-classique':'setup'};
+const pageOf=()=>PAGES[location.pathname.replace(/\/$/,'')]||'landing';
 function App(){
-  const [screen,setScreen]=useState('landing');
+  const [screen,setScreen]=useState(pageOf);
   const [series,setSeries]=useState([]);
   const [results,setResults]=useState([]);
   const [confirm,setConfirm]=useState(false);
@@ -960,13 +963,15 @@ function App(){
     loadSeries(picks).then(s=>{ play(s,boot.cfg,boot.target); setBoot(null); },()=>{ setUrl(''); setBoot(null); });
   },[boot]);
   function playDaily(){ const n=challengeInfo(new Date()).n; setBoot({ids:dailySeries(n).map(p=>p.id),cfg:{leagues:[],yr:[YMIN,YMAX],diff:'',daily:n},target:null}); }
-  function goHome(){ setScreen('landing'); setSeries([]); setResults([]); setConfirm(false); setTarget(null); setUrl(''); }
+  function goTo(path){ history.pushState(null,'',path); setScreen(pageOf()); setSeries([]); setResults([]); setConfirm(false); setTarget(null); }
+  const goHome=()=>goTo('/');
+  useEffect(()=>{ const back=()=>{ setScreen(pageOf()); setConfirm(false); }; addEventListener('popstate',back); return ()=>removeEventListener('popstate',back); },[]);
   function onBrand(){ if(screen==='game') setConfirm(true); else goHome(); }
   if(boot) return <React.Fragment><Brand onHome={()=>{}}/><div className="wrap"><p className="pool">Ouverture du dossier…</p></div></React.Fragment>;
   return (
    <React.Fragment>
      <Brand onHome={onBrand}>{screen==='landing' && <ChallengePill/>}</Brand>
-     {screen==='landing' && <Landing onChallenge={playDaily} onClassic={()=>setScreen('setup')}/>}
+     {screen==='landing' && <Landing onChallenge={playDaily} onClassic={()=>goTo('/partie-classique')}/>}
      {screen==='setup' && <Setup onStart={(s,c)=>play(s,c,null)}/>}
      {screen==='game' && <Game series={series} target={target} onEnd={r=>{ if(cfg.daily!=null) PLAYED.set(cfg.daily,r.filter(x=>x.good).length+'/'+r.length); setResults(r); setScreen('recap'); }}/>}
      {screen==='recap' && <Recap results={results} cfg={cfg} target={target} onAgain={goHome}/>}
