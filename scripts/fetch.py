@@ -9,7 +9,7 @@ dans failed.txt et sauté. Un refus d'accès arrête tout.
 import csv, http.client, io, pathlib, subprocess, time, urllib.error, urllib.parse, urllib.request
 
 ENDPOINT = "https://query.wikidata.org/sparql"
-UA = "IconicCareersBot/1.0 (https://github.com/SchweisguthN/wiki-quiz)"
+UA = "FootballArchivesBot/1.0 (https://github.com/SchweisguthN/wiki-quiz)"
 
 def run(query):
     data = urllib.parse.urlencode({"query": query}).encode()

@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Iconic Careers</title>
+<title>Football Archives</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='12 16 76 76'%3E%3Cpath d='M14 30 a4 4 0 0 1 4 -4 h20 l6 6 h38 a4 4 0 0 1 4 4 v42 a4 4 0 0 1 -4 4 H18 a4 4 0 0 1 -4 -4 z' fill='%231e7a49'/%3E%3Cg fill='none' stroke='%23f4ecd6' stroke-width='3.2' stroke-linecap='round'%3E%3Crect x='22' y='40' width='56' height='34' rx='2'/%3E%3Cline x1='50' y1='40' x2='50' y2='74'/%3E%3Ccircle cx='50' cy='57' r='8'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Saira+Stencil+One&family=Bitter:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
@@ -76,10 +77,12 @@ button{font:inherit;cursor:pointer;color:inherit}
 .brandbar{max-width:1000px;margin:0 auto;padding:20px 20px 0;display:flex;align-items:center;position:relative;z-index:1}
 .brand{display:inline-flex;align-items:center;gap:13px;background:none;border:none;padding:4px;transition:transform .16s var(--ease)}
 .brand:hover{transform:translateY(-1px)}
-.brand .crest{width:40px;height:50px;flex:none;filter:drop-shadow(0 3px 7px rgba(0,0,0,.5))}
+.brand .crest{width:49px;height:40px;flex:none;filter:drop-shadow(0 4px 6px rgba(20,40,25,.28))}
+.brand .wordmark .t1,.brand .wordmark .t2{white-space:nowrap}
 .brand .wordmark{text-align:left;line-height:.9}
 .brand .wordmark .t1{display:block;font-family:'Oswald',sans-serif;font-weight:700;font-size:25px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink)}
 .brand .wordmark .t2{display:block;font-family:'Courier Prime',monospace;font-weight:400;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--green-d);margin-top:5px}
+@media(max-width:480px){.brand .wordmark .t1{font-size:21px}.brand .wordmark .t2{font-size:9px;letter-spacing:.16em}}
 
 /* ============ Tampons ============ */
 .stamp{font-family:'Saira Stencil One',Oswald,sans-serif;text-transform:uppercase;letter-spacing:.06em;
@@ -496,27 +499,19 @@ const PERIODS=[
 ];
 
 const CREST=(
-  <svg className="crest" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    {/* cadre de vignette */}
-    <rect x="4" y="4" width="92" height="112" rx="9" fill="#fbf9f2" stroke="#c8a34a" strokeWidth="3"/>
-    {/* fenêtre photo verte */}
-    <rect x="11" y="11" width="78" height="82" rx="4" fill="#0e5137"/>
-    {/* buste silhouette anonyme */}
-    <circle cx="50" cy="46" r="16" fill="#0a3d29"/>
-    <path d="M22 92 C22 72 38 66 50 66 C62 66 78 72 78 92 Z" fill="#0a3d29"/>
-    {/* point d'interrogation */}
-    <text x="50" y="58" textAnchor="middle" fontFamily="Oswald,sans-serif" fontSize="30" fontWeight="700" fill="#e3c877">?</text>
-    {/* bandeau doré bas */}
-    <rect x="11" y="98" width="78" height="13" rx="2" fill="#c8a34a"/>
-    <text x="50" y="108" textAnchor="middle" fontFamily="Oswald,sans-serif" fontSize="9" fontWeight="700" fill="#0a3d29" letterSpacing="1.5">IC</text>
+  <svg className="crest" viewBox="12 22 76 62" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    {/* chemise cartonnée vert pelouse, tracé du terrain */}
+    <path d="M14 30 a4 4 0 0 1 4 -4 h20 l6 6 h38 a4 4 0 0 1 4 4 v42 a4 4 0 0 1 -4 4 H18 a4 4 0 0 1 -4 -4 z" fill="#1e7a49"/>
+    <g fill="none" stroke="#f4ecd6" strokeWidth="2.6" strokeLinecap="round"><rect x="22" y="40" width="56" height="34" rx="2"/><line x1="50" y1="40" x2="50" y2="74"/><circle cx="50" cy="57" r="8"/></g>
+    <circle cx="50" cy="57" r="1.8" fill="#f4ecd6"/>
   </svg>
 );
 function Brand({onHome,children}){
   return (
    <div className="brandbar">
-     <button className="brand" onClick={onHome} aria-label="Iconic Careers — retour à l'accueil">
+     <button className="brand" onClick={onHome} aria-label="Football Archives — retour à l'accueil">
        {CREST}
-       <span className="wordmark"><span className="t1">Iconic Careers</span><span className="t2">Archives des carrières</span></span>
+       <span className="wordmark"><span className="t1">Football Archives</span><span className="t2">Les dossiers du ballon rond</span></span>
      </button>
      {children}
    </div>
@@ -545,7 +540,7 @@ const SERIE={
     const s=u.get('s'), c=u.get('c');
     return {ids,cfg:{leagues:lg?lg.split('_'):[],yr:[+y0||2000,+y1||2026],diff:diff||'',daily:/^\d+$/.test(c||'')?+c:null},target:/^\d+$/.test(s||'')?+s:null};
   },
-  ref(series){let h=0;for(const c of series.map(p=>p.id).join()) h=(h*31+c.charCodeAt(0))>>>0;return 'IC-'+h.toString(36).toUpperCase().slice(-6).padStart(6,'0');},
+  ref(series){let h=0;for(const c of series.map(p=>p.id).join()) h=(h*31+c.charCodeAt(0))>>>0;return 'FA-'+h.toString(36).toUpperCase().slice(-6).padStart(6,'0');},
   label(cfg){
     if(cfg.daily!=null) return 'Challenge du jour '+dailyNo(cfg.daily)+' · '+DIFF_MAP[dailyLevel(cfg.daily)].t;
     const lg=cfg.leagues.map(id=>(LEAGUES.find(l=>l.id===id)||{}).name).filter(Boolean).join(', ');
@@ -645,7 +640,7 @@ function Landing({onChallenge,onClassic}){
         </Tag>);
      })}
     </nav>
-    <div className="ld-foot"><span>Fonds : 5 grands championnats · depuis 2000</span><span>Iconic Careers — archives</span></div>
+    <div className="ld-foot"><span>Fonds : 5 grands championnats · depuis 2000</span><span>Football Archives — salle de lecture</span></div>
    </div>
   );
 }
@@ -898,7 +893,7 @@ function Recap({results,onAgain,cfg,target}){
   const ref=SERIE.ref(series);
   const url=location.origin+location.pathname+'?'+SERIE.query(series,cfg)+'&s='+score;
   const label=SERIE.label(cfg);
-  const text='Iconic Careers · Dossier '+ref+'\nJ\u2019ai identifié '+score+' fiche'+(score>1?'s':'')+' sur '+total+(label?' ('+label+')':'')+'. À toi de faire mieux !\n'+results.map(r=>r.good?'\u{1F7E9}':'\u{1F7E5}').join('');
+  const text='Football Archives · Dossier '+ref+'\nJ\u2019ai identifié '+score+' fiche'+(score>1?'s':'')+' sur '+total+(label?' ('+label+')':'')+'. À toi de faire mieux !\n'+results.map(r=>r.good?'\u{1F7E9}':'\u{1F7E5}').join('');
   const vs=target==null?null:score>target?'Défi relevé : tu bats le score de '+target+'/'+total+'.':score===target?'Égalité : '+target+'/'+total+' de part et d\u2019autre.':'Défi perdu : le score à battre était '+target+'/'+total+'.';
   function copy(str){
     const done=()=>setCopied(true);
@@ -906,7 +901,7 @@ function Recap({results,onAgain,cfg,target}){
     else if(inputRef.current){inputRef.current.select();}
   }
   function share(){
-    if(navigator.share && matchMedia('(pointer:coarse)').matches) navigator.share({title:'Iconic Careers',text,url}).catch(()=>{});
+    if(navigator.share && matchMedia('(pointer:coarse)').matches) navigator.share({title:'Football Archives',text,url}).catch(()=>{});
     else copy(text+'\n'+url);
   }
   return (

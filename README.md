@@ -1,4 +1,4 @@
-# Iconic Careers
+# Football Archives
 
 Jeu où l'on devine un footballeur à partir de sa carrière en club. On affiche
 le parcours d'un joueur (clubs, périodes, matchs joués) et il
@@ -7,7 +7,7 @@ faut retrouver son nom.
 ## Contenu du dépôt
 
 ```
-iconic-careers/
+football-archives/
 ├── data/
 │   ├── joueurs_agrege.csv        # 1 ligne par joueur : la table de sélection et d'indices
 │   ├── carrieres_nettoyees.csv   # 1 ligne par passage en club : ce qu'on affiche

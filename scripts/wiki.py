@@ -10,7 +10,7 @@ import json, pathlib, re, sys, time, urllib.parse, urllib.request
 sys.path.insert(0, "scripts")
 from infobox import fields, raw, links as infobox_links
 
-UA = "IconicCareersBot/1.0 (https://github.com/SchweisguthN/wiki-quiz; n.schweisguth+claude@gmail.com)"
+UA = "FootballArchivesBot/1.0 (https://github.com/SchweisguthN/wiki-quiz; n.schweisguth+claude@gmail.com)"
 WD = "https://www.wikidata.org/w/api.php"
 EN = "https://en.wikipedia.org/w/api.php"
 
