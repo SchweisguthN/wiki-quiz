@@ -476,6 +476,24 @@ button.fold:hover .ld-stamp,button.fold:focus-visible .ld-stamp{transform:transl
  .ld-stamp{top:14px;right:20px;font-size:12px;transform:rotate(-8deg)!important}
 }
 
+/* ============ Langue ============ */
+.brandbar{gap:14px}
+.brand{margin-right:auto}
+.lang{display:inline-flex;flex:none;padding:3px;border-radius:999px;background:rgba(255,252,242,.55);box-shadow:0 0 0 1px rgba(60,45,20,.10),0 10px 24px -16px rgba(40,30,10,.4)}
+.lang button{border:0;background:none;padding:7px 10px;border-radius:999px;font:700 11px/1 'Courier Prime',monospace;letter-spacing:.12em;color:var(--ink-mut)}
+.lang button:hover{color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#f8f2e3}
+.brand,.brand .wordmark{min-width:0}
+.brand .wordmark .t2{overflow:hidden;text-overflow:ellipsis}
+@media(max-width:480px){
+ body.wide .brandbar{padding:20px 14px 0 10px}
+ .brandbar{gap:10px}
+ .brand .wordmark .t1{font-size:19px}
+ .brand .wordmark .t2{font-size:8px;letter-spacing:.1em}
+ .lang button{padding:6px 7px}
+}
+html[lang=en] .folder::before{content:"ARCHIVES — PLAYERS"}
+html[lang=en] .row.nested .club::before{content:"LOAN"}
 </style>
 </head>
 <body>
@@ -484,6 +502,10 @@ button.fold:hover .ld-stamp,button.fold:focus-visible .ld-stamp{transform:transl
 <script type="text/babel">
 const {useState,useMemo,useRef,useEffect}=React;
 const DATA=window.GAME_DATA;
+// Langue : choix mémorisé, sinon celle du navigateur (français par défaut pour les francophones, anglais sinon)
+let L=(()=>{try{const v=localStorage.getItem('fa-lang');if(v==='fr'||v==='en')return v}catch(e){}return /^fr/i.test(navigator.language||'fr')?'fr':'en'})();
+const tr=(fr,en)=>L==='en'?en:fr;
+const plural=n=>n>1?'s':'';
 const LEAGUES=[
   {id:'L1',name:'Ligue 1',flag:'linear-gradient(90deg,#0055a4 33.3%,#fff 33.3%,#fff 66.6%,#ef4135 66.6%)'},
   {id:'PL',name:'Premier League',flag:'linear-gradient(#cf142b,#cf142b) center/100% 34% no-repeat, linear-gradient(#cf142b,#cf142b) center/34% 100% no-repeat, #fff'},
@@ -492,18 +514,18 @@ const LEAGUES=[
   {id:'SA',name:'Serie A',flag:'linear-gradient(90deg,#009246 33.3%,#fff 33.3%,#fff 66.6%,#ce2b37 66.6%)'},
 ];
 const DIFFS=[
-  {id:'facile',t:'Facile',d:'Que de la vedette !',cote:1},
-  {id:'moyen',t:'Moyen',d:'De bons joueurs, sans être des cracks.',cote:2},
-  {id:'difficile',t:'Difficile',d:'Pour les vrais connaisseurs.',cote:3},
-  {id:'legende',t:'Légende',d:'Tout le monde les a oubliés. Et toi ?',cote:4},
+  {id:'facile',get t(){return tr('Facile','Easy')},get d(){return tr('Que de la vedette !','Stars only!')},cote:1},
+  {id:'moyen',get t(){return tr('Moyen','Medium')},get d(){return tr('De bons joueurs, sans être des cracks.','Good players, not quite world-class.')},cote:2},
+  {id:'difficile',get t(){return tr('Difficile','Hard')},get d(){return tr('Pour les vrais connaisseurs.','For true connoisseurs.')},cote:3},
+  {id:'legende',get t(){return tr('Légende','Legend')},get d(){return tr('Tout le monde les a oubliés. Et toi ?','Everyone has forgotten them. Have you?')},cote:4},
 ];
 const DIFF_MAP=Object.fromEntries(DIFFS.map(d=>[d.id,d]));
 const YMIN=1977,YMAX=2026;
 const PERIODS=[
-  {label:'Années 2020',range:[2020,2026]},
-  {label:'Années 2010',range:[2010,2019]},
-  {label:'Années 2000',range:[2000,2009]},
-  {label:'XXIe siècle',range:[2000,2026]},
+  {get label(){return tr('Années 2020','2020s')},range:[2020,2026]},
+  {get label(){return tr('Années 2010','2010s')},range:[2010,2019]},
+  {get label(){return tr('Années 2000','2000s')},range:[2000,2009]},
+  {get label(){return tr('XXIe siècle','21st century')},range:[2000,2026]},
 ];
 
 const CREST=(
@@ -517,13 +539,23 @@ const CREST=(
 function Brand({onHome,children}){
   return (
    <div className="brandbar">
-     <button className="brand" onClick={onHome} aria-label="Football Archives — retour à l'accueil">
+     <button className="brand" onClick={onHome} aria-label={tr('Football Archives, retour à l’accueil','Football Archives, back to home')}>
        {CREST}
-       <span className="wordmark"><span className="t1">Football Archives</span><span className="t2">Les dossiers du ballon rond</span></span>
+       <span className="wordmark"><span className="t1">Football Archives</span><span className="t2">{tr('Les dossiers du ballon rond','The beautiful game, on file')}</span></span>
      </button>
      {children}
    </div>
   );
+}
+const EN_WORDS={
+ 'Afrique du Sud':'South Africa','Albanie':'Albania','Algérie':'Algeria','Allemagne':'Germany',"Allemagne de l'Est":'East Germany','Angleterre':'England','Angola':'Angola','Antigua-et-Barbuda':'Antigua and Barbuda','Arabie saoudite':'Saudi Arabia','Argentine':'Argentina','Arménie':'Armenia','Australie':'Australia','Autriche':'Austria','Azerbaïdjan':'Azerbaijan','Barbade':'Barbados','Belgique':'Belgium','Bermudes':'Bermuda','Biélorussie':'Belarus','Bolivie':'Bolivia','Bosnie-Herzégovine':'Bosnia and Herzegovina','Brésil':'Brazil','Bulgarie':'Bulgaria','Burkina Faso':'Burkina Faso','Burundi':'Burundi','Bénin':'Benin','Cameroun':'Cameroon','Canada':'Canada','Cap-Vert':'Cape Verde','Chili':'Chile','Chine':'China','Chypre':'Cyprus','Colombie':'Colombia','Comores':'Comoros','Congo':'Congo','Corée du Sud':'South Korea','Costa Rica':'Costa Rica','Croatie':'Croatia','Curaçao':'Curaçao',"Côte d'Ivoire":'Ivory Coast','Danemark':'Denmark','Espagne':'Spain','Estonie':'Estonia','Finlande':'Finland','France':'France','Gabon':'Gabon','Gambie':'Gambia','Ghana':'Ghana','Gibraltar':'Gibraltar','Grenade':'Grenada','Grèce':'Greece','Guadeloupe':'Guadeloupe','Guinée':'Guinea','Guinée équatoriale':'Equatorial Guinea','Guinée-Bissau':'Guinea-Bissau','Guyana':'Guyana','Géorgie':'Georgia','Haïti':'Haiti','Honduras':'Honduras','Hongrie':'Hungary','Indonésie':'Indonesia','Irak':'Iraq','Iran':'Iran','Irlande':'Ireland','Irlande du Nord':'Northern Ireland','Islande':'Iceland','Israël':'Israel','Italie':'Italy','Jamaïque':'Jamaica','Japon':'Japan','Jordanie':'Jordan','Kazakhstan':'Kazakhstan','Kenya':'Kenya','Kosovo':'Kosovo','Lettonie':'Latvia','Liban':'Lebanon','Liberia':'Liberia','Libye':'Libya','Liechtenstein':'Liechtenstein','Lituanie':'Lithuania','Luxembourg':'Luxembourg','Macédoine du Nord':'North Macedonia','Madagascar':'Madagascar','Mali':'Mali','Malte':'Malta','Maroc':'Morocco','Martinique':'Martinique','Maurice':'Mauritius','Mauritanie':'Mauritania','Mexique':'Mexico','Moldavie':'Moldova','Monténégro':'Montenegro','Mozambique':'Mozambique','Namibie':'Namibia','Niger':'Niger','Nigeria':'Nigeria','Nigéria':'Nigeria','Norvège':'Norway','Nouvelle-Zélande':'New Zealand','Oman':'Oman','Ouzbékistan':'Uzbekistan','Pakistan':'Pakistan','Panama':'Panama','Paraguay':'Paraguay','Pays de Galles':'Wales','Pays-Bas':'Netherlands','Philippines':'Philippines','Pologne':'Poland','Portugal':'Portugal','Pérou':'Peru','Qatar':'Qatar','Roumanie':'Romania','Royaume de Danemark':'Denmark','Royaume des Pays-Bas':'Netherlands','Royaume-Uni':'United Kingdom','Russie':'Russia','République centrafricaine':'Central African Republic',"République d'Irlande":'Republic of Ireland','République dominicaine':'Dominican Republic','République du Congo':'Republic of the Congo','République démocratique allemande':'East Germany','République démocratique du Congo':'DR Congo','République fédérale de Yougoslavie':'FR Yugoslavia','République fédérative socialiste de Yougoslavie':'SFR Yugoslavia','République populaire de Chine':'China','Saint-Christophe-et-Niévès':'Saint Kitts and Nevis','Serbie':'Serbia','Serbie-et-Monténégro':'Serbia and Montenegro','Seychelles':'Seychelles','Sierra Leone':'Sierra Leone','Slovaquie':'Slovakia','Slovénie':'Slovenia','Soudan':'Sudan','Suisse':'Switzerland','Suriname':'Suriname','Suède':'Sweden','Syrie':'Syria','Sénégal':'Senegal','Tahiti':'Tahiti','Tanzanie':'Tanzania','Tchad':'Chad','Tchécoslovaquie':'Czechoslovakia','Tchéquie':'Czech Republic','Togo':'Togo','Trinité-et-Tobago':'Trinidad and Tobago','Tunisie':'Tunisia','Turquie':'Turkey','Ukraine':'Ukraine','Union soviétique':'Soviet Union','Uruguay':'Uruguay','Venezuela':'Venezuela','Yougoslavie':'Yugoslavia','Zambie':'Zambia','Zimbabwe':'Zimbabwe','Écosse':'Scotland','Égypte':'Egypt','Équateur':'Ecuador','Érythrée':'Eritrea','États-Unis':'United States',
+ 'ailier':'winger','ailier droit':'right winger','ailier gauche':'left winger','arrière':'defender','arrière droit(e)':'right back','arrière latéral':'full-back','attaquant':'forward','attaquant de soutien':'second striker','attaquant intérieur':'inside forward','avant-centre':'centre-forward','défenseur':'defender','défenseur central':'centre-back','entraîneur de gardien de but':'goalkeeping coach','gardien de but':'goalkeeper','libéro':'sweeper','meneur de jeu':'playmaker','milieu de terrain':'midfielder','milieu de terrain axial':'central midfielder','milieu droit':'right midfielder','milieu défensif':'defensive midfielder','milieu excentré':'wide midfielder','milieu gauche':'left midfielder','milieu offensif':'attacking midfielder','milieu offensif gauche':'left attacking midfielder','stoppeur':'stopper'
+};
+const trData=v=>L==='en'&&v?v.split(' / ').map(w=>EN_WORDS[w]||w).join(' / '):v;
+function LangToggle({onChange}){
+  return <div className="lang" role="group" aria-label={tr('Langue','Language')}>
+    {['fr','en'].map(x=><button key={x} lang={x} aria-pressed={L===x} onClick={()=>onChange(x)}>{x.toUpperCase()}</button>)}
+  </div>;
 }
 function Cote({n}){
   return <span className="cote">{[0,1,2,3].map(i=><i key={i} className={i<n?'f':''}></i>)}</span>;
@@ -550,7 +582,7 @@ const SERIE={
   },
   ref(series){let h=0;for(const c of series.map(p=>p.id).join()) h=(h*31+c.charCodeAt(0))>>>0;return 'FA-'+h.toString(36).toUpperCase().slice(-6).padStart(6,'0');},
   label(cfg){
-    if(cfg.daily!=null) return 'Challenge du jour '+dailyNo(cfg.daily)+' · '+DIFF_MAP[dailyLevel(cfg.daily)].t;
+    if(cfg.daily!=null) return tr('Challenge du jour ','Daily challenge ')+dailyNo(cfg.daily)+' · '+DIFF_MAP[dailyLevel(cfg.daily)].t;
     const lg=cfg.leagues.map(id=>(LEAGUES.find(l=>l.id===id)||{}).name).filter(Boolean).join(', ');
     const per=(PERIODS.find(x=>x.range[0]===cfg.yr[0]&&x.range[1]===cfg.yr[1])||{}).label||(cfg.yr[0]+'–'+cfg.yr[1]);
     return [lg,per,(DIFFS.find(x=>x.id===cfg.diff)||{}).t].filter(Boolean).join(' · ');
@@ -611,14 +643,14 @@ function useNow(){const [now,setNow]=useState(()=>new Date());
 
 const ARROW=<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>;
 const MODES=[
-  {k:'challenge',n:'01',tab:'Du jour',t:'Challenge du jour',d:'La même série pour tous les visiteurs. Compare ton score : elle change toutes les 24 h.',tx:'20px',r:'-2.2deg',y:'0px',z:4,lr:'-.8deg'},
-  {k:'classique',n:'02',tab:'Classique',t:'Partie classique',d:'Choisis championnats, période et difficulté, puis enchaîne 10 fiches.',tx:'70px',r:'2.4deg',y:'22px',z:3,lr:'.7deg'},
-  {k:'chrono',n:'03',tab:'Chrono',t:'Contre-la-montre',d:'Le parcours se dévoile peu à peu. Plus tu tardes, moins tu marques.',tx:'126px',r:'-1.6deg',y:'8px',z:2,lr:'-.5deg'},
-  {k:'tronque',n:'04',tab:'Tronqué',t:'Mode tronqué',d:'Le club principal est caviardé. À toi de recouper le reste.',tx:'20px',r:'3deg',y:'28px',z:1,lr:'.9deg'},
+  {k:'challenge',n:'01',get tab(){return tr('Du jour','Daily')},get t(){return tr('Challenge du jour','Daily challenge')},get d(){return tr('La même série pour tous les visiteurs. Compare ton score : elle change toutes les 24 h.','The same series for every visitor. Compare scores: it changes every 24 hours.')},tx:'20px',r:'-2.2deg',y:'0px',z:4,lr:'-.8deg'},
+  {k:'classique',n:'02',get tab(){return tr('Classique','Classic')},get t(){return tr('Partie classique','Classic game')},get d(){return tr('Choisis championnats, période et difficulté, puis enchaîne 10 fiches.','Pick leagues, era and difficulty, then work through 10 files.')},tx:'70px',r:'2.4deg',y:'22px',z:3,lr:'.7deg'},
+  {k:'chrono',n:'03',get tab(){return tr('Chrono','Timed')},get t(){return tr('Contre-la-montre','Against the clock')},get d(){return tr('Le parcours se dévoile peu à peu. Plus tu tardes, moins tu marques.','The career unfolds bit by bit. The longer you wait, the less you score.')},tx:'126px',r:'-1.6deg',y:'8px',z:2,lr:'-.5deg'},
+  {k:'tronque',n:'04',get tab(){return tr('Tronqué','Redacted')},get t(){return tr('Mode tronqué','Redacted mode')},get d(){return tr('Le club principal est caviardé. À toi de recouper le reste.','The main club is blacked out. Piece together the rest.')},tx:'20px',r:'3deg',y:'28px',z:1,lr:'.9deg'},
 ];
 function ChallengePill(){
   const c=challengeInfo(useNow());
-  return <div className="ld-pill">Challenge <b>{c.no}</b> · renouvelé dans <b>{c.left}</b><span className="ld-dot"><i></i></span></div>;
+  return <div className="ld-pill">Challenge <b>{c.no}</b> · {tr('renouvelé dans','resets in')} <b>{c.left}</b><span className="ld-dot"><i></i></span></div>;
 }
 function Landing({onChallenge,onClassic}){
   const c=challengeInfo(useNow());
@@ -628,30 +660,30 @@ function Landing({onChallenge,onClassic}){
   return (
    <div className="landing">
     <section className="ld-hero">
-     <div><h1>Une <em>carrière</em>, un nom</h1></div>
-     <p>Quatre façons de démasquer les joueurs. Le challenge du jour se renouvelle chaque nuit à minuit.</p>
+     <div><h1>{L==='en'?<React.Fragment>One <em>career</em>, one name</React.Fragment>:<React.Fragment>Une <em>carrière</em>, un nom</React.Fragment>}</h1></div>
+     <p>{tr('Quatre façons de démasquer les joueurs. Le challenge du jour se renouvelle chaque nuit à minuit.','Four ways to unmask the players. The daily challenge resets every night at midnight, Paris time.')}</p>
     </section>
-    <nav className="cascade" aria-label="Modes de jeu">
+    <nav className="cascade" aria-label={tr('Modes de jeu','Game modes')}>
      {MODES.map((m,i)=>{
        const ch=m.k==='challenge', act=on[m.k], Tag=act?'button':'div';
        return (
         <Tag key={m.k} type={act?'button':undefined} onClick={act} className={'fold f-'+m.k+(ch?' big':'')+(act?'':' soon')}
           style={{'--i':i,'--r':m.r,'--y':m.y,'--z':m.z,'--tx':m.tx,'--lr':m.lr}}>
          <span className="fold-back"><span className="fold-tab"><span>{m.n} · {m.tab}</span></span></span>
-         <span className="fold-sheet" aria-hidden="true"><span className="h">Fiche joueur — n° {m.n}</span><span className="rb"></span><span className="rb s"></span><span className="l"></span><span className="l"></span><span className="l"></span></span>
+         <span className="fold-sheet" aria-hidden="true"><span className="h">{tr('Fiche joueur','Player file')} — n° {m.n}</span><span className="rb"></span><span className="rb s"></span><span className="l"></span><span className="l"></span><span className="l"></span></span>
          {ch && <span className="ld-stamp">{c.no}</span>}
          <span className="fold-front"><span className="label">
            <span className="ld-t">{m.t}</span><span className="ld-d">{m.d}</span>
-           {ch && <span className={'ld-lvl '+c.level.id}>Aujourd’hui : <b>{c.level.t}</b><Cote n={c.level.cote}/></span>}
-           {ch && <span className="ld-clock"><small>Nouvelle série dans</small>{c.left}</span>}
-           {ch && done!=null ? <span className="ld-score">{done?<React.Fragment>Ton score <b>{done}</b></React.Fragment>:'Partie interrompue'}</span>
-            : act ? <span className={'ld-cta'+(ch?' gold':'')}>{ch?'Jouer le challenge':'Ouvrir le dossier'}<span className="ic">{ARROW}</span></span>
-                : <span className="ld-soon">Bientôt disponible</span>}
+           {ch && <span className={'ld-lvl '+c.level.id}>{tr('Aujourd’hui :','Today:')} <b>{c.level.t}</b><Cote n={c.level.cote}/></span>}
+           {ch && <span className="ld-clock"><small>{tr('Nouvelle série dans','New series in')}</small>{c.left}</span>}
+           {ch && done!=null ? <span className="ld-score">{done?<React.Fragment>{tr('Ton score','Your score')} <b>{done}</b></React.Fragment>:tr('Partie interrompue','Game abandoned')}</span>
+            : act ? <span className={'ld-cta'+(ch?' gold':'')}>{ch?tr('Jouer le challenge','Play the challenge'):tr('Ouvrir le dossier','Open the file')}<span className="ic">{ARROW}</span></span>
+                : <span className="ld-soon">{tr('Bientôt disponible','Coming soon')}</span>}
          </span></span>
         </Tag>);
      })}
     </nav>
-    <div className="ld-foot"><span>Fonds : 5 grands championnats · depuis 2000</span><span>Football Archives — salle de lecture</span></div>
+    <div className="ld-foot"><span>{tr('Fonds : 5 grands championnats · depuis 2000','Collection: the big five leagues · since 2000')}</span></div>
    </div>
   );
 }
@@ -669,26 +701,26 @@ function Setup({onStart,onBack}){
   async function start(){
     setBusy(true); setErr('');
     try{ onStart(await loadSeries(shuffle(pool).slice(0,n)),{leagues,yr,diff}); }
-    catch(e){ setBusy(false); setErr('Impossible de charger les fiches. Vérifie ta connexion, puis réessaie.'); }
+    catch(e){ setBusy(false); setErr(tr('Impossible de charger les fiches. Vérifie ta connexion, puis réessaie.','Couldn’t load the files. Check your connection, then try again.')); }
   }
   const cfg={leagues,yr,diff}, d=DIFF_MAP[diff];
-  const msg=err || (canPlay ? 'Série de '+n+' fiche'+(n>1?'s':'')+' tirée'+(n>1?'s':'')+' au hasard.' : leagues.length===0 ? 'Coche au moins un championnat.' : 'Aucune fiche ne correspond. Élargis tes critères.');
+  const msg=err || (canPlay ? tr('Série de '+n+' fiche'+plural(n)+' tirée'+plural(n)+' au hasard.','A series of '+n+' file'+plural(n)+' drawn at random.') : leagues.length===0 ? tr('Coche au moins un championnat.','Tick at least one league.') : tr('Aucune fiche ne correspond. Élargis tes critères.','No file matches. Widen your criteria.'));
   useEffect(()=>{document.body.classList.add('wide');return()=>document.body.classList.remove('wide');},[]);
   return (
    <div className="cf">
     <div className="cf-head">
-     <button className="cf-back" onClick={onBack}>← Tous les dossiers</button>
-     <h1>Partie <em>classique</em></h1>
-     <p>Choisis les championnats, la période et le niveau : on sort dix fiches du fonds.</p>
+     <button className="cf-back" onClick={onBack}>← {tr('Tous les dossiers','All files')}</button>
+     <h1>{L==='en'?<React.Fragment><em>Classic</em> game</React.Fragment>:<React.Fragment>Partie <em>classique</em></React.Fragment>}</h1>
+     <p>{tr('Choisis les championnats, la période et le niveau : on sort dix fiches du fonds.','Pick the leagues, the era and the level: we pull ten files from the archive.')}</p>
     </div>
     <div className="cf-fold">
-     <span className="cf-tab" aria-hidden="true"><span>02 · Classique</span></span>
+     <span className="cf-tab" aria-hidden="true"><span>02 · {tr('Classique','Classic')}</span></span>
      <div className="cf-grid">
       <div className="cf-sheet">
-       <div className="cf-sh">Bordereau de recherche</div>
+       <div className="cf-sh">{tr('Bordereau de recherche','Search request')}</div>
        <section className="cf-sec">
-        <h2>Championnats</h2>
-        <p className="cf-hint">Le joueur est passé par au moins un des championnats cochés.</p>
+        <h2>{tr('Championnats','Leagues')}</h2>
+        <p className="cf-hint">{tr('Le joueur est passé par au moins un des championnats cochés.','The player appeared in at least one of the ticked leagues.')}</p>
         <div className="cf-lgs">
          {LEAGUES.map(l=>{
            const on=leagues.includes(l.id);
@@ -703,15 +735,15 @@ function Setup({onStart,onBack}){
         </div>
        </section>
        <section className="cf-sec">
-        <h2>Période</h2>
-        <p className="cf-hint">Au moins une saison jouée sur la période.</p>
-        <div className="cf-seg" role="group" aria-label="Période">
-         {PERIODS.map(p=><button key={p.label} aria-pressed={yr[0]===p.range[0]&&yr[1]===p.range[1]} onClick={()=>setYr(p.range)}>{p.label}</button>)}
+        <h2>{tr('Période','Era')}</h2>
+        <p className="cf-hint">{tr('Au moins une saison jouée sur la période.','At least one season played in that era.')}</p>
+        <div className="cf-seg" role="group" aria-label={tr('Période','Era')}>
+         {PERIODS.map(p=><button key={p.range.join()} aria-pressed={yr[0]===p.range[0]&&yr[1]===p.range[1]} onClick={()=>setYr(p.range)}>{p.label}</button>)}
         </div>
        </section>
        <section className="cf-sec">
-        <h2>Niveau</h2>
-        <div className="cf-lv" role="group" aria-label="Niveau">
+        <h2>{tr('Niveau','Level')}</h2>
+        <div className="cf-lv" role="group" aria-label={tr('Niveau','Level')}>
          {DIFFS.map(x=>(
           <button key={x.id} className={x.id} aria-pressed={diff===x.id} onClick={()=>setDiff(x.id)}>
            <span className="tt">{x.t}<Cote n={x.cote}/></span>
@@ -722,11 +754,11 @@ function Setup({onStart,onBack}){
       </div>
       <aside className="cf-sum" aria-live="polite">
        <span className={"stamp tilt "+(diff==='legende'?'':diff==='difficile'?'gold':diff==='moyen'?'blue':'green')}>{d.t} · {d.cote}/4</span>
-       <span className="cf-k">Fiches au fonds</span>
-       <b className="cf-n">{(leagues.length?pool.length:0).toLocaleString('fr-FR')}</b>
+       <span className="cf-k">{tr('Fiches au fonds','Files in the archive')}</span>
+       <b className="cf-n">{(leagues.length?pool.length:0).toLocaleString(L==='en'?'en-GB':'fr-FR')}</b>
        <p className="cf-crit">{SERIE.label(cfg)}</p>
        <p className={"cf-msg"+(canPlay&&!err?"":" warn")}>{msg}</p>
-       <button className="ld-cta cf-go" disabled={!canPlay||busy} onClick={start}>{busy?'Ouverture…':'Ouvrir le dossier'}<span className="ic">{ARROW}</span></button>
+       <button className="ld-cta cf-go" disabled={!canPlay||busy} onClick={start}>{busy?tr('Ouverture…','Opening…'):tr('Ouvrir le dossier','Open the file')}<span className="ic">{ARROW}</span></button>
       </aside>
      </div>
     </div>
@@ -743,27 +775,27 @@ function Career({p,shown,revealed,outcome}){
   return (
    <div className="folder">
     <div className="sheet">
-     <div className="sh-h"><span className="ttl">Fiche joueur</span><span className="fno">Nº {fileNo} · {p.career[0]&&p.career[0].start}–{p.career[p.career.length-1]&&(p.career[p.career.length-1].end||'…')}</span></div>
+     <div className="sh-h"><span className="ttl">{tr('Fiche joueur','Player file')}</span><span className="fno">Nº {fileNo} · {p.career[0]&&p.career[0].start}–{p.career[p.career.length-1]&&(p.career[p.career.length-1].end||'…')}</span></div>
 
      <div className="ident-wrap">
       <div className="ident">
         <div className="lines">
-          <div className="fl"><span className="k">Nom</span>{revealed?<span className="reveal-name">{p.name}</span>:shown.ini?<span className="v">{p.name.split(' ').map(w=>w[0]).join('.')+'.'}</span>:<span className="redact"></span>}</div>
-          <div className="fl"><span className="k">Nationalité</span>{(revealed||shown.nat)?<span className="v">{p.nat}</span>:<span className="redact short"></span>}</div>
-          <div className="fl"><span className="k">Poste</span>{(revealed||shown.pos)?<span className="v">{p.pos}</span>:<span className="redact short"></span>}</div>
+          <div className="fl"><span className="k">{tr('Nom','Name')}</span>{revealed?<span className="reveal-name">{p.name}</span>:shown.ini?<span className="v">{p.name.split(' ').map(w=>w[0]).join('.')+'.'}</span>:<span className="redact"></span>}</div>
+          <div className="fl"><span className="k">{tr('Nationalité','Nationality')}</span>{(revealed||shown.nat)?<span className="v">{trData(p.nat)}</span>:<span className="redact short"></span>}</div>
+          <div className="fl"><span className="k">{tr('Poste','Position')}</span>{(revealed||shown.pos)?<span className="v">{trData(p.pos)}</span>:<span className="redact short"></span>}</div>
         </div>
       </div>
       <span className="cross">
         {revealed
           ? (outcome==='good'
-              ? <span className="stamp green pop">Identifié</span>
-              : <span className="stamp pop">Non identifié</span>)
-          : <span className="stamp">Identité masquée</span>}
+              ? <span className="stamp green pop">{tr('Identifié','Identified')}</span>
+              : <span className="stamp pop">{tr('Non identifié','Unidentified')}</span>)
+          : <span className="stamp">{tr('Identité masquée','Identity withheld')}</span>}
       </span>
      </div>
 
      <div className="rec">
-      <div className="rec-h"><span>Club</span><span>Période</span><span>Matchs</span></div>
+      <div className="rec-h"><span>Club</span><span>{tr('Période','Years')}</span><span>{tr('Matchs','Apps')}</span></div>
       {p.career.map((c,i)=>{
         const big=c.apps&&/^\d+$/.test(c.apps)&&parseInt(c.apps)>=100;
         return (
@@ -773,11 +805,11 @@ function Career({p,shown,revealed,outcome}){
           <span className="ap">{c.apps&&/^\d+$/.test(c.apps)?<span><b>{c.apps}</b></span>:<span className="na">—</span>}</span>
         </div>
       );})}
-      <div className="tot"><span>Total consigné</span><span>{nClubs} club{nClubs>1?'s':''} · {totApps} matchs</span></div>
+      <div className="tot"><span>{tr('Total consigné','Total on record')}</span><span>{nClubs} club{plural(nClubs)} · {totApps} {tr('matchs','apps')}</span></div>
      </div>
 
      <div className="sh-f">
-       <span className="meta">Cote de recrutement</span>
+       <span className="meta">{tr('Cote de recrutement','Scouting rating')}</span>
        <span className={"stamp tilt "+(p.diff==='legende'?'':p.diff==='difficile'?'gold':p.diff==='moyen'?'blue':'green')}>{d.t} · {d.cote}/4</span>
      </div>
     </div>
@@ -808,8 +840,8 @@ function Game({series,onEnd,target}){
            return <span key={k} className={cls}></span>;
          })}
        </div>
-       <div className="qn">Fiche {i+1} / {series.length}</div>
-       {target!=null && <div className="target">À battre<b>{target}</b></div>}
+       <div className="qn">{tr('Fiche','File')} {i+1} / {series.length}</div>
+       {target!=null && <div className="target">{tr('À battre','To beat')}<b>{target}</b></div>}
        <div className="score">Score<b>{score}</b></div>
      </div>
      <div className="stage">
@@ -829,13 +861,13 @@ function GuessHost({p,onResolve,stock,onHint}){
   const nq=norm(q);
   const matches=useMemo(()=>nq.length<2?[]:ALLKEYS.filter(x=>x.k.includes(nq)||x.a.includes(nq)).slice(0,8),[nq]);
   function resolve(good){setLocked(true);setOutcome(good?'good':'bad');
-    setFb(good?{type:'good',msg:'Identité confirmée.',sub:p.name}:{type:'reveal',msg:'Dossier déclassé. C’était :',sub:p.name});
+    setFb(good?{type:'good',msg:tr('Identité confirmée.','Identity confirmed.'),sub:p.name}:{type:'reveal',msg:tr('Dossier déclassé. C’était :','File declassified. It was:'),sub:p.name});
     setTimeout(()=>onResolve(good),2300);}
   function submitName(name){if(locked)return;
     if(norm(name)===p.key){resolve(true);return;}
     const t=tries+1;setTries(t);
     if(t>=3)resolve(false);
-    else{setFb({type:'err',msg:'Nom non concordant.',sub:(3-t)+' essai'+(3-t>1?'s':'')+' restant'+(3-t>1?'s':'')});setQ('');setSel(0);setTimeout(()=>inputRef.current&&inputRef.current.focus(),30);}}
+    else{setFb({type:'err',msg:tr('Nom non concordant.','Name doesn’t match.'),sub:tr((3-t)+' essai'+plural(3-t)+' restant'+plural(3-t),(3-t)+' tr'+(3-t>1?'ies':'y')+' left')});setQ('');setSel(0);setTimeout(()=>inputRef.current&&inputRef.current.focus(),30);}}
   function onKey(e){if(locked)return;
     if(e.key==='ArrowDown'){e.preventDefault();setSel(s=>Math.min(s+1,matches.length-1));}
     else if(e.key==='ArrowUp'){e.preventDefault();setSel(s=>Math.max(s-1,0));}
@@ -848,9 +880,9 @@ function GuessHost({p,onResolve,stock,onHint}){
      <div className="guess">
        <div className="guess-h"><span className="qm">?</span>Identification</div>
        <div className="guess-body">
-       <p className="formlab">Nom du joueur</p>
+       <p className="formlab">{tr('Nom du joueur','Player name')}</p>
        <div className="searchbox">
-         <input ref={inputRef} value={q} disabled={locked} placeholder="Saisir un nom…"
+         <input ref={inputRef} value={q} disabled={locked} placeholder={tr('Saisir un nom…','Type a name…')}
            onChange={e=>{setQ(e.target.value);setSel(0);}} onKeyDown={onKey} autoComplete="off"/>
          {!locked && matches.length>0 &&
            <div className="ac">{matches.map((m,idx)=>(
@@ -859,17 +891,17 @@ function GuessHost({p,onResolve,stock,onHint}){
        </div>
        <div className="tries">
          {[0,1,2].map(idx=><span key={idx} className={"pip"+(idx<3-tries?" full":" spent")}></span>)}
-         <span className="lbl">{3-tries} essai{3-tries>1?'s':''} restant{3-tries>1?'s':''}</span>
+         <span className="lbl">{tr((3-tries)+' essai'+plural(3-tries)+' restant'+plural(3-tries),(3-tries)+' tr'+(3-tries>1?'ies':'y')+' left')}</span>
        </div>
        {fb && <div className={"feedback "+fb.type}>{fb.msg}{fb.sub&&<div className="sub">{fb.sub}</div>}</div>}
        {!locked &&
          <div className="hintrow">
-           {!shown.nat && <button className="link" disabled={stock.nat<1} onClick={()=>hint('nat')}>+ Nationalité <span className="left">{stock.nat} restant{stock.nat>1?'s':''}</span></button>}
-           {!shown.pos && <button className="link" disabled={stock.pos<1} onClick={()=>hint('pos')}>+ Poste <span className="left">{stock.pos} restant{stock.pos>1?'s':''}</span></button>}
-           {!shown.ini && <button className="link" disabled={stock.ini<1} onClick={()=>hint('ini')}>+ Initiales <span className="left">{stock.ini} restant{stock.ini>1?'s':''}</span></button>}
+           {!shown.nat && <button className="link" disabled={stock.nat<1} onClick={()=>hint('nat')}>+ {tr('Nationalité','Nationality')} <span className="left">{stock.nat} {tr('restant'+plural(stock.nat),'left')}</span></button>}
+           {!shown.pos && <button className="link" disabled={stock.pos<1} onClick={()=>hint('pos')}>+ {tr('Poste','Position')} <span className="left">{stock.pos} {tr('restant'+plural(stock.pos),'left')}</span></button>}
+           {!shown.ini && <button className="link" disabled={stock.ini<1} onClick={()=>hint('ini')}>+ {tr('Initiales','Initials')} <span className="left">{stock.ini} {tr('restant'+plural(stock.ini),'left')}</span></button>}
          </div>}
        {!locked &&
-         <button className="skip" onClick={()=>resolve(false)}>Abandonner et déclasser</button>}
+         <button className="skip" onClick={()=>resolve(false)}>{tr('Abandonner et déclasser','Give up and declassify')}</button>}
        </div>
      </div>
      <Career p={p} shown={shown} revealed={locked} outcome={outcome}/>
@@ -881,16 +913,16 @@ function Recap({results,onAgain,cfg,target}){
   const score=results.filter(r=>r.good).length;
   const total=results.length;
   const pct=total?score/total:0;
-  const rank=pct>=.9?'Recruteur en chef':pct>=.7?'Titulaire':pct>=.4?'Recrue':pct>=.2?'Stagiaire':'Tribune';
-  const msg=score>=8?'Chapeau, tu connais ton football.':score>=5?'Joli, mais quelques trous.':score>=2?'La mémoire flanche un peu.':'Rude série. On y retourne ?';
+  const rank=pct>=.9?tr('Recruteur en chef','Chief scout'):pct>=.7?tr('Titulaire','First team'):pct>=.4?tr('Recrue','New signing'):pct>=.2?tr('Stagiaire','Trainee'):tr('Tribune','In the stands');
+  const msg=score>=8?tr('Chapeau, tu connais ton football.','Hats off, you know your football.'):score>=5?tr('Joli, mais quelques trous.','Nice, with a few gaps.'):score>=2?tr('La mémoire flanche un peu.','The memory is slipping a bit.'):tr('Rude série. On y retourne ?','Tough run. Go again?');
   const [copied,setCopied]=useState(false);
   const inputRef=useRef();
   const series=results.map(r=>r.p);
   const ref=SERIE.ref(series);
   const url=location.origin+location.pathname+'?'+SERIE.query(series,cfg)+'&s='+score;
   const label=SERIE.label(cfg);
-  const text='Football Archives · Dossier '+ref+'\nJ\u2019ai identifié '+score+' fiche'+(score>1?'s':'')+' sur '+total+(label?' ('+label+')':'')+'. À toi de faire mieux !\n'+results.map(r=>r.good?'\u{1F7E9}':'\u{1F7E5}').join('');
-  const vs=target==null?null:score>target?'Défi relevé : tu bats le score de '+target+'/'+total+'.':score===target?'Égalité : '+target+'/'+total+' de part et d\u2019autre.':'Défi perdu : le score à battre était '+target+'/'+total+'.';
+  const text='Football Archives · '+tr('Dossier ','File ')+ref+'\n'+tr('J\u2019ai identifié '+score+' fiche'+plural(score)+' sur '+total,'I identified '+score+' file'+plural(score)+' out of '+total)+(label?' ('+label+')':'')+tr('. À toi de faire mieux !','. Can you beat that?')+'\n'+results.map(r=>r.good?'\u{1F7E9}':'\u{1F7E5}').join('');
+  const vs=target==null?null:score>target?tr('Défi relevé : tu bats le score de ','Challenge won: you beat the score of ')+target+'/'+total+'.':score===target?tr('Égalité : '+target+'/'+total+' de part et d\u2019autre.','Draw: '+target+'/'+total+' each.'):tr('Défi perdu : le score à battre était ','Challenge lost: the score to beat was ')+target+'/'+total+'.';
   function copy(str){
     const done=()=>setCopied(true);
     if(navigator.clipboard) navigator.clipboard.writeText(str).then(done,()=>{inputRef.current&&inputRef.current.select();});
@@ -906,32 +938,32 @@ function Recap({results,onAgain,cfg,target}){
        <div className="recap-head">
          <div className="rh-in">
            <div className="grade"><div className="gs">{score}<span>/{total}</span></div><div className="gl">{rank}</div></div>
-           <div className="rmsg">{cfg.daily!=null && <div className="kline">{SERIE.label(cfg)}</div>}<div className="rt">Dossier clos</div><p>{msg}</p>{vs && <div className="vs">{vs}</div>}</div>
-           <span className="stamp tilt green" style={{alignSelf:'flex-start'}}>Traité</span>
+           <div className="rmsg">{cfg.daily!=null && <div className="kline">{SERIE.label(cfg)}</div>}<div className="rt">{tr('Dossier clos','Case closed')}</div><p>{msg}</p>{vs && <div className="vs">{vs}</div>}</div>
+           <span className="stamp tilt green" style={{alignSelf:'flex-start'}}>{tr('Traité','Filed')}</span>
          </div>
        </div>
        <section className="bordereau" aria-labelledby="bd-titre">
-         <div className="bd-h"><span>Bordereau de transmission</span><span className="ref">Réf. {ref}</span></div>
-         <h2 id="bd-titre">Défie un ami sur ce dossier</h2>
-         <p>Il recevra les mêmes {total} fiches, dans le même ordre, avec ton score à battre.</p>
-         <div className="releve" aria-label={'Ton relevé : '+score+' sur '+total}>
+         <div className="bd-h"><span>{tr('Bordereau de transmission','Transmittal slip')}</span><span className="ref">{tr('Réf.','Ref.')} {ref}</span></div>
+         <h2 id="bd-titre">{tr('Défie un ami sur ce dossier','Challenge a friend on this file')}</h2>
+         <p>{tr('Il recevra les mêmes '+total+' fiches, dans le même ordre, avec ton score à battre.','They get the same '+total+' files, in the same order, with your score to beat.')}</p>
+         <div className="releve" aria-label={tr('Ton relevé : '+score+' sur '+total,'Your record: '+score+' out of '+total)}>
            {results.map((r,i)=><span key={i} className={r.good?'g':'b'}>{r.good?'✓':'✗'}</span>)}
          </div>
          <div className="bd-act">
            <button className="share" onClick={share}>
              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>
-             {copied?'Message copié':'Transmettre le dossier'}
+             {copied?tr('Message copié','Message copied'):tr('Transmettre le dossier','Send the file')}
            </button>
-           {copied && <span className="stamp tilt pop">Copié</span>}
+           {copied && <span className="stamp tilt pop">{tr('Copié','Copied')}</span>}
          </div>
          <div className="bd-link">
-           <label htmlFor="bd-url">Ou copie le lien</label>
+           <label htmlFor="bd-url">{tr('Ou copie le lien','Or copy the link')}</label>
            <div className="row2">
              <input id="bd-url" ref={inputRef} readOnly value={url} onFocus={e=>e.target.select()}/>
-             <button onClick={()=>copy(url)}>Copier</button>
+             <button onClick={()=>copy(url)}>{tr('Copier','Copy')}</button>
            </div>
          </div>
-         <button className="copylink" onClick={()=>copy(url)}>{copied?'Lien copié':'Copier le lien'}</button>
+         <button className="copylink" onClick={()=>copy(url)}>{copied?tr('Lien copié','Link copied'):tr('Copier le lien','Copy the link')}</button>
        </section>
      </div>
      <div className="rlist">
@@ -939,11 +971,11 @@ function Recap({results,onAgain,cfg,target}){
          <div className={"ritem "+(r.good?"good":"bad")} key={i}>
            <span className="mk">{r.good?'✓':'✗'}</span>
            <span className="nm">{r.p.name}</span>
-           <span className="meta">{r.p.nat} · {r.p.pos}</span>
+           <span className="meta">{trData(r.p.nat)} · {trData(r.p.pos)}</span>
          </div>
        ))}
      </div>
-     <button className="again" onClick={onAgain}>Nouveau dossier</button>
+     <button className="again" onClick={onAgain}>{tr('Nouveau dossier','New file')}</button>
    </div>
   );
 }
@@ -956,6 +988,7 @@ function App(){
   const [series,setSeries]=useState([]);
   const [results,setResults]=useState([]);
   const [confirm,setConfirm]=useState(false);
+  const [lang,setLang]=useState(L);
   const [cfg,setCfg]=useState(null);
   const [target,setTarget]=useState(null);
   const [boot,setBoot]=useState(()=>SERIE.parse(location.search));   // série reçue par un lien
@@ -974,11 +1007,13 @@ function App(){
   function goTo(path){ history.pushState(null,'',path); setScreen(pageOf()); setSeries([]); setResults([]); setConfirm(false); setTarget(null); }
   const goHome=()=>goTo('/');
   useEffect(()=>{ const back=()=>{ if(screenRef.current==='game'){ guard(); setConfirm(true); return; } setScreen(pageOf()); setConfirm(false); }; addEventListener('popstate',back); return ()=>removeEventListener('popstate',back); },[]);
+  L=lang; document.documentElement.lang=lang;
+  const changeLang=x=>{ try{localStorage.setItem('fa-lang',x)}catch(e){} setLang(x); };
   function onBrand(){ if(screen==='game') setConfirm(true); else goHome(); }
-  if(boot) return <React.Fragment><Brand onHome={()=>{}}/><div className="wrap"><p className="pool">Ouverture du dossier…</p></div></React.Fragment>;
+  if(boot) return <React.Fragment><Brand onHome={()=>{}}/><div className="wrap"><p className="pool">{tr('Ouverture du dossier…','Opening the file…')}</p></div></React.Fragment>;
   return (
    <React.Fragment>
-     <Brand onHome={onBrand}>{screen==='landing' && <ChallengePill/>}</Brand>
+     <Brand onHome={onBrand}>{screen==='landing' && <ChallengePill/>}<LangToggle onChange={changeLang}/></Brand>
      {screen==='landing' && <Landing onChallenge={playDaily} onClassic={()=>goTo('/partie-classique')}/>}
      {screen==='setup' && <Setup onStart={(s,c)=>play(s,c,null)} onBack={goHome}/>}
      {screen==='game' && <Game series={series} target={target} onEnd={r=>{ if(cfg.daily!=null) PLAYED.set(cfg.daily,r.filter(x=>x.good).length+'/'+r.length); setResults(r); setScreen('recap'); }}/>}
@@ -986,11 +1021,11 @@ function App(){
      {confirm &&
        <div className="overlay" onClick={()=>setConfirm(false)}>
          <div className="dialog" role="dialog" aria-modal="true" onClick={e=>e.stopPropagation()}>
-           <h3>Quitter le dossier ?</h3>
-           <p>La série en cours sera abandonnée et le score perdu.</p>
+           <h3>{tr('Quitter le dossier ?','Leave this file?')}</h3>
+           <p>{tr('La série en cours sera abandonnée et le score perdu.','The current series will be abandoned and the score lost.')}</p>
            <div className="acts">
-             <button onClick={()=>setConfirm(false)}>Continuer</button>
-             <button className="danger" onClick={goHome}>Quitter</button>
+             <button onClick={()=>setConfirm(false)}>{tr('Continuer','Keep playing')}</button>
+             <button className="danger" onClick={goHome}>{tr('Quitter','Leave')}</button>
            </div>
          </div>
        </div>}
