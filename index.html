@@ -352,6 +352,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 .releve span{height:30px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
 .releve .g{background:var(--green);color:#eafff2}
 .releve .b{background:var(--red);color:#fff}
+.releve .y{background:var(--gold);color:var(--ink)}
 .bd-act{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .share{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:none;border-radius:9px;
   background:linear-gradient(180deg,var(--green-br),var(--green));color:#eafff2;font-family:'Oswald',sans-serif;font-weight:700;font-size:16px;
@@ -842,8 +843,8 @@ function Game({series,onEnd,target}){
   const [stock,setStock]=useState({nat:STOCK_INDICES,pos:STOCK_INDICES,ini:STOCK_INDICES});
   const [results,setResults]=useState([]);
   const p=series[i];
-  function resolve(good){
-    const res=[...results,{p,good}];
+  function resolve(good,miss){
+    const res=[...results,{p,good,miss}];
     setResults(res);
     if(i+1>=series.length){ setTimeout(()=>onEnd(res),0); }
     else setI(i+1);
@@ -882,7 +883,7 @@ function GuessHost({p,onResolve,stock,onHint}){
   const matches=useMemo(()=>nq.length<2?[]:ALLKEYS.filter(x=>x.k.includes(nq)||x.a.includes(nq)).slice(0,8),[nq]);
   function resolve(good){inputRef.current&&inputRef.current.blur();setLocked(true);setOutcome(good?'good':'bad');
     setFb(good?{type:'good',msg:tr('Identité confirmée.','Identity confirmed.'),sub:p.name}:{type:'reveal',msg:tr('Dossier déclassé. C’était :','File declassified. It was:'),sub:p.name});
-    setTimeout(()=>onResolve(good),2300);}
+    setTimeout(()=>onResolve(good,tries),2300);}
   function submitName(name){if(locked)return;
     if(norm(name)===p.key){resolve(true);return;}
     const t=tries+1;setTries(t);
@@ -935,7 +936,10 @@ function Recap({results,onAgain,cfg,target}){
   const ref=SERIE.ref(series);
   const url=location.origin+location.pathname+'?'+SERIE.query(series,cfg)+'&s='+score;
   const label=SERIE.label(cfg);
-  const text='Football Archives · '+tr('Dossier ','File ')+ref+'\n'+tr('J\u2019ai identifié '+score+' fiche'+plural(score)+' sur '+total,'I identified '+score+' file'+plural(score)+' out of '+total)+(label?' ('+label+')':'')+tr('. À toi de faire mieux !','. Can you beat that?')+'\n'+results.map(r=>r.good?'\u{1F7E9}':'\u{1F7E5}').join('');
+  const cell=r=>!r.good?'b':r.miss?'y':'g'; // vert : du premier coup · or : 2e ou 3e essai · rouge : raté
+  const text=['Football Archives · '+(cfg.daily!=null?label:tr('Dossier ','File ')+ref+(label?'\n'+label:'')),
+    results.map(r=>({g:'\u{1F7E9}',y:'\u{1F7E8}',b:'\u{1F7E5}'})[cell(r)]).join('')+' '+score+'/'+total,
+    tr('À toi de faire mieux !','Can you beat that?')].join('\n');
   const vs=target==null?null:score>target?tr('Défi relevé : tu bats le score de ','Challenge won: you beat the score of ')+target+'/'+total+'.':score===target?tr('Égalité : '+target+'/'+total+' de part et d\u2019autre.','Draw: '+target+'/'+total+' each.'):tr('Défi perdu : le score à battre était ','Challenge lost: the score to beat was ')+target+'/'+total+'.';
   function copy(str){
     const done=()=>setCopied(true);
@@ -961,7 +965,7 @@ function Recap({results,onAgain,cfg,target}){
          <h2 id="bd-titre">{tr('Défie un ami sur ce dossier','Challenge a friend on this file')}</h2>
          <p>{tr('Il recevra les mêmes '+total+' fiches, dans le même ordre, avec ton score à battre.','They get the same '+total+' files, in the same order, with your score to beat.')}</p>
          <div className="releve" aria-label={tr('Ton relevé : '+score+' sur '+total,'Your record: '+score+' out of '+total)}>
-           {results.map((r,i)=><span key={i} className={r.good?'g':'b'}>{r.good?'✓':'✗'}</span>)}
+           {results.map((r,i)=><span key={i} className={cell(r)} title={r.good?(r.miss?tr('Trouvé au '+(r.miss+1)+'e essai','Found on try '+(r.miss+1)):tr('Trouvé du premier coup','Found first try')):tr('Non identifié','Not identified')}>{r.good?'✓':'✗'}</span>)}
          </div>
          <div className="bd-act">
            <button className="share" onClick={share}>
