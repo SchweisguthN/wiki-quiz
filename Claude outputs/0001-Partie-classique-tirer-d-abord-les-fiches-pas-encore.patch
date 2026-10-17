@@ -1,0 +1,56 @@
+From 360e17d5b2f51c0195b12617fd918af9d75e7d2d Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Sat, 17 Oct 2026 12:48:29 +0200
+Subject: [PATCH] =?UTF-8?q?Partie=20classique=20:=20tirer=20d'abord=20les?=
+ =?UTF-8?q?=20fiches=20pas=20encore=20vues,=20tous=20les=20championnats=20?=
+ =?UTF-8?q?par=20d=C3=A9faut?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01VMZLm92XvPd8CPauTAxUXN
+---
+ index.html | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/index.html b/index.html
+index ac22a3f..27f3d7e 100644
+--- a/index.html
++++ b/index.html
+@@ -629,6 +629,14 @@ function pickPool(leagues,yr,diff){
+   });
+ }
+ function shuffle(a,rand=Math.random){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
++// Partie classique : fiches déjà vues gardées sur l'appareil, retirées en dernier ; vivier épuisé → on repart de zéro
++const SEEN={get(){try{return new Set(JSON.parse(localStorage.getItem('fa-vus'))||[])}catch(e){return new Set()}},set(s){try{localStorage.setItem('fa-vus',JSON.stringify([...s]))}catch(e){}}};
++function drawFresh(pool,n){
++  const seen=SEEN.get(), fresh=pool.filter(p=>!seen.has(p.id));
++  const picks=[...shuffle(fresh),...shuffle(pool.filter(p=>seen.has(p.id)))].slice(0,n);
++  if(fresh.length<n) pool.forEach(p=>seen.delete(p.id));
++  picks.forEach(p=>seen.add(p.id)); SEEN.set(seen); return picks;
++}
+ 
+ /* ===== Challenge du jour : série déterministe, renouvelée à minuit (heure de Paris) ===== */
+ const TZ='Europe/Paris', EPOCH='2026-09-29'; // challenge #001
+@@ -703,7 +711,7 @@ function Landing({onChallenge,onClassic}){
+ }
+ 
+ function Setup({onStart,onBack}){
+-  const [leagues,setLeagues]=useState(['L1']);
++  const [leagues,setLeagues]=useState(LEAGUES.map(l=>l.id));
+   const [yr,setYr]=useState([2020,2026]);
+   const [diff,setDiff]=useState('facile');
+   const pool=useMemo(()=>pickPool(leagues,yr,diff),[leagues,yr,diff]);
+@@ -714,7 +722,7 @@ function Setup({onStart,onBack}){
+   const [err,setErr]=useState('');
+   async function start(){
+     setBusy(true); setErr('');
+-    try{ onStart(await loadSeries(shuffle(pool).slice(0,n)),{leagues,yr,diff}); }
++    try{ onStart(await loadSeries(drawFresh(pool,n)),{leagues,yr,diff}); }
+     catch(e){ setBusy(false); setErr(tr('Impossible de charger les fiches. Vérifie ta connexion, puis réessaie.','Couldn’t load the files. Check your connection, then try again.')); }
+   }
+   const cfg={leagues,yr,diff}, d=DIFF_MAP[diff];
+-- 
+2.43.0
+
